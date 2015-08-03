@@ -16,13 +16,13 @@ attr_reader :grid, :cursor_pos
   end
 
   def move_curs(direction)
-    if direction == :r
+    if direction == :right
       cursor_pos[1] += 1
       cursor_pos[1] -= 1 unless on_board?(cursor_pos)
-    elsif direction == :l
+    elsif direction == :left
       cursor_pos[1] -= 1
       cursor_pos[1] += 1 unless on_board?(cursor_pos)
-    elsif direction == :u
+    elsif direction == :up
       cursor_pos[0] -= 1
       cursor_pos[0] += 1 unless on_board?(cursor_pos)
     else
