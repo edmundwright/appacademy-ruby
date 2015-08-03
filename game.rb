@@ -1,7 +1,12 @@
 require_relative 'board'
+require_relative 'keypress'
 require 'yaml'
 
 class Game
+  ACTION_KEYS = {"s" => :save, "u" => :unflag, "f" => :flag, "r" => :reveal,
+                 "q" => :quit}
+  ARROW_KEYS = {"\e[A" => :up, "\e[B" => :down, "\e[C" => :right,
+                "\e[D" => :left}
 
   attr_reader :board
 
@@ -46,7 +51,7 @@ class Game
 
   def get_move
     loop do
-      puts "Flag, Unflag or Reveal? (f/u/r) Or Save? (s)"
+
       print "> "
       move = gets.chomp.downcase
       return move.to_sym if ["f", "u", "r", "s"].include?(move)
@@ -55,21 +60,33 @@ class Game
   end
 
   def take_turn
-    board.render
+    key_entered = nil
 
-    move = get_move
-    if move == :s
-      save_game
-      return
+    until ACTION_KEYS.include?(key_entered)
+      board.render
+      puts "Use arrow keys to move cursor, or type f/u/r/s"
+      puts "to flag/unflag/reveal/save."
+
+      key_entered = read_char
+
+      if ARROW_KEYS.include?(key_entered)
+        board.move_curs(ARROW_KEYS[key_entered])
+      end
     end
-    pos = get_pos
 
-    if move == :f
-      board[pos].flag
-    elsif move == :u
-      board[pos].unflag
-    else
-      board[pos].reveal_until_fringe
+    tile_to_alter = board[board.cursor_pos]
+
+    case ACTION_KEYS[key_entered]
+    when :save
+      save_game
+    when :quit
+      abort
+    when :flag
+      tile_to_alter.flag
+    when :unflag
+      tile_to_alter.unflag
+    when :reveal
+      tile_to_alter.reveal_until_fringe
     end
   end
 
