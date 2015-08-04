@@ -44,8 +44,8 @@ class Game
 
     until ACTION_KEYS.include?(key_entered)
       board.render
-      puts "Use arrow keys to move cursor, or type f/u/r/s"
-      puts "to flag/unflag/reveal/save."
+      puts "Use arrow keys to move cursor, or type f/u/r/s/q"
+      puts "to flag/unflag/reveal/save/quit."
 
       key_entered = read_char
 
