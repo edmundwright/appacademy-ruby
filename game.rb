@@ -39,26 +39,6 @@ class Game
     end
   end
 
-  def get_pos
-    loop do
-      puts "What position?"
-      print "> "
-      input = gets.chomp.split(",").map(&:to_i)
-      return input if board.on_board?(input)
-      puts "That's not a valid position"
-    end
-  end
-
-  def get_move
-    loop do
-
-      print "> "
-      move = gets.chomp.downcase
-      return move.to_sym if ["f", "u", "r", "s"].include?(move)
-      puts "That's not a valid move."
-    end
-  end
-
   def take_turn
     key_entered = nil
 
