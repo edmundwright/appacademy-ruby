@@ -39,7 +39,7 @@ class Game
     end
   end
 
-  def take_turn
+  def get_action
     key_entered = nil
 
     until ACTION_KEYS.include?(key_entered)
@@ -54,9 +54,14 @@ class Game
       end
     end
 
+    ACTION_KEYS[key_entered]
+  end
+
+  def take_turn
+    action = get_action
     tile_to_alter = board[board.cursor_pos]
 
-    case ACTION_KEYS[key_entered]
+    case action
     when :save
       save_game
     when :quit
