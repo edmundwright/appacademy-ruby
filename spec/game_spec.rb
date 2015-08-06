@@ -2,11 +2,18 @@ require 'rspec'
 require 'game'
 
 describe Game do
-  let(:player1) 
-  describe "#play" do
-    it "doesn't crash" do
-      game = Game.new
-      expect(game.play).to_not raise_error
-    end
+  let(:board) { Board.new }
+  let(:white) { double("white") }
+  let(:black) { double("black") }
+
+  it "doesn't crash when created" do
+    allow(white).to receive(:color=)
+    allow(black).to receive(:color=)
+    allow(white).to receive(:board=)
+    allow(black).to receive(:board=)
+
+    expect do
+      Game.new(board: board, player1: white, player2: black)
+    end.to_not raise_error
   end
 end
