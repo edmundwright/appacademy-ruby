@@ -1,4 +1,5 @@
 require 'byebug'
+require 'colorize'
 
 class Piece
   BLACK_PAWN_DELTAS = [[1, 1], [1, -1]]
@@ -18,7 +19,11 @@ class Piece
   end
 
   def to_s
-    is_king? ? "K" : "P"
+    if color == :black
+      is_king? ? "\u265A" : "\u265F"
+    else
+      is_king? ? "\u2654" : "\u2659"
+    end
   end
 
   def dup(new_board)
