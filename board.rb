@@ -1,5 +1,4 @@
 require_relative 'piece'
-require 'byebug'
 
 class Board
   SIZE = 8
@@ -31,10 +30,15 @@ class Board
     raise BoardError.new("No piece at that position!") unless piece?(pos)
     self[pos] = nil
   end
-  
-  def move(moves)
-    raise BoardError.new("No piece at that position!") unless piece?(moves.first)
-    self[moves.first].perform_moves(moves.drop(1))
+
+  def move(moves, color_wot_done_it)
+    if empty_square?(moves.first)
+      raise BoardError.new("No piece at that position!")
+    elsif color(moves.first) != color_wot_done_it
+      raise InvalidMoveError.new("Can't move opponent's color!")
+    else
+      self[moves.first].perform_moves(moves.drop(1))
+    end
   end
 
   def dup
@@ -43,10 +47,28 @@ class Board
     dup_board
   end
 
-  def num_moves_for_color(color)
-    pieces_of_color(color).inject(0) do |acc, piece|
-      acc + piece.num_available_moves
+  def available_jumps_for_color(color)
+    moves = []
+    pieces_of_color(color).each do |piece|
+      piece.available_jumps.each do |move|
+        moves << [piece.pos, move]
+      end
     end
+    moves
+  end
+
+  def available_slides_for_color(color)
+    moves = []
+    pieces_of_color(color).each do |piece|
+      piece.available_slides.each do |move|
+        moves << [piece.pos, move]
+      end
+    end
+    moves
+  end
+
+  def available_moves_for_color(color)
+    available_slides_for_color(color) + available_jumps_for_color(color)
   end
 
   def pieces_of_color(color)

@@ -11,8 +11,8 @@ class Piece
 
   attr_reader :color, :pos
 
-  def initialize(board, pos, color)
-    @is_king = false
+  def initialize(board, pos, color, is_king = false)
+    @is_king = is_king
     @board = board
     @pos = pos
     @color = color
@@ -27,7 +27,7 @@ class Piece
   end
 
   def dup(new_board)
-    self.class.new(new_board, pos.dup, color)
+    self.class.new(new_board, pos.dup, color, is_king?)
   end
 
   def perform_moves(move_sequence)
@@ -38,8 +38,12 @@ class Piece
     end
   end
 
-  def num_available_moves
-    possible_jumps.length + possible_slides.length
+  def available_slides
+    possible_slides
+  end
+
+  def available_jumps
+    possible_jumps.map { |slide| slide.last }
   end
 
   protected
@@ -47,7 +51,11 @@ class Piece
   def perform_moves!(move_sequence)
     if move_sequence.length == 1
       move = move_sequence.first
-      perform_slide(move) || perform_jump(move) || raise(InvalidMoveError)
+      if possible_jumps.empty?
+        perform_slide(move) || raise(InvalidMoveError)
+      else
+        perform_jump(move) || raise(InvalidMoveError)
+      end
     else
       move_sequence.each do |move|
         perform_jump(move) || raise(InvalidMoveError)

@@ -7,13 +7,7 @@ class HumanPlayer
   end
 
   def play_turn
-    moves = get_moves
-
-    if board.color(moves.first) != color
-      raise InvalidMoveError.new("Can't move opponent's color!")
-    end
-
-    board.move(moves)
+    board.move(get_moves, color)
   rescue InvalidMoveError, BoardError, HumanInputError => e
     puts "#{e.message} Try again."
     retry
@@ -42,6 +36,7 @@ class HumanPlayer
   def translate_pos(pos_string)
     col_string, row_string = pos_string.split("")
     pos = [row_string.to_i, col_string.ord - "A".ord]
+
     if board.on_board?(pos)
       pos
     else
