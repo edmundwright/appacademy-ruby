@@ -1,3 +1,4 @@
+require_relative 'errors'
 require_relative 'board'
 require_relative 'human_player'
 
@@ -17,14 +18,15 @@ class Game
 
   private
 
-  def take_turn
-    begin
-      piece_pos, move_sequence = current_player.get_moves
-      board.move(piece_pos, move_sequence)
-    rescue InvalidMoveError, BoardError => e
-      puts "#{e.message} Try again."
-      retry
-    end
+  def play_turn
+    board.render
+    puts "#{current_player.color.capitalize}'s turn."
+    current_player.play_turn
+    switch_players
+  end
+
+  def switch_players
+    @current_player, @other_player = other_player, current_player
   end
 
   def winner
@@ -38,4 +40,8 @@ class Game
       nil
     end
   end
+end
+
+if __FILE__ == $PROGRAM_NAME
+  Game.new.play
 end
