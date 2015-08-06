@@ -16,17 +16,24 @@ class Piece
   end
 
   def perform_slide(end_pos)
-    possible_slides.include?(end_pos) ? move_to(end_pos) : false
+    return false unless possible_slides.include?(end_pos)
+    move_to(end_pos)
   end
 
-  def perform_jump(first_step, second_step)
-    return false unless possible_jumps.include?([first_step, second_step])
+  def perform_jump(end_pos)
+    jump_that_ends_there = possible_jumps.select do |_, second_step|
+      second_step == end_pos
+    end.first
+    
+    return false unless jump_that_ends_there
+
+    first_step, second_step = jump_that_ends_there
+    board.remove_piece(first_step)
     move_to(second_step)
-    board[first_step] = nil
   end
 
   def move_to(end_pos)
-    board[pos] = nil
+    board.remove_piece(pos)
     board[end_pos] = self
     @pos = end_pos
     maybe_promote
