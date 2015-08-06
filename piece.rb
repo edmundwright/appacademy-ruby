@@ -6,7 +6,7 @@ class Piece
     [pos[0] + delta[0], pos[1] + delta[1]]
   end
 
-  attr_reader :color, :pos
+  attr_reader :color, :pos, :board
 
   def initialize(board, pos, color)
     @is_king = false
@@ -16,11 +16,11 @@ class Piece
   end
 
   def perform_slide(end_pos)
-    possible_jumps.include?(end_pos) ? move_to(end_pos) : false
+    possible_slides.include?(end_pos) ? move_to(end_pos) : false
   end
 
   def perform_jump(first_step, second_step)
-    return false if possible_jumps.include?([first_step, second_step])
+    return false unless possible_jumps.include?([first_step, second_step])
     move_to(second_step)
     board[first_step] = nil
   end
@@ -29,6 +29,11 @@ class Piece
     board[pos] = nil
     board[end_pos] = self
     @pos = end_pos
+    maybe_promote
+  end
+
+  def maybe_promote
+    transform_into_king if pos[0] == board.class::SIZE - 1 || pos[0] == 0
   end
 
   def is_king?
@@ -40,14 +45,14 @@ class Piece
   end
 
   def possible_slides
-    slides = deltas.map { |delta| add_delta(pos, delta) }
+    slides = deltas.map { |delta| self.class.add_delta(pos, delta) }
     slides.select { |end_pos| board.empty_square?(end_pos) }
   end
 
   def possible_jumps
     jumps = deltas.map do |delta|
-      first_step = add_delta(pos, delta)
-      second_step = add_delta(first_step, delta)
+      first_step = self.class.add_delta(pos, delta)
+      second_step = self.class.add_delta(first_step, delta)
       [first_step, second_step]
     end
     jumps.select do |jump|
@@ -66,5 +71,9 @@ class Piece
         BLACK_PAWN_DELTAS.map { |delta| [-delta[0], delta[1]] }
       end
     end
+  end
+
+  def to_s
+    is_king? ? "K" : "P"
   end
 end
