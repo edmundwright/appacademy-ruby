@@ -32,7 +32,7 @@ class Board
   end
 
   def []=(pos, value)
-    raise BoardError.new("Position is not on board!")  unless on_board?(pos)
+    raise BoardError.new("Position is not on board!") unless on_board?(pos)
     row, col = pos
     grid[row][col] = value
   end
@@ -92,15 +92,15 @@ class Board
   end
 
   def render
-    rows.each do |row|
+    puts
+    puts "   #{("A".."Z").to_a.take(SIZE).join("  ")}"
+
+    rows.each_with_index do |row, index|
       mapped_row = row.map do |square|
         square.nil? ? "[ ]" : "[#{square}]"
       end
-      print mapped_row.join("")
-      print "\n"
+      puts "#{index} #{mapped_row.join("")}"
     end
+    puts
   end
-end
-
-class BoardError < StandardError
 end
