@@ -7,14 +7,15 @@ require 'byebug'
 class Game
   def initialize(options = {})
     defaults = {board: Board.new,
-                player1: HumanPlayer.new,
-                player2: ComputerPlayer.new}
+                player1: HumanPlayer.new(:white),
+                player2: ComputerPlayer.new(:black)}
     options = defaults.merge(options)
     @board = options[:board]
     @current_player = options[:player1]
     @other_player = options[:player2]
     @turns_played = 0
-    give_players_board_and_colors
+    @current_player.receive_board(@board)
+    @other_player.receive_board(@board)
   end
 
   def play
@@ -26,13 +27,6 @@ class Game
   private
 
   attr_reader :board, :current_player, :other_player
-
-  def give_players_board_and_colors
-    current_player.color = :white
-    other_player.color = :black
-    current_player.board = board
-    other_player.board = board
-  end
 
   def play_turn
     @turns_played += 1

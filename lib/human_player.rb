@@ -1,9 +1,12 @@
 class HumanPlayer
   attr_accessor :board, :color
 
-  def initialize
-    @board = nil
-    @color = nil
+  def initialize(color)
+    @color = color
+  end
+
+  def receive_board(board)
+    @board = board
   end
 
   def play_turn
