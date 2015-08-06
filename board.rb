@@ -10,19 +10,9 @@ class Board
                                    [6, 1], [6, 3], [6, 5], [6, 7],
                                    [ 7, 0], [7, 2], [7, 4], [7, 6]]}
 
-  attr_accessor :grid
-
   def initialize(skip_setup = false)
     @grid = Array.new(SIZE) { Array.new(SIZE) }
     setup unless skip_setup
-  end
-
-  def setup
-     [:black, :white].each do |color|
-       STARTING_POSITIONS[color].each do |pos|
-         self[pos] = Piece.new(self, pos, color)
-       end
-     end
   end
 
   def [](pos)
@@ -53,16 +43,8 @@ class Board
     dup_board
   end
 
-  def pieces
-    grid.flatten.compact
-  end
-
   def num_pieces_of_color(color)
     pieces_of_color(color).length
-  end
-
-  def pieces_of_color(color)
-    pieces.select { |piece| piece.color == color }
   end
 
   def num_moves_for_color(color)
@@ -87,10 +69,6 @@ class Board
     self[pos].color
   end
 
-  def rows
-    grid
-  end
-
   def render
     puts
     puts "   #{("A".."Z").to_a.take(SIZE).join("  ")}"
@@ -102,5 +80,29 @@ class Board
       puts "#{index} #{mapped_row.join("")}"
     end
     puts
+  end
+
+  private
+
+  attr_accessor :grid
+
+  def setup
+     [:black, :white].each do |color|
+       STARTING_POSITIONS[color].each do |pos|
+         self[pos] = Piece.new(self, pos, color)
+       end
+     end
+  end
+
+  def pieces
+    grid.flatten.compact
+  end
+
+  def pieces_of_color(color)
+    pieces.select { |piece| piece.color == color }
+  end
+
+  def rows
+    grid
   end
 end

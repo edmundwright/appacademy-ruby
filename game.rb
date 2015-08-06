@@ -3,8 +3,6 @@ require_relative 'board'
 require_relative 'human_player'
 
 class Game
-  attr_reader :board, :current_player, :other_player
-
   def initialize
     @board = Board.new
     @current_player = HumanPlayer.new(board, :white)
@@ -18,6 +16,8 @@ class Game
 
   private
 
+  attr_reader :board, :current_player, :other_player
+
   def play_turn
     board.render
     puts "#{current_player.color.capitalize}'s turn."
@@ -30,15 +30,11 @@ class Game
   end
 
   def winner
-    if board.num_pieces_of_color(:black) == 0 ||
-       board.num_moves_for_color(:black) == 0
-      :white
-    elsif board.num_pieces_of_color(:white) == 0 ||
-          board.num_moves_for_color(:white) == 0
-      :black
-    else
-      nil
-    end
+    return :white if board.num_pieces_of_color(:black) == 0 ||
+                     board.num_moves_for_color(:black) == 0
+    return :black if board.num_pieces_of_color(:white) == 0 ||
+                     board.num_moves_for_color(:white) == 0
+    nil
   end
 end
 
