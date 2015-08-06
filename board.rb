@@ -1,4 +1,5 @@
 require_relative 'piece'
+require 'byebug'
 
 class Board
   SIZE = 8
@@ -6,11 +7,12 @@ class Board
   attr_accessor :grid
 
   def initialize(skip_setup = false)
+    @grid = Array.new(SIZE) { Array.new(SIZE) }
     setup unless skip_setup
   end
 
   def setup
-    @grid = Array.new(SIZE) { Array.new(SIZE) } # temporary
+     # temporary
   end
 
   def [](pos)
@@ -28,6 +30,16 @@ class Board
   def remove_piece(pos)
     raise "Nothing there!" unless piece?(pos)
     self[pos] = nil
+  end
+
+  def dup
+    dup_board = self.class.new(true)
+    pieces.each { |piece| dup_board[piece.pos] = piece.dup(dup_board) }
+    dup_board
+  end
+
+  def pieces
+    grid.flatten.compact
   end
 
   def on_board?(pos)
