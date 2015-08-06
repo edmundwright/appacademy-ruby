@@ -26,20 +26,25 @@ class Board
   end
 
   def [](pos)
-    raise "Not on board!" unless on_board?(pos)
+    raise BoardError.new("Position is not on board!") unless on_board?(pos)
     row, col = pos
     grid[row][col]
   end
 
   def []=(pos, value)
-    raise "Not on board!" unless on_board?(pos)
+    raise BoardError.new("Position is not on board!")  unless on_board?(pos)
     row, col = pos
     grid[row][col] = value
   end
 
   def remove_piece(pos)
-    raise "Nothing there!" unless piece?(pos)
+    raise BoardError.new("No piece at that position!") unless piece?(pos)
     self[pos] = nil
+  end
+
+  def move(piece_pos, move_sequence)
+    raise BoardError.new("No piece at that position!") unless piece?(piece_pos)
+    self[piece_pos].perform_moves(move_sequence)
   end
 
   def dup
@@ -50,6 +55,20 @@ class Board
 
   def pieces
     grid.flatten.compact
+  end
+
+  def num_pieces_of_color(color)
+    pieces_of_color(color).length
+  end
+
+  def pieces_of_color(color)
+    pieces.select { |piece| piece.color == color }
+  end
+
+  def num_moves_for_color(color)
+    pieces_of_color(color).inject(0) do |acc, piece|
+      acc + piece.num_available_moves
+    end
   end
 
   def on_board?(pos)
@@ -81,4 +100,7 @@ class Board
       print "\n"
     end
   end
+end
+
+class BoardError < StandardError
 end
