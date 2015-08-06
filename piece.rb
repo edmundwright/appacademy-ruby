@@ -41,7 +41,7 @@ class Piece
 
   def possible_slides
     slides = deltas.map { |delta| add_delta(pos, delta) }
-    slides.select { |end_pos| board.empty_at?(end_pos) }
+    slides.select { |end_pos| board.empty_square?(end_pos) }
   end
 
   def possible_jumps
@@ -51,8 +51,8 @@ class Piece
       [first_step, second_step]
     end
     jumps.select do |jump|
-      board.piece_at?(jump[0]) && board.color_at(jump[0]) != color &&
-        board.empty_at?(jump[1])
+      board.piece?(jump[0]) && board.color(jump[0]) != color &&
+        board.empty_square?(jump[1])
     end
   end
 
