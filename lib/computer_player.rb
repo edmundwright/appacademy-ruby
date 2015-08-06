@@ -1,9 +1,9 @@
 class ComputerPlayer
-  attr_reader :color
+  attr_accessor :board, :color
 
-  def initialize(board, color)
-    @board = board
-    @color = color
+  def initialize
+    @board = nil
+    @color = nil
   end
 
   def play_turn

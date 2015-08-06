@@ -5,11 +5,16 @@ require_relative 'computer_player'
 require 'byebug'
 
 class Game
-  def initialize
-    @board = Board.new
-    @current_player = HumanPlayer.new(board, :white)
-    @other_player = ComputerPlayer.new(board, :black)
+  def initialize(options = {})
+    defaults = {board: Board.new,
+                player1: HumanPlayer.new,
+                player2: ComputerPlayer.new}
+    options = defaults.merge(options)
+    @board = options[:board]
+    @current_player = options[:player1]
+    @other_player = options[:player2]
     @turns_played = 0
+    give_players_board_and_colors
   end
 
   def play
@@ -21,6 +26,13 @@ class Game
   private
 
   attr_reader :board, :current_player, :other_player
+
+  def give_players_board_and_colors
+    current_player.color = :white
+    other_player.color = :black
+    current_player.board = board
+    other_player.board = board
+  end
 
   def play_turn
     @turns_played += 1
