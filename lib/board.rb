@@ -111,7 +111,7 @@ class Board
   def setup
      [:black, :white].each do |color|
        STARTING_POSITIONS[color].each do |pos|
-         self[pos] = Piece.new(self, pos, color)
+         Piece.new(self, pos, color)
        end
      end
   end

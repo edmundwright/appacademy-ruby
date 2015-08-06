@@ -15,6 +15,7 @@ class Piece
     @is_king = is_king
     @board = board
     @pos = pos
+    board[pos] = self
     @color = color
   end
 
@@ -51,7 +52,7 @@ class Piece
   def perform_moves!(move_sequence)
     if move_sequence.length == 1
       move = move_sequence.first
-      if possible_jumps.empty?
+      if board.available_jumps_for_color(color).empty?
         perform_slide(move) || raise(InvalidMoveError)
       else
         perform_jump(move) || raise(InvalidMoveError)
