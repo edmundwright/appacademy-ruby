@@ -9,7 +9,7 @@ class Piece
     [pos[0] + delta[0], pos[1] + delta[1]]
   end
 
-  attr_reader :color
+  attr_reader :color, :pos
 
   def initialize(board, pos, color)
     @is_king = false
@@ -57,7 +57,7 @@ class Piece
 
   private
 
-  attr_reader :pos, :board
+  attr_reader :board
 
   def is_king?
     @is_king
@@ -133,7 +133,4 @@ class Piece
       WHITE_PAWN_DELTAS
     end
   end
-end
-
-class InvalidMoveError < StandardError
 end
