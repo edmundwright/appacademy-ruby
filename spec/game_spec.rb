@@ -2,18 +2,78 @@ require 'rspec'
 require 'game'
 
 describe Game do
-  let(:board) { Board.new }
-  let(:white) { double("white") }
-  let(:black) { double("black") }
-
-  it "doesn't crash when created" do
-    allow(white).to receive(:color=)
-    allow(black).to receive(:color=)
-    allow(white).to receive(:board=)
-    allow(black).to receive(:board=)
-
+  it "can be created without any arguments" do
     expect do
-      Game.new(board: board, player1: white, player2: black)
+      Game.new
+    end.to_not raise_error
+  end
+
+  it "can be created with arguments" do
+    expect do
+      Game.new(board: Board.new, player1: ComputerPlayer.new(:white), player2: HumanPlayer.new(:black))
+    end.to_not raise_error
+  end
+end
+
+describe Board do
+  let(:board) { Board.new(true) }
+
+  before(:each) do
+    board[[4,4]] = Piece.new(board, [4,4], :black)
+    board[[5,5]] = Piece.new(board, [5,5], :white)
+    board[[5,6]] = Piece.new(board, [5,6], :white)
+    board[[1,1]] = Piece.new(board, [1,1], :white)
+  end
+
+  it "does not raise error when valid move requested" do
+    expect do
+      board.move([[5,5], [3,3]], :white)
+    end.to_not raise_error
+  end
+
+  it "implements valid jump" do
+    board.move([[5,5], [3,3]], :white)
+    expect(board[[5,5]].nil? && board[[3,3]].color==:white).to be true
+  end
+
+  it "implements valid slide" do
+    board.move([[5,6], [4,7]], :white)
+    expect(board[[5,6]].nil? && board[[4,7]].color==:white).to be true
+  end
+
+  it "implements taking of opponent's piece" do
+    board.move([[5,5], [3,3]], :white)
+    expect(board[[4,4]].nil? ).to be true
+  end
+
+  it "raises error when invalid move requested" do
+    expect do
+      board.move([[5,5], [4,4]], :white)
+    end.to raise_error(InvalidMoveError)
+  end
+
+  it "raises error when try to move opponents' piece" do
+    expect do
+      board.move([[5,5], [3,3]], :black)
+    end.to raise_error(InvalidMoveError)
+  end
+
+  it "raises error when move requested from square with no piece on it" do
+    expect do
+      board.move([[6,6], [4,4]], :white)
+    end.to raise_error(BoardError)
+  end
+
+  it "doesn't allow pawns to move backwards" do
+    expect do
+      board.move([[1,1], [2,2]], :white)
+    end.to raise_error(InvalidMoveError)
+  end
+
+  it "transforms pawn to king when reaches final row" do
+    expect do
+      board.move([[1,1], [0,2]], :white)
+      board.move([[0,2], [1,3]], :white) #going backwards, only king can do
     end.to_not raise_error
   end
 end
