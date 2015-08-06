@@ -1,2 +1,2 @@
 # Minesweeper
-Minesweeper project for App Academy, pair programmed with [Caitlin Kilroy](https://github.com/ckilroy/minesweeper).
+Minesweeper game, pair programmed with [Caitlin Kilroy](https://github.com/ckilroy/minesweeper).
