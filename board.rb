@@ -1,3 +1,5 @@
+require_relative 'piece'
+
 class Board
   SIZE = 8
 
@@ -22,7 +24,7 @@ class Board
   end
 
   def on_board?(pos)
-    pos.all? { |coord| coord.between(0, SIZE - 1) }
+    pos.all? { |coord| coord.between?(0, SIZE - 1) }
   end
 
   def empty_square?(pos)
@@ -35,5 +37,19 @@ class Board
 
   def color(pos)
     self[pos].color
+  end
+
+  def rows
+    grid
+  end
+
+  def render
+    rows.each do |row|
+      mapped_row = row.map do |square|
+        square.nil? ? "[ ]" : "[#{square}]"
+      end
+      print mapped_row.join("")
+      print "\n"
+    end
   end
 end
