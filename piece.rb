@@ -34,8 +34,12 @@ class Piece
     if valid_move_seq?(move_sequence)
       perform_moves!(move_sequence)
     else
-      raise InvalidMoveError
+      raise InvalidMoveError.new("Invalid move!")
     end
+  end
+
+  def num_available_moves
+    possible_jumps.length + possible_slides.length
   end
 
   protected
