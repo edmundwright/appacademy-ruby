@@ -38,11 +38,11 @@ class Piece
     end
   end
 
-  def available_slides
+  def available_slide_moves
     possible_slides
   end
 
-  def available_jumps
+  def available_jump_moves
     possible_jumps.map { |slide| slide.last }
   end
 

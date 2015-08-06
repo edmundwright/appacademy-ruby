@@ -50,7 +50,7 @@ class Board
   def available_jumps_for_color(color)
     moves = []
     pieces_of_color(color).each do |piece|
-      piece.available_jumps.each do |move|
+      piece.available_jump_moves.each do |move|
         moves << [piece.pos, move]
       end
     end
@@ -60,7 +60,7 @@ class Board
   def available_slides_for_color(color)
     moves = []
     pieces_of_color(color).each do |piece|
-      piece.available_slides.each do |move|
+      piece.available_slide_moves.each do |move|
         moves << [piece.pos, move]
       end
     end
