@@ -3,6 +3,12 @@ require 'byebug'
 
 class Board
   SIZE = 8
+  STARTING_POSITIONS = {:black => [[0, 1], [0, 3], [0, 5], [0, 7],
+                                   [1, 0], [1, 2], [1, 4], [1, 6],
+                                   [2, 1], [2, 3], [2, 5], [2, 7]],
+                        :white => [[5, 0], [5, 2], [5, 4], [5, 6],
+                                   [6, 1], [6, 3], [6, 5], [6, 7],
+                                   [ 7, 0], [7, 2], [7, 4], [7, 6]]}
 
   attr_accessor :grid
 
@@ -12,7 +18,11 @@ class Board
   end
 
   def setup
-     # temporary
+     [:black, :white].each do |color|
+       STARTING_POSITIONS[color].each do |pos|
+         self[pos] = Piece.new(self, pos, color)
+       end
+     end
   end
 
   def [](pos)
