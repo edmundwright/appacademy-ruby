@@ -1,6 +1,6 @@
 class Piece
   BLACK_PAWN_DELTAS = [[1, 1], [1, -1]]
-  BLACK_KING_DELTAS = BLACK_PAWN_DELTAS + [[-1, 1], [-1, -1]]
+  WHITE_PAWN_DELTAS = [[-1, 1], [-1, -1]]
 
   def self.add_delta(pos, delta)
     [pos[0] + delta[0], pos[1] + delta[1]]
@@ -50,26 +50,23 @@ class Piece
   end
 
   def possible_jumps
-    jumps = deltas.map do |delta|
+    deltas.map do |delta|
       first_step = self.class.add_delta(pos, delta)
       second_step = self.class.add_delta(first_step, delta)
       [first_step, second_step]
-    end
-    jumps.select do |jump|
-      board.piece?(jump[0]) && board.color(jump[0]) != color &&
-        board.empty_square?(jump[1])
+    end.select do |first_step, second_step|
+      board.piece?(first_step) && board.color(first_step) != color &&
+        board.empty_square?(second_step)
     end
   end
 
   def deltas
-    if color == :black
-      is_king? ? BLACK_KING_DELTAS : BLACK_PAWN_DELTAS
+    if is_king?
+      BLACK_PAWN_DELTAS + WHITE_PAWN_DELTAS
+    elsif color ==:black
+      BLACK_PAWN_DELTAS
     else
-      if is_king?
-        BLACK_KING_DELTAS.map { |delta| [-delta[0], delta[1]] }
-      else
-        BLACK_PAWN_DELTAS.map { |delta| [-delta[0], delta[1]] }
-      end
+      WHITE_PAWN_DELTAS
     end
   end
 
