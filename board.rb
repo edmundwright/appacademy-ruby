@@ -10,17 +10,24 @@ class Board
   end
 
   def setup
-    @grid = Array.new(8) { Array.new(8) } # temporary
+    @grid = Array.new(SIZE) { Array.new(SIZE) } # temporary
   end
 
   def [](pos)
+    raise "Not on board!" unless on_board?(pos)
     row, col = pos
     grid[row][col]
   end
 
   def []=(pos, value)
+    raise "Not on board!" unless on_board?(pos)
     row, col = pos
     grid[row][col] = value
+  end
+
+  def remove_piece(pos)
+    raise "Nothing there!" unless piece?(pos)
+    self[pos] = nil
   end
 
   def on_board?(pos)
@@ -28,11 +35,11 @@ class Board
   end
 
   def empty_square?(pos)
-    on_board?(pos) && self[pos] == nil
+    on_board?(pos) && self[pos].nil?
   end
 
   def piece?(pos)
-    on_board?(pos) && self[pos] != nil
+    on_board?(pos) && !self[pos].nil?
   end
 
   def color(pos)
