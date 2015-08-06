@@ -20,9 +20,9 @@ class Piece
 
   def to_s
     if color == :black
-      is_king? ? "\u265A" : "\u265F"
+      is_king? ? "\u265A" : "\u25CF"
     else
-      is_king? ? "\u2654" : "\u2659"
+      is_king? ? "\u2654" : "\u25CB"
     end
   end
 

@@ -30,9 +30,9 @@ class Game
   end
 
   def winner
-    return :white if board.num_pieces_of_color(:black) == 0 ||
+    return :white if board.pieces_of_color(:black).length == 0 ||
                      board.num_moves_for_color(:black) == 0
-    return :black if board.num_pieces_of_color(:white) == 0 ||
+    return :black if board.pieces_of_color(:white).length == 0 ||
                      board.num_moves_for_color(:white) == 0
     nil
   end

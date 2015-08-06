@@ -7,14 +7,13 @@ class HumanPlayer
   end
 
   def play_turn
-    piece_pos, move_sequence = get_moves
+    moves = get_moves
 
-    if board.color(piece_pos) != color
+    if board.color(moves.first) != color
       raise InvalidMoveError.new("Can't move opponent's color!")
     end
 
-    board.move(piece_pos, move_sequence)
-
+    board.move(moves)
   rescue InvalidMoveError, BoardError, HumanInputError => e
     puts "#{e.message} Try again."
     retry
@@ -25,21 +24,16 @@ class HumanPlayer
   attr_reader :board
 
   def get_moves
-    puts "Position of piece you wish to move? (e.g. 'A1')"
+    puts "Please enter position of piece you wish to move, followed by"
+    puts "positions you wish to move to, in order. (e.g. 'A1 C3 E4 G6')"
     print "> "
-    piece_pos = translate_pos(gets.chomp)
-
-    puts "Sequence of moves? (e.g. 'C3 E4 G6')"
-    print "> "
-    move_sequence = parse_move_sequence(gets.chomp)
-
-    [piece_pos, move_sequence]
+    parse_moves(gets.chomp)
   end
 
-  def parse_move_sequence(sequence_string)
-    move_strings = sequence_string.split(" ")
-    if move_strings.empty?
-      raise HumanInputError.new("Nothing entered!")
+  def parse_moves(human_input)
+    move_strings = human_input.split(" ")
+    if move_strings.length < 2
+      raise HumanInputError.new("Position or move not entered!")
     else
       move_strings.map { |move_string| translate_pos(move_string) }
     end

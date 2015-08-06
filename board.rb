@@ -31,10 +31,10 @@ class Board
     raise BoardError.new("No piece at that position!") unless piece?(pos)
     self[pos] = nil
   end
-
-  def move(piece_pos, move_sequence)
-    raise BoardError.new("No piece at that position!") unless piece?(piece_pos)
-    self[piece_pos].perform_moves(move_sequence)
+  
+  def move(moves)
+    raise BoardError.new("No piece at that position!") unless piece?(moves.first)
+    self[moves.first].perform_moves(moves.drop(1))
   end
 
   def dup
@@ -43,14 +43,14 @@ class Board
     dup_board
   end
 
-  def num_pieces_of_color(color)
-    pieces_of_color(color).length
-  end
-
   def num_moves_for_color(color)
     pieces_of_color(color).inject(0) do |acc, piece|
       acc + piece.num_available_moves
     end
+  end
+
+  def pieces_of_color(color)
+    pieces.select { |piece| piece.color == color }
   end
 
   def on_board?(pos)
@@ -96,10 +96,6 @@ class Board
 
   def pieces
     grid.flatten.compact
-  end
-
-  def pieces_of_color(color)
-    pieces.select { |piece| piece.color == color }
   end
 
   def rows
