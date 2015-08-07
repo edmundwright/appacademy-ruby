@@ -1,7 +1,7 @@
 require_relative 'card'
 
 class Deck
-  attr_reader :cards
+  attr_accessor :cards
 
   def initialize
     @cards = make_deck
@@ -15,5 +15,17 @@ class Deck
     end
 
     result
+  end
+
+  def take(n)
+    cards.pop(n)
+  end
+
+  def deal(n)
+    take(n)
+  end
+
+  def return(cards)
+    self.cards += cards
   end
 end
