@@ -27,12 +27,28 @@ class Response < ActiveRecord::Base
     end
 
     def respondent_is_not_author
-      if question.poll.author_id == respondent_id
-        errors[:respondent] << "is the author!"
+      if Poll
+        .select("polls.author_id")
+        .joins("JOIN questions ON questions.poll_id = polls.id")
+        .joins("JOIN answer_choices ON answer_choices.question_id = questions.id")
+        .where("answer_choices.id = ?", answer_choice_id)
+        .first.author_id == respondent_id
+          errors[:respondent] << "is the author!"
       end
     end
 
     def sibling_responses
+      Response
+        .select("responses.*")
+        .joins("JOIN answer_choices
+          ON answer_choices.id = responses.answer_choice_id")
+        .joins("JOIN questions ON questions.id = answer_choices.question_id")
+        .where("answer_choices.id = :answer_choice_id
+                AND (:id IS NULL OR responses.id != :id)",
+               answer_choice_id: answer_choice_id, id: id)
+    end
+
+    def sibling_responses_nicer
       question.responses.where(":id IS NULL OR responses.id != :id", id: id)
     end
 end
