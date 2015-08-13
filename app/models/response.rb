@@ -33,6 +33,6 @@ class Response < ActiveRecord::Base
     end
 
     def sibling_responses
-      question.responses.where("? IS NULL OR responses.id != ?", id, id)
+      question.responses.where(":id IS NULL OR responses.id != :id", id: id)
     end
 end
