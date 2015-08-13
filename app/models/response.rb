@@ -3,6 +3,7 @@ class Response < ActiveRecord::Base
   validates :respondent_id, presence: true
   validate :respondent_has_not_already_answered_question
   validate :respondent_is_not_author
+  after_destroy :log_destroy_action
 
   belongs_to :answer_choice,
     class_name: "AnswerChoice",
@@ -17,6 +18,10 @@ class Response < ActiveRecord::Base
   has_one :question,
     through: :answer_choice,
     source: :question
+
+  def log_destroy_action
+    puts "Response destroyed."
+  end
 
   private
 

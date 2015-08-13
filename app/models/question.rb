@@ -8,6 +8,7 @@ class Question < ActiveRecord::Base
     primary_key: :id
 
   has_many :answer_choices,
+    dependent: :destroy,
     class_name: "AnswerChoice",
     foreign_key: :question_id,
     primary_key: :id
