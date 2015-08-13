@@ -2,6 +2,7 @@ class Response < ActiveRecord::Base
   validates :answer_choice_id, presence: true
   validates :respondent_id, presence: true
   validate :respondent_has_not_already_answered_question
+  validate :respondent_is_not_author
 
   belongs_to :answer_choice,
     class_name: "AnswerChoice",
@@ -17,11 +18,17 @@ class Response < ActiveRecord::Base
     through: :answer_choice,
     source: :question
 
-  private
+private
 
   def respondent_has_not_already_answered_question
     if sibling_responses.exists?(respondent_id: respondent_id)
       errors[:respondent] << "has already answered this question!"
+    end
+  end
+
+  def respondent_is_not_author
+    if question.poll.author_id == respondent_id
+      errors[:respondent] << "is the author!"
     end
   end
 
