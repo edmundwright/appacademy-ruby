@@ -18,22 +18,21 @@ class Response < ActiveRecord::Base
     through: :answer_choice,
     source: :question
 
-private
+  private
 
-  def respondent_has_not_already_answered_question
-    if sibling_responses.exists?(respondent_id: respondent_id)
-      errors[:respondent] << "has already answered this question!"
+    def respondent_has_not_already_answered_question
+      if sibling_responses.exists?(respondent_id: respondent_id)
+        errors[:respondent] << "has already answered this question!"
+      end
     end
-  end
 
-  def respondent_is_not_author
-    if question.poll.author_id == respondent_id
-      errors[:respondent] << "is the author!"
+    def respondent_is_not_author
+      if question.poll.author_id == respondent_id
+        errors[:respondent] << "is the author!"
+      end
     end
-  end
 
-  def sibling_responses
-    query = question.responses
-    id.nil? ? query : query.where("responses.id != ?", id)
-  end
+    def sibling_responses
+      question.responses.where("? IS NULL OR responses.id != ?", id, id)
+    end
 end
