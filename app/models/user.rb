@@ -12,18 +12,13 @@ class User < ActiveRecord::Base
     primary_key: :id
 
   def completed_polls
-    subquery = Response
-      .select("*")
-      .where("respondent_id = ?", id)
-
-    Poll
-      .select("polls.*")
-      .joins("JOIN questions ON questions.poll_id = polls.id")
-      .joins("JOIN answer_choices ON answer_choices.question_id = questions.id")
-      .joins("LEFT OUTER JOIN (#{subquery.to_sql}) AS user_responses
-              ON user_responses.answer_choice_id = answer_choices.id")
-      .group("polls.id")
+    answered_and_unanswered_questions
       .having("COUNT(user_responses.respondent_id) = COUNT(DISTINCT questions.id)")
+  end
+
+  def uncompleted_polls
+    answered_and_unanswered_questions
+      .having("COUNT(user_responses.respondent_id) < COUNT(DISTINCT questions.id)")
   end
 
   def completed_polls_sql
@@ -52,5 +47,21 @@ class User < ActiveRecord::Base
         COUNT(user_responses.respondent_id) = COUNT(DISTINCT questions.id)
     SQL
   end
+
+  private
+
+    def answered_and_unanswered_questions
+      user_responses = Response
+        .select("*")
+        .where("respondent_id = ?", id)
+
+      Poll
+        .select("polls.*")
+        .joins("JOIN questions ON questions.poll_id = polls.id")
+        .joins("JOIN answer_choices ON answer_choices.question_id = questions.id")
+        .joins("LEFT OUTER JOIN (#{user_responses.to_sql}) AS user_responses
+                ON user_responses.answer_choice_id = answer_choices.id")
+        .group("polls.id")
+    end
 
 end
