@@ -1,3 +1,3 @@
-# appacademy-ruby
+# Work for App Academy
 
-My work for the App Academy Ruby curriculum.
+Work for App Academy. Some projects are stored in their own repositories.
