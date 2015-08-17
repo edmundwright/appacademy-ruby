@@ -1,17 +1,41 @@
 class UsersController < ApplicationController
   def index
-    # render text: "Test text."
-    # render json: {'a_key' => 'a value', 'b_key' => 'b value', "c_key" => 'c value'}
     users = User.all
-
     render json: users
   end
 
   def show
-    render text: "Test text."
+    user = User.find(params[:id])
+    render json: user
   end
 
   def create
-    render text: "Test text."
+    user = User.new(user_params)
+    if user.save
+      render json: user
+    else
+      render(
+        json: user.errors.full_messages, status: :unprocessable_entity
+      )
+    end
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    # user.save
+    render json: user
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    render json: user
+  end
+
+  private
+
+  def user_params
+    params[:user].permit(:email, :name)
   end
 end
