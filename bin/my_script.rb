@@ -9,9 +9,7 @@ def get_users
     path: '/users',
   ).to_s
 
-  # puts RestClient.post(url, body: "blabla", test: "test paramater")
   puts RestClient.get(url)
-
 end
 
 def create_user
@@ -62,7 +60,7 @@ def update_user(id, name, email)
     scheme: 'http',
     host: 'localhost',
     port: 3000,
-    path: '/users' + "/#{id}"
+    path: "/users/#{id}"
   ).to_s
 
   puts RestClient.patch(
@@ -82,16 +80,9 @@ def destroy_user(id)
   puts RestClient.delete(url)
 end
 
-# get_users
 # create_user
-# get_users
-
 # create_invalid_user
-
 # show_user(1)
 #update_user(1, "Arthur", "arthur111@hotmail.com")
-get_users
-
-destroy_user(1)
-
+#destroy_user(1)
 get_users
