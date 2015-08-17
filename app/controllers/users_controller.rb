@@ -5,8 +5,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
-    render json: user
+    begin
+      user = User.find(params[:id])
+      render json: user
+    rescue ActiveRecord::RecordNotFound => e
+      render(
+        json: e.message, status: :not_found
+      )
+    end
   end
 
   def create

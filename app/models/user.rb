@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
     :contacts,
     class_name: "Contact",
     foreign_key: :user_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 
   has_many :contact_shares,
@@ -16,6 +17,7 @@ class User < ActiveRecord::Base
 
   has_many :shared_contacts,
     through: :contact_shares,
-    source: :contact,
-    dependent: :destroy
+    source: :contact
+
+  has_many :comments, :as => :commentable
 end

@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
     user = User.find(params[:user_id])
     contacts = user.contacts + user.shared_contacts
     render json: contacts
+    # render json: user
   end
 
   def show
@@ -36,6 +37,11 @@ class ContactsController < ApplicationController
     contact = Contact.find(params[:id])
     contact.destroy!
     render json: contact
+  end
+
+  def favorite
+    contact = Contact.find(params[:id])
+    render json: contact.favorite
   end
 
   private
