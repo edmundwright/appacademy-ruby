@@ -1,0 +1,22 @@
+
+
+<label for="cat_name">Name</label>
+<input type="text" id="cat_name" name="cat[name]" value="<%= @cat.name %>">
+</input>
+<label for="cat_description">Description</label>
+<textarea id="cat_description" name="cat[description]"><%= @cat.description %>
+</textarea>
+<label for="cat_color">Color</label>
+<select id="cat_color" name="cat[color]">
+    <option></option>
+  <% Cat::COLORS.each do |color| %>
+    <option <%= "selected" if @cat.color == color %>> <%= color %></option>
+  <% end %>
+</select><br>
+<label for="cat_sex">Sex</label>
+<input <%= "checked" if @cat.sex == "M" %>
+  id="cat_sex" type="radio" name="cat[sex]" value="M"> Male<br>
+<input <%= "checked" if @cat.sex == "F" %>
+  id="cat_sex" type="radio" name="cat[sex]" value="F"> Female<br>
+<label for="cat_birth_date">Birthday</label>
+<input id="cat_birth_date" type="date" name="cat[birth_date]" value="<%= @cat.birth_date.to_formatted_s(:db) unless @cat.birth_date.nil? %>">
