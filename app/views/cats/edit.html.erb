@@ -1,7 +1,7 @@
 <h1> Edit Cat </h1>
 
-<form action="<%= cats_url %>" method="post">
-  <hidden name="_method" value="patch">
+<form action="<%= cat_url(@cat) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
   <%= render partial: "form" %>
-  <button>Create!</button>
+  <button>Edit!</button>
 </form>
