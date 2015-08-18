@@ -7,10 +7,32 @@ class CatRentalRequest < ActiveRecord::Base
   validate :no_overlapping_requests_when_both_approved
   validate :start_date_is_before_end_date
 
+  belongs_to :cat
 
   # after_initialize do |cat_rental_request|
   #  cat_rental_request.start_date ||= Time.now.utc.to_date
   # end
+
+   def approve!
+     transaction do
+       overlapping_pending_requests.each do |request|
+         request.deny!
+       end
+       self.status = "APPROVED"
+       save!
+     end
+   end
+
+   def deny!
+     self.status = "DENIED"
+     save!
+   end
+
+  private
+
+  def overlapping_pending_requests
+    overlapping_requests.where("status = 'PENDING'")
+  end
 
   def overlapping_requests
     CatRentalRequest.where("end_date > ? AND start_date < ?
@@ -38,7 +60,4 @@ class CatRentalRequest < ActiveRecord::Base
     end
   end
 
-  belongs_to :cat
-  # class_name: "Cat",
-  # foreign_key: :cat_id
 end

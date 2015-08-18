@@ -25,6 +25,8 @@
   <% @cat.rental_requests.order(:start_date).each do |request| %>
     <tr><td>
       <%= request.start_date  %> - <%= request.end_date  %>: <%= request.status  %>
+      <%= button_to "DENY", deny_url(request.id) if request.status == "PENDING"%>
+      <%= button_to "APPROVE", approve_url(request.id) if request.status == "PENDING" %>
     </td></tr>
   <% end %>
 </table>
