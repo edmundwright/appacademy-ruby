@@ -14,4 +14,17 @@
       </tr>
     <% end %>
   <% end %>
+  <tr>
+    <td>Age</td>
+    <td><%= @cat.age %></td>
+  </tr>
+</table>
+
+<h2> Rental Requests </h2>
+<table>
+  <% @cat.rental_requests.order(:start_date).each do |request| %>
+    <tr><td>
+      <%= request.start_date  %> - <%= request.end_date  %>: <%= request.status  %>
+    </td></tr>
+  <% end %>
 </table>
