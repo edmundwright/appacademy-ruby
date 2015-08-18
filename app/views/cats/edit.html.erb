@@ -2,6 +2,6 @@
 
 <form action="<%= cat_url(@cat) %>" method="post">
   <input type="hidden" name="_method" value="patch">
-  <%= render partial: "form" %>
+  <%= render "form", cat: @cat %>
   <button>Edit!</button>
 </form>

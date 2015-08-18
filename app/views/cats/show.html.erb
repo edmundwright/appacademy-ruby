@@ -2,7 +2,8 @@
 
 <table>
   <% @cat.attributes.each do |key, value| %>
-    <% unless value.nil? || key=='created_at' || key=='updated_at'%>
+    <% unless value.nil? || key=='created_at' ||
+        key=='updated_at' || key=='id'%>
       <tr>
         <td>
           <%= key.gsub('_',' ').capitalize %>
