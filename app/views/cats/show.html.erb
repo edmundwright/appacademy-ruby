@@ -1,0 +1,16 @@
+<h1><%= @cat.name %></h1>
+
+<table>
+  <% @cat.attributes.each do |key, value| %>
+    <% unless value.nil? || key=='created_at' || key=='updated_at'%>
+      <tr>
+        <td>
+          <%= key.gsub('_',' ').capitalize %>
+        </td>
+        <td>
+          <%= value.to_s.capitalize %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
