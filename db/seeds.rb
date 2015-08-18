@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# run rake db:reset before this
+# Cat.destroy_all
+
+Cat.create!(:color => "orange", :name => "Hairball", :sex => "F",  :birth_date => "19990105", :description => "Stray cat.")
+Cat.create!(:color => "black", :sex => "F", :name => "Catto", :birth_date => "19990101")
+Cat.create!(:color => "orange", :sex => "M", :name => "Sennacy", :description => "AppAcademy famous cat", :birth_date => "2")
