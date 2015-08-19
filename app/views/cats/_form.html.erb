@@ -1,4 +1,5 @@
 
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 <%= cat.errors.full_messages.join(", ") %><br>
 <label for="cat_name">Name</label>
 <input type="text" id="cat_name" name="cat[name]" value="<%= cat.name %>">

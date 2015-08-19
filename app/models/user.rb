@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
     user.is_password?(password) ? user : nil
   end
 
+
   def self.random_token
     SecureRandom::urlsafe_base64(16)
   end
@@ -28,6 +29,7 @@ class User < ActiveRecord::Base
 
   def reset_session_token!
     self.session_token = User.random_token
+    save!
   end
 
   def is_password?(given_password)

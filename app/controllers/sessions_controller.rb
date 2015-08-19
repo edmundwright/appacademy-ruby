@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :redirect_to_cats, except: [:new]
+
   def new
   end
 
@@ -7,21 +9,18 @@ class SessionsController < ApplicationController
 
     if @user
       flash[:notice] = "Welcome back #{@user.user_name}!"
-
-      @user.reset_session_token!
-      session[:token] = @user.session_token
-
+      login_user!
       redirect_to cats_url
     else
       flash.now[:errors] = ["Your username or password is incorrect"]
-      #@user_name = user_params[:user_name]
       render :new
     end
   end
 
-#   Verify the user_name/password.
-# (Re)set the User's session_token.
-# Update the session.
-# Redirect the user to the cats index.
-
+  def destroy
+    current_user.reset_session_token! if logged_in?
+    session[:token] = nil
+    flash[:notice] = "byebye!"
+    redirect_to new_session_url
+  end
 end

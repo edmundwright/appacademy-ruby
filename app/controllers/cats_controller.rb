@@ -1,4 +1,6 @@
 class CatsController < ApplicationController
+  skip_before_action :redirect_to_cats
+
   def index
     @cats = Cat.all
     #render :index not necessary as method X automatically renders view X

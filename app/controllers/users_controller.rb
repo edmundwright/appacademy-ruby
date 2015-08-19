@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :redirect_to_cats, except: [:new]
 
   def new
     @user = User.new
@@ -10,16 +11,11 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = "Welcome to 99 cats, #{@user.user_name}!"
-      redirect_to user_url
+      login_user!
+      redirect_to cats_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end
-
   end
-
-  def show
-    fail
-  end
-
 end

@@ -1,5 +1,6 @@
 class CatRentalRequestsController < ApplicationController
-
+  skip_before_action :redirect_to_cats
+  
   def new
     @cat_rental_request = CatRentalRequest.new
   end
