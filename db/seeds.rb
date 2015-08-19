@@ -39,3 +39,7 @@ CatRentalRequest.create!(cat_id: 3, start_date: "19060101", end_date: "19120101"
 CatRentalRequest.create!(cat_id: 3, start_date: "19500101", end_date: "19550101")
 
 CatRentalRequest.create!(cat_id: 3, start_date: "19700101", end_date: "19750101")
+
+
+User.create!(user_name: "Edmund", password: "password")
+User.create!(user_name: "Ingrid", password: "ingrid123")
