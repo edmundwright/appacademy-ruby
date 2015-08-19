@@ -1,0 +1,8 @@
+<% if request.status == "PENDING" %>
+  <form method="post" action="<%= deny_url(request.id) %>">
+    <button>DENY</button>
+  </form>
+  <form method="post" action="<%= approve_url(request.id) %>">
+    <button>APPROVE</button>
+  </form>
+<% end %>

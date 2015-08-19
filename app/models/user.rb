@@ -13,7 +13,12 @@ class User < ActiveRecord::Base
 
   def self.find_by_credentials(user_name, password)
     user = User.find_by(user_name: user_name)
+    return nil unless user
     user.is_password?(password) ? user : nil
+  end
+
+  def self.random_token
+    SecureRandom::URLsafe_base64(16)
   end
 
   def password=(new_password)
@@ -28,10 +33,4 @@ class User < ActiveRecord::Base
   def is_password?(given_password)
     BCrypt::Password.new(password_digest).is_password?(given_password)
   end
-
-  private
-  def self.random_token
-    SecureRandom::URLsafe_base64(16)
-  end
-
 end
