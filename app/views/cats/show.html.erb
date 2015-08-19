@@ -20,12 +20,16 @@
   </tr>
 </table>
 
+<a href="<%= edit_cat_url(@cat) %>">Edit cat!</a>
+
 <h2> Rental Requests </h2>
 <table>
   <% @cat.rental_requests.order(:start_date).each do |request| %>
     <tr><td>
-      <%= request.start_date  %> - <%= request.end_date  %>: <%= request.status  %>
-      <%= render 'accept_deny', request: request %>
+      <%= request.start_date  %> - <%= request.end_date  %>,  <%= request.requester.user_name %>: <%= request.status  %>
+      <% if current_user == @cat.owner %>
+        <%= render 'accept_deny', request: request %>
+      <% end %>
     </td></tr>
   <% end %>
 </table>

@@ -9,10 +9,6 @@ class ApplicationController < ActionController::Base
     redirect_to cats_url if logged_in?
   end
 
-  def user_params
-    params.require(:user).permit(:user_name, :password)
-  end
-
   def current_user
     token = session[:token]
     User.find_by(session_token: token)

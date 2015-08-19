@@ -1,7 +1,7 @@
 class CatRentalRequest < ActiveRecord::Base
   STATUS = ["PENDING", "APPROVED", "DENIED"]
 
-  validates :start_date, :end_date, :cat_id, :status, presence: true
+  validates :start_date, :end_date, :cat_id, :status, :user_id, presence: true
   validates :status, inclusion: { in: STATUS, message: "%{value} is not valid" }
 
   validate :no_overlapping_requests_when_both_approved
@@ -9,6 +9,13 @@ class CatRentalRequest < ActiveRecord::Base
 
   belongs_to :cat
 
+  belongs_to :requester,
+    class_name: "User",
+    foreign_key: :user_id
+
+  has_one :cat_owner,
+    through: :cat,
+    source: :owner
   # after_initialize do |cat_rental_request|
   #  cat_rental_request.start_date ||= Time.now.utc.to_date
   # end
