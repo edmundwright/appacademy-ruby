@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize do |user|
-    user.session_token ||= random_token
+    user.session_token ||= User.random_token
   end
 
   def self.find_by_credentials(user_name, password)
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def self.random_token
-    SecureRandom::URLsafe_base64(16)
+    SecureRandom::urlsafe_base64(16)
   end
 
   def password=(new_password)
