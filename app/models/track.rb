@@ -9,6 +9,7 @@ class Track < ActiveRecord::Base
   has_one :band,
     through: :album,
     source: :band
+  has_many :notes
 
   def bonus?
     bonus

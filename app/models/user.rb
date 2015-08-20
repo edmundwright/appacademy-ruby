@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :notes
+
   def self.find_by_credentials(email, password)
     user = find_by(email: email)
     return nil unless user

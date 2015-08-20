@@ -14,3 +14,11 @@ Bonus?: <%= @track.bonus? ? "Yes" : "No" %>
   <h2>Lyrics</h2>
   <%= @track.lyrics %>
 <% end %>
+
+<h2>Notes</h2>
+
+<%= render 'notes/form', track: @track %>
+
+<% @track.notes.each do |note| %>
+  <%= render 'notes/note', note: note %>
+<% end %>
