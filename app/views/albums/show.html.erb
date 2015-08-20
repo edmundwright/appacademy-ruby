@@ -8,5 +8,5 @@ Live?: <%= @album.live ? "Yes" : "No" %>
 <h2>Tracks</h2>
 
 <% track_links_for_album(@album).each do |link| %>
-<p><%= link %>
+  <%= link %><br>
 <% end %>
