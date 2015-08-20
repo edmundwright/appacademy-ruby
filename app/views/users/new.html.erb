@@ -3,18 +3,6 @@
 <%= render 'shared/errors' %>
 
 <form action="<%= users_url %>" method="post">
-  <%= hidden_auth_token %>
-
-  <label for="user_email">Your email address</label>
-  <input id="user_email"
-         type="text"
-         name="user[email]"
-         value="<%= @user.email %>">
-
-   <label for="user_password">Password</label>
-   <input id="user_password"
-          type="password"
-          name="user[password]">
-
+  <%= render 'fields', email: @email %>
   <button>Sign up!</button>
 </form>
