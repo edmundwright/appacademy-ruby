@@ -5,7 +5,7 @@ class NotesController < ApplicationController
     if note.save
       flash[:notice] = "Thanks for adding a new note!"
     else
-      flash.now[:errors] = @note.errors.full_messages
+      flash[:errors] = note.errors.full_messages
     end
 
     redirect_to track_url(note.track)
@@ -17,7 +17,7 @@ class NotesController < ApplicationController
       note.destroy!
       redirect_to track_url(note.track)
     else
-      render text: "NOOOOOO"
+      render text: "NOOOOOO", status: :forbidden
     end
   end
 

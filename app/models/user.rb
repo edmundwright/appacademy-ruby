@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, presence: true
   validates :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
+  validates :activated, inclusion: {
+    in: [true, false]
+  }
 
   after_initialize :ensure_session_token
 
@@ -28,6 +31,16 @@ class User < ActiveRecord::Base
     self.session_token = self.class.random_token
     save!
     session_token
+  end
+
+  def set_activation_token!
+    self.activation_token = self.class.random_token
+    save!
+  end
+
+  def activate!
+    self.activated = true
+    save!
   end
 
   private
