@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<% if logged_in? %>
+  Logged in as
+  <a href="<%= user_url(current_user) %>"><%= current_user.email %></a>
+  <%= render 'shared/log_out_button' %>
+<% else %>
+  <a href="<%= new_session_url %>">Log in</a>
+  <a href="<%= new_user_url %>">Sign up</a>
+<% end %>
+
+<%= flash[:notice] %>
+
 <%= yield %>
 
 </body>
