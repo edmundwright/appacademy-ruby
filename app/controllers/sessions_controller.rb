@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :ensure_logged_in, only: [:new, :create]
+  skip_before_action :ensure_admin
 
   def new
     @email = ""
