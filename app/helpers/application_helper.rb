@@ -7,10 +7,24 @@ module ApplicationHelper
     HTML
   end
 
-  def list_of_linked_albums_for_band(band)
-    album_links = band.albums.map do |album|
-      "<a href=\"#{album_url(album)}\">#{h(album.name)}</a>"
+  def album_links_for_band(band)
+    band.albums.map { |album| link(album) }
+  end
+
+  def track_links_for_album(album)
+    album.tracks.map { |track| link(track) }
+  end
+
+  def link(item)
+    url = case item
+    when Album
+      album_url(item)
+    when Band
+      band_url(item)
+    when Track
+      track_url(item)
     end
-    album_links.join(", ").html_safe
+
+    "<a href=\"#{url}\">#{h(item.name)}</a>".html_safe
   end
 end

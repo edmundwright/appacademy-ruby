@@ -1,0 +1,7 @@
+<h1><%= link(@band) %></h1>
+
+<h2>Albums</h2>
+
+<% album_links_for_band(@band).each do |link| %>
+<p><%= link %>
+<% end %>

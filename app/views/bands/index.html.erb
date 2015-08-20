@@ -7,8 +7,8 @@
   </tr>
 <% @bands.each do |band| %>
   <tr>
-    <td><a href="<%= band_url(band) %>"><%= band.name %></a></td>
-    <td><%= list_of_linked_albums_for_band(band) %></td>
+    <td><%= link(band) %></td>
+    <td><%= album_links_for_band(band).join(", ").html_safe %></td>
   </tr>
 <% end %>
 </table>

@@ -1,0 +1,12 @@
+<h1><%= link(@album) %></h1>
+
+<h2>Details</h2>
+
+Band: <%= link(@album.band) %><br>
+Live?: <%= @album.live ? "Yes" : "No" %>
+
+<h2>Tracks</h2>
+
+<% track_links_for_album(@album).each do |link| %>
+<p><%= link %>
+<% end %>
