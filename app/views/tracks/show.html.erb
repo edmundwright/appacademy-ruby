@@ -1,0 +1,12 @@
+<h1><%= link(@track) %></h1>
+
+<h2>Details</h2>
+
+Album: <%= link(@track.album) %><br>
+Band: <%= link(@track.band) %><br>
+Bonus?: <%= @track.bonus? ? "Yes" : "No" %>
+
+<% if @track.lyrics %>
+  <h2>Lyrics</h2>
+  <%= @track.lyrics %>
+<% end %>
