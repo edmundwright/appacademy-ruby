@@ -15,7 +15,7 @@ class AlbumsController < ApplicationController
       flash[:notice] = "Thanks for adding a new album!"
       redirect_to album_url(@album)
     else
-      flash[:errors] = @album.errors.full_messages
+      flash.now[:errors] = @album.errors.full_messages
       render :new
     end
   end
@@ -31,7 +31,7 @@ class AlbumsController < ApplicationController
       flash[:notice] = "Thanks for editing this album!"
       redirect_to album_url(@album)
     else
-      flash[:errors] = @album.errors.full_messages
+      flash.now[:errors] = @album.errors.full_messages
       render :edit
     end
   end

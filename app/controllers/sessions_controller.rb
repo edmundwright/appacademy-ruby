@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :ensure_logged_in, only: [:new, :create, :destroy]
+  skip_before_action :ensure_logged_in, only: [:new, :create]
 
   def new
     @email = ""
@@ -14,9 +14,9 @@ class SessionsController < ApplicationController
     if user
       log_in!(user)
       flash[:notice] = "Welcome back!"
-      redirect_to user_url(user)
+      redirect_to bands_url
     else
-      flash[:errors] = ["Email or password is not correct."]
+      flash.now[:errors] = ["Email or password is not correct."]
       @email = params[:user][:email]
       render :new
     end

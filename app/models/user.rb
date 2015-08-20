@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)
-    user = find_by_email(email)
+    user = find_by(email: email)
     return nil unless user
     user.password_matches?(password) ? user : nil
   end
@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   def reset_session_token!
     self.session_token = self.class.random_token
     save!
-    nil
+    session_token
   end
 
   private

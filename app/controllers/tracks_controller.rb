@@ -15,7 +15,7 @@ class TracksController < ApplicationController
       flash[:notice] = "Thanks for adding a new track!"
       redirect_to track_url(@track)
     else
-      flash[:errors] = @track.errors.full_messages
+      flash.now[:errors] = @track.errors.full_messages
       render :new
     end
   end
@@ -31,7 +31,7 @@ class TracksController < ApplicationController
       flash[:notice] = "Thanks for editing this track!"
       redirect_to track_url(@track)
     else
-      flash[:errors] = @track.errors.full_messages
+      flash.now[:errors] = @track.errors.full_messages
       render :edit
     end
   end

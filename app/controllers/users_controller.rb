@@ -11,10 +11,10 @@ class UsersController < ApplicationController
     if user.save
       log_in!(user)
       flash[:notice] = "Welcome to the site!"
-      redirect_to user_url(user)
+      redirect_to bands_url
     else
-      flash[:errors] = user.errors.full_messages
-      @email = params[:user][:email]
+      flash.now[:errors] = user.errors.full_messages
+      @email = user.email
       render :new
     end
   end

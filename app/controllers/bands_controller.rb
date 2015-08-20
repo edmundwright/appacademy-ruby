@@ -18,7 +18,7 @@ class BandsController < ApplicationController
       flash[:notice] = "Thanks for adding a new band!"
       redirect_to band_url(@band)
     else
-      flash[:errors] = @band.errors.full_messages
+      flash.now[:errors] = @band.errors.full_messages
       render :new
     end
   end
@@ -34,7 +34,7 @@ class BandsController < ApplicationController
       flash[:notice] = "Thanks for editing this band!"
       redirect_to band_url(@band)
     else
-      flash[:errors] = @band.errors.full_messages
+      flash.now[:errors] = @band.errors.full_messages
       render :edit
     end
   end
