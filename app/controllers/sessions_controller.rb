@@ -1,20 +1,27 @@
 class SessionsController < ApplicationController
   def new
-    @user = User.new
+    @email = ""
   end
 
   def create
-    @user = User.find_by_credentials(
-      params[user][email],
-      params[user][password]
+    user = User.find_by_credentials(
+      params[:user][:email],
+      params[:user][:password]
     )
 
-    if @user
-      log_in!(@user)
-      redirect_to user_url(@user)
+    if user
+      log_in!(user)
+      flash[:notice] = "Welcome back!"
+      redirect_to user_url(user)
     else
-      flash[:errors] << "Email or password is not correct."@
+      flash[:errors] = ["Email or password is not correct."]
+      @email = params[:user][:email]
       render :new
     end
+  end
+
+  def destroy
+    log_out!
+    redirect_to new_session_url
   end
 end
