@@ -13,8 +13,12 @@ class NotesController < ApplicationController
 
   def destroy
     note = Note.find(params[:id])
-    note.destroy!
-    redirect_to track_url(note.track)
+    if note.user == current_user
+      note.destroy!
+      redirect_to track_url(note.track)
+    else
+      render text: "NOOOOOO"
+    end
   end
 
   private

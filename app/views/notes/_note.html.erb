@@ -1,3 +1,5 @@
 <h3>Note by <%= note.user.email %></h3>
 <%= note.body %>
-<%= render 'notes/delete_button', note: note %>
+<% if note.user == current_user %>
+  <%= render 'notes/delete_button', note: note %>
+<% end %>
