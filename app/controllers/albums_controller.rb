@@ -1,4 +1,6 @@
 class AlbumsController < ApplicationController
+  skip_before_action :ensure_admin, only: [:index, :show]
+  
   def show
     @album = Album.find(params[:id])
   end

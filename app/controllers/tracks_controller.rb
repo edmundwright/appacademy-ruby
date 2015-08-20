@@ -1,4 +1,6 @@
 class TracksController < ApplicationController
+  skip_before_action :ensure_admin, only: [:index, :show]
+  
   def show
     @track = Track.find(params[:id])
   end

@@ -1,4 +1,6 @@
 class NotesController < ApplicationController
+  skip_before_action :ensure_admin
+
   def create
     note = Note.new(note_params.merge({user_id: current_user.id}))
 
@@ -13,7 +15,7 @@ class NotesController < ApplicationController
 
   def destroy
     note = Note.find(params[:id])
-    if note.user == current_user
+    if note.user == current_user || current_user.admin?
       note.destroy!
       redirect_to track_url(note.track)
     else

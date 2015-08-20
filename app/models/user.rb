@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   validates :activated, inclusion: {
     in: [true, false]
   }
+  validates :admin, inclusion: {
+    in: [true, false]
+  }
 
   after_initialize :ensure_session_token
 

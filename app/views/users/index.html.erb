@@ -1,0 +1,8 @@
+<% all_users.each do |user| %>
+  <%= user.email %>
+  <% if user.admin? %>
+    ADMIN
+  <% else %>
+    <%= render 'make_admin_button', user: user %>
+  <% end %>
+<% end %>

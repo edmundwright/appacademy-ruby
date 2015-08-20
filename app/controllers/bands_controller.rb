@@ -1,4 +1,6 @@
 class BandsController < ApplicationController
+  skip_before_action :ensure_admin, only: [:index, :show]
+
   def index
     @bands = Band.all
   end

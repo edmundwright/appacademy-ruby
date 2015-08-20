@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   skip_before_action :ensure_logged_in, only: [:new, :create, :activate]
+  skip_before_action :ensure_admin, except: [:index]
+
+  def index
+  end
 
   def new
     @email = ""
@@ -35,6 +39,14 @@ class UsersController < ApplicationController
     end
 
     redirect_to new_session_url
+  end
+
+  def make_admin
+    user = User.find(params[:id])
+    user.admin = true
+    user.save!
+    flash[:notice] = "Made user into Admin."
+    redirect_to users_url
   end
 
   private

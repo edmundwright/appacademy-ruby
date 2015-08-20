@@ -15,6 +15,10 @@ module ApplicationHelper
     Album.all
   end
 
+  def all_users
+    User.all
+  end
+
   def album_links_for_band(band)
     band.albums.map { |album| link(album) }
   end

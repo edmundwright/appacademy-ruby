@@ -1,6 +1,8 @@
 <h1>Bands</h1>
 
-<a href="<%= new_band_url %>">Add a new band</a><br><br>
+<% if current_user.admin? %>
+  <a href="<%= new_band_url %>">Add a new band</a><br><br>
+<% end %>
 
 <table>
   <tr>
