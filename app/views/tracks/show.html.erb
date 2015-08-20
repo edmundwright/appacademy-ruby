@@ -12,7 +12,7 @@ Bonus?: <%= @track.bonus? ? "Yes" : "No" %>
 
 <% if @track.lyrics %>
   <h2>Lyrics</h2>
-  <%= @track.lyrics %>
+  <%= ugly_lyrics(@track.lyrics) %>
 <% end %>
 
 <h2>Notes</h2>

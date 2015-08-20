@@ -35,4 +35,10 @@ module ApplicationHelper
 
     "<a href=\"#{url}\">#{h(item.name)}</a>".html_safe
   end
+
+  def ugly_lyrics(lyrics)
+    lines = h(lyrics).split("\n")
+    lines_with_notes = lines.map { |line| "&#9835; " + line }
+    "<pre>#{lines_with_notes.join("\n")}</pre>".html_safe
+  end
 end
