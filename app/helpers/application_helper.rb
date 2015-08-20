@@ -9,9 +9,7 @@ module ApplicationHelper
 
   def list_of_linked_albums_for_band(band)
     album_links = band.albums.map do |album|
-      <<-HTML
-        <a href="#{album_url(album)}">#{h(album.name)}</a>
-      HTML
+      "<a href=\"#{album_url(album)}\">#{h(album.name)}</a>"
     end
     album_links.join(", ").html_safe
   end
