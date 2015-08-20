@@ -2,7 +2,7 @@ class Album < ActiveRecord::Base
   validates :name, :band_id, presence: true
   validates :live, inclusion: {
     in: [true, false],
-    message: "must be present, and a boolean."
+    message: " or studio album must be selected."
   }
 
   belongs_to :band

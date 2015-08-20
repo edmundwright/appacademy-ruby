@@ -1,5 +1,9 @@
 <h1><%= link(@album) %></h1>
 
+<a href="<%= edit_album_url %>">Edit this album</a>
+<%= render 'delete_button', album: @album  %>
+<a href="<%= new_album_track_url(@album) %>">Add a new track</a><br><br>
+
 <h2>Details</h2>
 
 Band: <%= link(@album.band) %><br>

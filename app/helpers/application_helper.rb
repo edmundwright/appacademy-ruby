@@ -7,6 +7,14 @@ module ApplicationHelper
     HTML
   end
 
+  def all_bands
+    Band.all
+  end
+
+  def all_albums
+    Album.all
+  end
+
   def album_links_for_band(band)
     band.albums.map { |album| link(album) }
   end

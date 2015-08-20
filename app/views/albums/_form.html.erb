@@ -1,0 +1,40 @@
+<%= render 'shared/errors' %>
+
+<form action="<%= edit ? album_url(album) : albums_url %>" method="post">
+  <% if edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+
+  <%= hidden_auth_token %>
+
+  <label for="album_name">Name</label>
+  <input id="album_name"
+         type="text"
+         name="album[name]"
+         value = "<%= album.name %>">
+
+  <label for="album_band">Band</label>
+  <select id="album_band" name="album[band_id]">
+    <% all_bands.each do |band| %>
+      <option value="<%= band.id %>" <%= "selected" if band == album.band %>>
+        <%= band.name %>
+      </option>
+    <% end %>
+  </select>
+
+  <input id="album_live_true"
+         type="radio"
+         name="album[live]"
+         value="true"
+         <%= "checked" if album.live? %>>
+  <label for="album_live_true">Live album</label>
+
+  <input id="album_live_false"
+         type="radio"
+         name="album[live]"
+         value="false"
+         <%= "checked" unless album.live? || album.live.nil? %>>
+  <label for="album_live_false">Studio album</label>
+
+  <button><%= edit ? "Edit album!" : "Add album!" %></button>
+</form>

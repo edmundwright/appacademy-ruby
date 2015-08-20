@@ -1,5 +1,9 @@
 <h1><%= link(@track) %></h1>
 
+<a href="<%= edit_track_url %>">Edit this track</a>
+<%= render 'delete_button', track: @track  %>
+
+
 <h2>Details</h2>
 
 Album: <%= link(@track.album) %><br>

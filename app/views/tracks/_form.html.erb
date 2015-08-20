@@ -1,0 +1,44 @@
+<%= render 'shared/errors' %>
+
+<form action="<%= edit ? track_url(track) : tracks_url %>" method="post">
+  <% if edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+
+  <%= hidden_auth_token %>
+
+  <label for="track_name">Name</label>
+  <input id="track_name"
+         type="text"
+         name="track[name]"
+         value = "<%= track.name %>">
+
+  <label for="track_album">Album</label>
+  <select id="track_album" name="track[album_id]">
+    <% all_albums.each do |album| %>
+      <option value="<%= album.id %>" <%= "selected" if album == track.album %>>
+        <%= album.name %>
+      </option>
+    <% end %>
+  </select>
+
+  <input id="track_bonus_true"
+         type="radio"
+         name="track[bonus]"
+         value="true"
+         <%= "checked" if track.bonus? %>>
+  <label for="track_bonus_true">Bonus track</label>
+
+  <input id="track_bonus_false"
+         type="radio"
+         name="track[bonus]"
+         value="false"
+         <%= "checked" unless track.bonus? || track.bonus.nil? %>>
+  <label for="track_bonus_false">Non-bonus track</label>
+
+  <label for="track_lyrics">Lyrics</label>
+  <textarea id="track_lyrics"
+            name="track[lyrics]"><%= track.lyrics %></textarea>
+
+  <button><%= edit ? "Edit track!" : "Add track!" %></button>
+</form>

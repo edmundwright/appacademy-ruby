@@ -2,7 +2,7 @@ class Track < ActiveRecord::Base
   validates :name, :album_id, presence: true
   validates :bonus, inclusion: {
     in: [true, false],
-    message: "must be present, and a boolean."
+    message: "or non-bonus must be selected."
   }
 
   belongs_to :album
