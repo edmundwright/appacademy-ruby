@@ -7,16 +7,16 @@ class Post < ActiveRecord::Base
     foreign_key: :author_id,
     primary_key: :id
 
-  has_many :subs,
-    through: :post_subs,
-    source: :sub
-
   has_many :post_subs,
     dependent: :destroy,
     class_name: "PostSub",
     foreign_key: :post_id,
     primary_key: :id,
     inverse_of: :post
+
+  has_many :subs,
+    through: :post_subs,
+    source: :sub
 
   has_many :comments,
     dependent: :destroy,
