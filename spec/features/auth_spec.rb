@@ -63,8 +63,47 @@ end
 
 feature "logging in" do
 
-  it "shows username on the homepage after login"
+  before :each do
+    visit "/users/new"
 
+    fill_in "Username", with: "Fred"
+    fill_in "Password", with: "test_password"
+    click_button "Sign Up"
+
+    visit "/session/new"
+  end
+
+  it "shows username on the homepage after login" do
+    fill_in "Username", with: "Fred"
+    fill_in "Password", with: "test_password"
+    click_button "Sign In"
+
+    expect(page).to have_content "Fred"
+  end
+
+  it "displays an error if password is wrong" do
+    fill_in "Username", with: "Fred"
+    fill_in "Password", with: "test"
+    click_button "Sign In"
+
+    expect(page).to have_content "Username or password is wrong"
+  end
+
+  it "displays an error if no username is provided" do
+
+    fill_in "Password", with: "test_password"
+    click_button "Sign In"
+
+    expect(page).to have_content "Username or password is wrong"
+  end
+
+  it "displays an error if username does not exist" do
+    fill_in "Username", with: "Nancy"
+    fill_in "Password", with: "test_password"
+    click_button "Sign In"
+
+    expect(page).to have_content "Username or password is wrong"
+  end
 end
 
 feature "logging out" do
