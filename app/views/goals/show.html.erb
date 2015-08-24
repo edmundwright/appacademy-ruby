@@ -34,3 +34,24 @@ Status:
     <button>Delete Goal</button>
   </form>
 <% end %>
+
+<%= render 'layouts/errors' %>
+
+<form action="<%= comments_url %>" method="post">
+  <%= form_auth_token %>
+  <input type="hidden" name="comment[commentable_id]" value="<%= @goal.id %>">
+  <input type="hidden" name="comment[commentable_type]" value="Goal">
+  <label for="comment_reply">Comment</label>
+  <textarea name="comment[reply]" id="comment_reply"></textarea>
+
+
+  <button>Submit Comment</button>
+</form>
+
+<ul>
+  <% @goal.received_comments.each do |comment| %>
+    <li>
+      <%= comment.reply %> -<%=comment.author.username %>
+    </li>
+  <% end %>
+</ul>

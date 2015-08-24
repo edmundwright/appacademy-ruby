@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
     end
 
     if comment.commentable_type == "User"
-      redirect_to user_url(commentable_id)
+      redirect_to user_url(comment.commentable_id)
     else
-      redirect_to goal_url(commentable_id)
+      redirect_to goal_url(comment.commentable_id)
     end
   end
 

@@ -5,7 +5,7 @@ require 'byebug'
 feature 'create a comment on a user' do
   before :each do
     sign_up(username: 'Fred', password: 'test_password')
-    fred_id = User.find_by(username: 'Fred')
+    fred_id = User.find_by(username: 'Fred').id
     click_button "Sign Out"
 
     sign_up(username: 'George', password: 'george_password')
@@ -28,7 +28,7 @@ feature 'create a comment on a user' do
 
   it "displays error if comment is blank" do
     click_button "Submit Comment"
-    expect(page).to have_content "Reply can't be blank."
+    expect(page).to have_content "Reply can't be blank"
   end
 end
 
@@ -36,11 +36,11 @@ feature 'create a comment on a goal' do
   before :each do
     sign_up(username: 'George', password: 'george_password')
     add_goal(body: "Hello World", public: true)
-    goal_id = Goal.find_by(body: "Hello World")
+    goal_id = Goal.find_by(body: "Hello World").id
     visit "/goals/#{goal_id}"
   end
 
-  
+
   it "shows a form to make a comment" do
     expect(page).to have_field "Comment"
     expect(page).to have_button "Submit Comment"
@@ -55,6 +55,6 @@ feature 'create a comment on a goal' do
 
   it "displays error if comment is blank" do
     click_button "Submit Comment"
-    expect(page).to have_content "Reply can't be blank."
+    expect(page).to have_content "Reply can't be blank"
   end
 end
