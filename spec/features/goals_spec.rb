@@ -116,4 +116,30 @@ feature 'update a goal' do
 end
 
 feature 'delete  a goal' do
+  before :each do
+    sign_up(username: 'Fred', password: 'test_password')
+    add_goal(body: "To be deleted body test", public: true)
+  end
+
+  it "shows a button to Delete Goal" do
+    expect(page).to have_content "Delete Goal"
+  end
+
+  it "cannot delete someone else's goal" do
+    click_button "Sign Out"
+
+    sign_up(username: "John", password: "john_password")
+    visit "/goals/#{Goal.find_by(body: "To be deleted body test").id}"
+
+    expect(page).to_not have_button "Delete Goal"
+  end
+
+  it "allows authorized users to actually delete a goal" do
+    click_button "Delete Goal"
+
+    visit "/goals/#{Goal.find_by(body: "To be deleted body test").id}"
+    expect(page).to raise_error
+  end
+
+
 end
