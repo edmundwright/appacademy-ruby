@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%= link_to "Add Goal", new_goal_url %>
+
 <% if signed_in? %>
   <%= current_user.username %>
   <form action="<%= session_url %>" method="post">

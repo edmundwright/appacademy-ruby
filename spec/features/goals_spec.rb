@@ -33,9 +33,9 @@ feature 'create a goal' do
     expect(page).to have_content "Body can't be blank"
   end
 
-  it 'shows error if neither private nor public selected' do
-    add_goal(body: "Goal body test")
-    expect(page).to have_content "must be selected"
+  it 'private is selected by default' do
+    visit "/goals/new"
+    expect(page).to have_field("Private", checked: true)
   end
 end
 
