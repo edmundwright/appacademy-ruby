@@ -11,6 +11,7 @@
 <% if signed_in? %>
   <%= current_user.username %>
   <form action="<%= session_url %>" method="post">
+    <%= form_auth_token %>
     <input type="hidden" name="_method" value="delete">
     <button>Sign Out</button>
   </form>
