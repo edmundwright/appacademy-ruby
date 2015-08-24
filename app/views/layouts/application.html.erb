@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%= flash[:notice] %>
+
 <%= link_to "Add Goal", new_goal_url %>
 
 <% if signed_in? %>

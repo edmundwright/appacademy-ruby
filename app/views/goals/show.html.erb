@@ -11,3 +11,7 @@ Status:
 <% else %>
   Public
 <% end %>
+
+<% if current_user == @goal.user %>
+<%= link_to "Update Goal", edit_goal_url(@goal) %>
+<% end %>

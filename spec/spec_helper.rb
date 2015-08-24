@@ -40,24 +40,30 @@ RSpec.configure do |config|
 
   def sign_up(options={})
     visit "/users/new"
-    fill_in "Username", with: options[:username] if options[:username]
-    fill_in "Password", with: options[:password] if options[:password]
+    fill_in_user_form(options)
     click_button 'Sign Up'
   end
 
   def sign_in(options={})
     visit "/session/new"
+    fill_in_user_form(options)
+    click_button 'Sign In'
+  end
+
+  def fill_in_user_form(options={})
     fill_in "Username", with: options[:username] if options[:username]
     fill_in "Password", with: options[:password] if options[:password]
-    click_button 'Sign In'
   end
 
   def add_goal(options={})
     visit "/goals/new"
-    fill_in "Body", with: options[:body] if options[:body]
-    choose("Public") if options[:public]
-    choose("Private") if options[:private]
+    fill_in_goal_form(options)
     click_button 'Add Goal'
   end
 
+  def fill_in_goal_form(options={})
+    fill_in "Body", with: options[:body] if options[:body]
+    choose("Public") if options[:public]
+    choose("Private") if options[:private]
+  end
 end

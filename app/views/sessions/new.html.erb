@@ -1,10 +1,4 @@
-<ul>
-<% flash[:errors].try(:each) do |error| %>
-  <li>
-    <%= error %>
-  </li>
-<% end %>
-</ul>
+<%= render 'layouts/errors' %>
 
 <form action="<%= session_url %>" method="post">
   <%= form_auth_token %>

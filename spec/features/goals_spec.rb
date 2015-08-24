@@ -5,7 +5,7 @@ require 'byebug'
 feature 'create a goal' do
   before :each do
     sign_up(username: 'Fred', password: 'test_password')
-    sign_in(username: 'Fred', password: 'test_password')
+
   end
 
   it 'redirects to sign in page if not signed in' do
@@ -44,7 +44,6 @@ feature 'read a goal' do
 
   before :each do
     sign_up(username: 'Fred', password: 'test_password')
-    sign_in(username: 'Fred', password: 'test_password')
   end
 
   it 'show whether is public after creation' do
@@ -76,6 +75,44 @@ feature 'read a goal' do
 end
 
 feature 'update a goal' do
+
+  before :each do
+    sign_up(username: 'Fred', password: 'test_password')
+    add_goal(body: "Not yet updated body test", public: true)
+  end
+
+  it 'shows a link to Update Goal' do
+    expect(page).to have_content "Update Goal"
+  end
+
+  it "cannot edit someone else's goal" do
+    click_button "Sign Out"
+
+    sign_up(username: "John", password: "john_password")
+    visit "/goals/#{Goal.find_by(body: "Not yet updated body test").id}"
+
+    expect(page).to_not have_content "Update Goal"
+  end
+
+  it "cannot go directly to URL for editing someone else's goal" do
+    click_button "Sign Out"
+
+    sign_up(username: "John", password: "john_password")
+    visit "/goals/#{Goal.find_by(body: "Not yet updated body test").id}/edit"
+
+    expect(page).to have_content "You cannot edit someone else's goals!"
+    expect(page).to_not have_button "Update Goal"
+  end
+
+  it "allows users who are authorized to actually edit a goal" do
+    click_link "Update Goal"
+
+    fill_in_goal_form(body: "Updated body", private: true)
+    click_button "Edit Goal"
+
+    expect(page).to have_content "Updated body"
+    expect(page).to have_content "Private"
+  end
 end
 
 feature 'delete  a goal' do
