@@ -144,15 +144,15 @@ end
 feature 'keep track of goal completion' do
   before :each do
     sign_up(username: 'Fred', password: 'test_password')
-    add_goal(body: "To be deleted body test", public: true)
+    add_goal(body: "To be completed body test", public: true)
   end
 
   it 'shows Complete button when goal is not done' do
-
+    expect(page).to have_button "Complete!"
   end
 
   it 'shows Not Complete when goal is not done' do
-
+    expect(page).to have_content "Not Completed"
   end
 
   it 'shows Completed when goal is done' do
@@ -161,7 +161,11 @@ feature 'keep track of goal completion' do
   end
 
   it "Doesn't show Complete button when unauthorized users" do
+    click_button "Sign Out"
 
+    sign_up(username: "John", password: "john_password")
+    visit "/goals/#{Goal.find_by(body: "To be completed body test").id}"
+
+    expect(page).to_not have_button "Complete!"
   end
-
 end
