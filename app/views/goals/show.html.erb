@@ -12,6 +12,15 @@ Status:
   Public
 <% end %>
 
+if @goal.completed?
+  Completed
+else
+  Not Completed
+  <form action="" method="post">
+
+  </form>
+end
+
 <% if current_user == @goal.user %>
 <%= link_to "Update Goal", edit_goal_url(@goal) %>
   <form action="<%= goal_url(@goal) %>" method="post">

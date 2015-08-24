@@ -140,3 +140,28 @@ feature 'delete  a goal' do
     expect(page).to_not have_content "To be deleted body test"
   end
 end
+
+feature 'keep track of goal completion' do
+  before :each do
+    sign_up(username: 'Fred', password: 'test_password')
+    add_goal(body: "To be deleted body test", public: true)
+  end
+
+  it 'shows Complete button when goal is not done' do
+
+  end
+
+  it 'shows Not Complete when goal is not done' do
+
+  end
+
+  it 'shows Completed when goal is done' do
+    click_button  "Complete"
+    expect(page).to have_content "Completed"
+  end
+
+  it "Doesn't show Complete button when unauthorized users" do
+
+  end
+
+end
