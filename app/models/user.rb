@@ -5,6 +5,14 @@ class User < ActiveRecord::Base
 
   has_many :goals
 
+  has_many :received_comments, as: :commentable,
+    class_name: "Comment",
+    foreign_key: :commentable_id
+
+  has_many :authored_comments,
+    class_name: "Comment",
+    foreign_key: :author_id
+
   after_initialize :ensure_session_token
 
   attr_reader :password
