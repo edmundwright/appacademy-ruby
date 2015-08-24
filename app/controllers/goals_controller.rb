@@ -1,9 +1,9 @@
 class GoalsController < ApplicationController
-  before_action :ensure_current_user_is_owner, only: [:edit, :update]
+  before_action :ensure_current_user_is_owner, only: [:edit, :update, :destroy]
 
   def ensure_current_user_is_owner
     if current_user != Goal.find(params[:id]).user
-      flash[:notice] = "You cannot edit someone else's goals!"
+      flash[:notice] = "You cannot edit or delete someone else's goals!"
       redirect_to goals_url
     end
   end
@@ -47,6 +47,11 @@ class GoalsController < ApplicationController
       flash.now[:errors] = @goal.errors.full_messages
       render :edit
     end
+  end
+
+  def destroy
+    Goal.find(params[:id]).destroy!
+    redirect_to goals_url
   end
 
   private

@@ -100,7 +100,7 @@ feature 'update a goal' do
     sign_up(username: "John", password: "john_password")
     visit "/goals/#{Goal.find_by(body: "Not yet updated body test").id}/edit"
 
-    expect(page).to have_content "You cannot edit someone else's goals!"
+    expect(page).to have_content "You cannot edit or delete someone else's goals!"
     expect(page).to_not have_button "Update Goal"
   end
 
@@ -135,11 +135,8 @@ feature 'delete  a goal' do
   end
 
   it "allows authorized users to actually delete a goal" do
+    id_of_deleted_goal = Goal.find_by(body: "To be deleted body test").id
     click_button "Delete Goal"
-
-    visit "/goals/#{Goal.find_by(body: "To be deleted body test").id}"
-    expect(page).to raise_error
+    expect { visit "/goals/#{id_of_deleted_goal}" }.to raise_error(ActiveRecord::RecordNotFound)
   end
-
-
 end

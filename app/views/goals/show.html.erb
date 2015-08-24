@@ -14,4 +14,9 @@ Status:
 
 <% if current_user == @goal.user %>
 <%= link_to "Update Goal", edit_goal_url(@goal) %>
+  <form action="<%= goal_url(@goal) %>" method="post">
+    <%= form_auth_token %>
+    <input type="hidden" name="_method" value="delete">
+    <button>Delete Goal</button>
+  </form>
 <% end %>
