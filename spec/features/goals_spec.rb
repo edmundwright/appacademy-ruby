@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'rails_helper'
+require 'byebug'
 
 feature 'create a goal' do
   before :each do
@@ -40,6 +41,37 @@ feature 'create a goal' do
 end
 
 feature 'read a goal' do
+
+  before :each do
+    sign_up(username: 'Fred', password: 'test_password')
+    sign_in(username: 'Fred', password: 'test_password')
+  end
+
+  it 'show whether is public after creation' do
+    add_goal(body: "Goal body test", public: true)
+    expect(page).to have_content "Public"
+  end
+
+  it 'Redirects to index when unauthorized user tries to access private goal' do
+    add_goal(body: "Goal body test", private: true)
+
+    click_button "Sign Out"
+
+    sign_up(username: "John", password: "john_password")
+
+    visit "/goals/#{Goal.find_by(body: "Goal body test").id}"
+    expect(page).to have_content "Goals Index"
+  end
+
+  it 'Shows other user public goal' do
+    add_goal(body: "Goal body test", public: true)
+    click_button "Sign Out"
+
+    sign_up(username: "John", password: "john_password")
+    visit "/goals/#{Goal.find_by(body: "Goal body test").id}"
+    expect(page).to have_content "Goal body test"
+  end
+
 
 end
 

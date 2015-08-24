@@ -1,6 +1,13 @@
 class GoalsController < ApplicationController
+  def index
+    @private_goals = current_user.goals.where(private: true)
+    @public_goals = current_user.goals.where(private: false)
+    @other_user_public_goals = Goal.all.where("private = false AND user_id != ?", current_user.id)
+  end
+
   def show
     @goal = Goal.find(params[:id])
+    redirect_to goals_url if current_user != @goal.user && @goal.private?
   end
 
   def new
