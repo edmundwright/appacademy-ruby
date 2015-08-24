@@ -1,0 +1,19 @@
+<ul>
+<% flash[:errors].try(:each) do |error| %>
+  <li>
+    <%= error %>
+  </li>
+<% end %>
+</ul>
+
+<form action="<%= goals_url %>" method="post">
+  <%= form_auth_token %>
+  <label for="goal_body">Body</label>
+
+  <!-- <textarea name="name" rows="8" cols="40"></textarea> -->
+
+  <input id="goal_body" type="text" name="goal[body]" value="<%= @user.username %>">
+  <label for="goal_password">Password</label>
+  <input id="goal_password" type="password" name="goal[password]">
+  <button>Sign Up</button>
+</form>

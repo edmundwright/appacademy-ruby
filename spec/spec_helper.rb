@@ -52,5 +52,12 @@ RSpec.configure do |config|
     click_button 'Sign In'
   end
 
+  def add_goal(options={})
+    visit "/goals/new"
+    fill_in "Body", with: options[:body] if options[:body]
+    choose("Public") if options[:public]
+    choose("Private") if options[:private]
+    click_button 'Add Goal'
+  end
 
 end

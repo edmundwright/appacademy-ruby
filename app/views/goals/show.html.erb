@@ -1,0 +1,13 @@
+<h2>Goal</h2>
+
+<%= @goal.body %>
+<br>
+User: <%= @goal.user.username %><br>
+
+
+Status:
+<% if @goal.private? %>
+  Private
+<% else %>
+  Public
+<% end %>
