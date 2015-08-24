@@ -10,7 +10,10 @@
 
 <% if signed_in? %>
   <%= current_user.username %>
-
+  <form action="<%= session_url %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Sign Out</button>
+  </form>
 <% else %>
   <%= link_to "Sign In", new_session_url %>
   <%= link_to "Sign Up", new_user_url %>

@@ -67,12 +67,13 @@ feature "logging in" do
     visit "/session/new"
   end
 
-  it "shows username on the homepage after login" do
+  it "shows sign out link and username on the homepage after login" do
     fill_in "Username", with: "Fred"
     fill_in "Password", with: "test_password"
     click_button "Sign In"
 
     expect(page).to have_content "Fred"
+    expect(page).to have_content "Sign Out"
   end
 
   it "displays an error if password is wrong" do
@@ -101,8 +102,24 @@ end
 
 feature "logging out" do
 
-  it "begins with logged out state"
+  it "begins with logged out state" do
+    visit "/"
 
-  it "doesn't show username on the homepage after logout"
+    expect(page).to have_content "Sign In"
+  end
+
+  it "shows sign in link and doesn't show username on the homepage after logout" do
+    visit "/users/new"
+    fill_in "Username", with: "Fred"
+    fill_in "Password", with: "test_password"
+    click_button "Sign Up"
+
+    click_button "Sign Out"
+
+    expect(page).to_not have_content "Fred"
+    expect(page).to have_content "Sign In"
+
+    visit "/"
+  end
 
 end
