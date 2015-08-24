@@ -5,7 +5,6 @@ require 'byebug'
 feature 'create a goal' do
   before :each do
     sign_up(username: 'Fred', password: 'test_password')
-
   end
 
   it 'redirects to sign in page if not signed in' do
@@ -122,7 +121,7 @@ feature 'delete  a goal' do
   end
 
   it "shows a button to Delete Goal" do
-    expect(page).to have_content "Delete Goal"
+    expect(page).to have_button "Delete Goal"
   end
 
   it "cannot delete someone else's goal" do
@@ -137,6 +136,7 @@ feature 'delete  a goal' do
   it "allows authorized users to actually delete a goal" do
     id_of_deleted_goal = Goal.find_by(body: "To be deleted body test").id
     click_button "Delete Goal"
-    expect { visit "/goals/#{id_of_deleted_goal}" }.to raise_error(ActiveRecord::RecordNotFound)
+    visit "/goals"
+    expect(page).to_not have_content "To be deleted body test"
   end
 end
