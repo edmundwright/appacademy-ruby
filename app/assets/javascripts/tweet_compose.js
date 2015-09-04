@@ -2,6 +2,14 @@ $.TweetCompose = function (el) {
   this.$el = $(el);
   this.$el.on('submit', this.submit.bind(this));
   this.$el.find('textarea').on('input', this.count.bind(this));
+  this.$el.find(".add-mentioned-user").on('click', this.addMentionedUser.bind(this));
+  this.$el.on('click', ".remove-mentioned-user", this.addMentionedUser.bind(this));
+};
+
+$.TweetCompose.prototype.addMentionedUser = function (e) {
+  var $scriptTag = this.$el.find('script')
+  var html = $scriptTag.html();
+  this.$el.find(".mentioned-users").append(html);
 };
 
 $.TweetCompose.prototype.count = function (e) {
