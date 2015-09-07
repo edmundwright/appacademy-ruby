@@ -1,1 +1,4 @@
-Pokedex.Models.Toy = Backbone.Model.extend({})
+Pokedex.Models.Toy = Backbone.Model.extend({
+  urlRoot: "/toys"
+
+})

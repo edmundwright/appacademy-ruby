@@ -4,6 +4,7 @@ Pokedex.Models.Pokemon = Backbone.Model.extend({
   toys: function () {
     return this._toys = this._toys || new Pokedex.Collections.Toys();
   },
+
   parse: function(jsonResp){
     if(jsonResp.toys){
       this.toys().set(jsonResp.toys);
@@ -11,4 +12,4 @@ Pokedex.Models.Pokemon = Backbone.Model.extend({
     }
     return jsonResp;
   }
-})
+});
