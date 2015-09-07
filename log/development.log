@@ -1776,3 +1776,2948 @@ Processing by PokemonController#index as JSON
   Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
   Rendered pokemon/index.json.jbuilder (90.3ms)
 Completed 200 OK in 129ms (Views: 127.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 11:39:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 284ms (Views: 283.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/views/pokemon.self-c4654dec8a41174f6813402499f45669fdbbb6a48c31603cbe78744760d45eee.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:39:08 -0400
+
+
+Started GET "/pokemon/1" for ::1 at 2015-09-07 11:41:20 -0400
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mPokemon Load (0.5ms)[0m  SELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/show.json.jbuilder (1.3ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 11:43:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 238ms (Views: 237.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/assets/views/pokemon.self-0b6fee17a04bd646a98909fb2f1dd8ddf5a9f0f6eda3197a105631ee6ef3c248.js?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:43:40 -0400
+
+
+Started GET "/pokemon/1" for ::1 at 2015-09-07 11:43:55 -0400
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.5ms)[0m  [1mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/show.json.jbuilder (1.4ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 11:44:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 148ms (Views: 147.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/assets/views/pokemon.self-ab5a4471a47ac6a8cf542c2144ff5ff1831ddd36f82b657f842c4c31c95160e1.js?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:44:12 -0400
+
+
+Started GET "/pokemon/1" for ::1 at 2015-09-07 11:44:16 -0400
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mPokemon Load (0.8ms)[0m  SELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/show.json.jbuilder (1.3ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 11:47:37 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 263ms (Views: 262.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/assets/views/pokemon.self-90162595b20c3a0768d226bb389cf26b561838431490c6f0ab97c5d80d78dcce.js?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:47:37 -0400
+
+
+Started GET "/pokemon/1" for ::1 at 2015-09-07 11:48:39 -0400
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/show.json.jbuilder (1.4ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 11:48:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 149ms (Views: 148.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/views/pokemon.self-d47e33825213e0c7ca629780befd84f2dced15399c0d3e595847506081b2a227.js?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:48:58 -0400
+
+
+Started GET "/" for ::1 at 2015-09-07 11:49:38 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 150ms (Views: 150.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/assets/views/pokemon.self-080d395113698d7133f8009213fc7b2a4d29b260bd3fd7d41176cd3b40d325ec.js?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:49:38 -0400
+
+
+Started GET "/" for ::1 at 2015-09-07 11:50:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 251ms (Views: 251.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/views/pokemon.self-4d3e945c08ba24239027c49c77c4226bebe0c2eeaef042c8c117e0abf600601e.js?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:51:00 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 11:51:00 -0400
+Processing by PokemonController#index as JSON
+  [1m[35mPokemon Load (1.5ms)[0m  SELECT "pokemons".* FROM "pokemons"
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.4ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (106.6ms)
+Completed 200 OK in 110ms (Views: 108.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 11:51:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 42ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/assets/views/pokemon.self-4d3e945c08ba24239027c49c77c4226bebe0c2eeaef042c8c117e0abf600601e.js?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:51:03 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 11:51:03 -0400
+Processing by PokemonController#index as JSON
+  [1m[36mPokemon Load (1.8ms)[0m  [1mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (89.5ms)
+Completed 200 OK in 93ms (Views: 90.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 11:51:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 53ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/assets/views/pokemon.self-4d3e945c08ba24239027c49c77c4226bebe0c2eeaef042c8c117e0abf600601e.js?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:51:15 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 11:51:15 -0400
+Processing by PokemonController#index as JSON
+  [1m[35mPokemon Load (1.7ms)[0m  SELECT "pokemons".* FROM "pokemons"
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (84.9ms)
+Completed 200 OK in 89ms (Views: 86.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 11:51:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 140ms (Views: 139.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/views/pokemon.self-0c08511439eca72765461fdbc8bddfabb012feae274e36a81da8f52692637f83.js?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:51:32 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 11:54:01 -0400
+Processing by PokemonController#index as JSON
+  [1m[36mPokemon Load (2.3ms)[0m  [1mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (71.3ms)
+Completed 200 OK in 97ms (Views: 94.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 11:54:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 246ms (Views: 246.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 11:54:02 -0400
+Processing by PokemonController#index as JSON
+  [1m[35mPokemon Load (1.1ms)[0m  SELECT "pokemons".* FROM "pokemons"
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.5ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.4ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (1.8ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.6ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (235.6ms)
+Completed 200 OK in 238ms (Views: 236.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/assets/views/pokemon.self-387f7fdccf30474157e32099b901e8beaa8e7cfbcf7cab7db8f7db0432015899.js?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:54:02 -0400
+
+
+Started GET "/" for ::1 at 2015-09-07 11:54:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 163ms (Views: 162.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/views/pokemon.self-48d9adcc1aabe51b0822831f5b557a4b09b94e90134ebcf8bc537af53d273798.js?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:54:30 -0400
+
+
+Started GET "/" for ::1 at 2015-09-07 11:54:48 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 131ms (Views: 131.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/assets/views/pokemon.self-f2a9c8cd1046a605be809dfbb0597bfd7b0d80f9ee4c3e08d3039c2f44d16c88.js?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:54:48 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 11:55:15 -0400
+Processing by PokemonController#index as JSON
+  [1m[36mPokemon Load (1.0ms)[0m  [1mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (72.9ms)
+Completed 200 OK in 75ms (Views: 73.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 11:55:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 235ms (Views: 234.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 11:55:15 -0400
+Processing by PokemonController#index as JSON
+  [1m[35mPokemon Load (1.0ms)[0m  SELECT "pokemons".* FROM "pokemons"
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.4ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (1.6ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (142.9ms)
+Completed 200 OK in 146ms (Views: 144.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/assets/views/pokemon.self-2a67b0915993d099a291e331e64192f9c3e563c116f31e5ee28b8cacf72f048f.js?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 11:55:16 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 11:55:16 -0400
+Processing by PokemonController#index as JSON
+  [1m[36mPokemon Load (2.2ms)[0m  [1mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (75.3ms)
+Completed 200 OK in 78ms (Views: 76.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 12:08:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 267ms (Views: 266.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/assets/views/pokemon.self-1f02d094ef78bd9a5a5e1b8a351d21d5fd2474957ca95e5fa6a08673a6aed0ef.js?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 12:08:05 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 12:08:06 -0400
+Processing by PokemonController#index as JSON
+  [1m[35mPokemon Load (1.5ms)[0m  SELECT "pokemons".* FROM "pokemons"
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (90.0ms)
+Completed 200 OK in 93ms (Views: 91.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pokemon/1" for ::1 at 2015-09-07 12:09:38 -0400
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.3ms)[0m  [1mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/show.json.jbuilder (0.7ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 12:09:38 -0400
+Processing by PokemonController#index as JSON
+  [1m[35mPokemon Load (1.1ms)[0m  SELECT "pokemons".* FROM "pokemons"
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (87.3ms)
+Completed 200 OK in 92ms (Views: 90.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/pokemon_snaps/083.png" for ::1 at 2015-09-07 12:09:39 -0400
+
+
+Started GET "/" for ::1 at 2015-09-07 12:11:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 294ms (Views: 294.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/assets/views/pokemon.self-57c10befc075fb07486073314e5f89d3a6e17999baa6ab935c89b04c4e6ea69a.js?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 12:11:23 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 12:11:23 -0400
+Processing by PokemonController#index as JSON
+  [1m[36mPokemon Load (2.0ms)[0m  [1mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/index.json.jbuilder (90.5ms)
+Completed 200 OK in 94ms (Views: 91.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pokemon/1" for ::1 at 2015-09-07 12:11:29 -0400
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mPokemon Load (0.4ms)[0m  SELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/show.json.jbuilder (1.2ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 12:11:29 -0400
+Processing by PokemonController#index as JSON
+  [1m[36mPokemon Load (1.5ms)[0m  [1mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.4ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.6ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (1.5ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (105.9ms)
+Completed 200 OK in 109ms (Views: 106.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/pokemon_snaps/083.png" for ::1 at 2015-09-07 12:11:29 -0400
+
+
+Started GET "/" for ::1 at 2015-09-07 12:13:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 210ms (Views: 210.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/assets/views/pokemon.self-ff970dcb534d1396706674e536aca367d749b90d9fdee3e9367f8fc0fac76136.js?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 12:13:14 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 12:13:14 -0400
+Processing by PokemonController#index as JSON
+  [1m[35mPokemon Load (1.8ms)[0m  SELECT "pokemons".* FROM "pokemons"
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (87.7ms)
+Completed 200 OK in 91ms (Views: 88.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pokemon/1" for ::1 at 2015-09-07 12:13:22 -0400
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/show.json.jbuilder (1.2ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 12:13:22 -0400
+Processing by PokemonController#index as JSON
+  [1m[35mPokemon Load (1.0ms)[0m  SELECT "pokemons".* FROM "pokemons"
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (80.5ms)
+Completed 200 OK in 83ms (Views: 81.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/pokemon_snaps/083.png" for ::1 at 2015-09-07 12:13:22 -0400
+
+
+Started GET "/" for ::1 at 2015-09-07 12:15:24 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 258ms (Views: 257.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/assets/views/pokemon.self-49685abf5455fc115bb36b22aa9c1f0b90dae089d72f4bfcb6718cb2995c52b3.js?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 12:15:24 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 12:15:24 -0400
+Processing by PokemonController#index as JSON
+  [1m[36mPokemon Load (2.0ms)[0m  [1mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.4ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (107.1ms)
+Completed 200 OK in 110ms (Views: 107.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-07 12:19:29 -0400
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 281ms (Views: 281.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/views/pokemon.self-0c5de78b2b7b7aeb175fb62e1022c4bec0ab493dd00ce704c19cdd7a2568ab44.js?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/assets/application.self-6f3c5f000433bfd7fda4aabecf7308978ffd71729e44d6235645078d4594781a.css?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/assets/jquery.serializejson.min.self-3ac442468b3826db492ffaaea434d85fd719fdc12bf972b262fb32446a51913d.js?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/assets/backbone.self-0977290d5e68ce40d516cd4dc3965586680024e51399f0ee54ee8ed3a99b1506.js?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/assets/pokedex.self-fafe4b47fef69182ef6d856fee14df4dfb57914ebb99ff9a83db09d2fe2de93c.js?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/assets/models/pokemon.self-24fc69834ccbfc0f335d5a4648d65a77b6acdc5df7fb789ccd9d6b24d6442aa3.js?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/assets/collections/pokemon.self-05274281e8a8767d531effde3fbbb9863900f4eeab86cb4ca47c386b07e490d4.js?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for ::1 at 2015-09-07 12:19:30 -0400
+
+
+Started GET "/pokemon" for ::1 at 2015-09-07 12:19:30 -0400
+Processing by PokemonController#index as JSON
+  [1m[35mPokemon Load (1.5ms)[0m  SELECT "pokemons".* FROM "pokemons"
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.5ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.3ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.2ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.4ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/_pokemon.json.jbuilder (0.1ms)
+  Rendered pokemon/index.json.jbuilder (130.2ms)
+Completed 200 OK in 133ms (Views: 131.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/pokemon_snaps/140.png" for ::1 at 2015-09-07 12:19:31 -0400
+
+
+Started GET "/assets/pokemon_snaps/083.png" for ::1 at 2015-09-07 12:19:34 -0400
+
+
+Started GET "/assets/pokemon_snaps/108.png" for ::1 at 2015-09-07 12:19:36 -0400
+
+
+Started GET "/assets/pokemon_snaps/022.png" for ::1 at 2015-09-07 12:19:37 -0400
+
+
+Started GET "/assets/pokemon_snaps/074.png" for ::1 at 2015-09-07 12:19:37 -0400
+
+
+Started GET "/assets/pokemon_snaps/150.png" for ::1 at 2015-09-07 12:19:39 -0400
+
+
+Started GET "/assets/pokemon_snaps/007.png" for ::1 at 2015-09-07 12:19:39 -0400
+
+
+Started GET "/assets/pokemon_snaps/055.png" for ::1 at 2015-09-07 12:19:40 -0400
+
+
+Started GET "/assets/pokemon_snaps/089.png" for ::1 at 2015-09-07 12:19:41 -0400
+
+
+Started GET "/assets/pokemon_snaps/062.png" for ::1 at 2015-09-07 12:19:42 -0400
+
+
+Started GET "/assets/pokemon_snaps/072.png" for ::1 at 2015-09-07 12:19:43 -0400
