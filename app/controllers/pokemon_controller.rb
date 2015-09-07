@@ -23,6 +23,15 @@ class PokemonController < ApplicationController
     @pokemon = Pokemon.find(params[:id])
   end
 
+  def update
+    @pokemon = Pokemon.find(params[:id])
+    if @pokemon.update(pokemon_params)
+      render "show"
+    else
+      render json: @pokemon.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def pokemon_params
