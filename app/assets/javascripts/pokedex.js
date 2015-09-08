@@ -7,9 +7,6 @@ window.Pokedex = {
     Pokedex.pokemonTypes = pokemonTypes;
     new Pokedex.Routers.Router();
     Backbone.history.start();
-    // var $el = $('#pokedex');
-    // view = new Pokedex.Views.Pokemon({ el: $el });
-    // view.refreshPokemon();
   }
 };
 
