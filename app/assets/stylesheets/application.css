@@ -56,6 +56,12 @@ ul {
 	padding: 10px;
 	cursor: pointer;
   list-style: none;
+
+}
+
+.pokemon-toys {
+  display: block;
+  clear: both;
 }
 
 .poke-list-item:hover, .toy-list-item:hover {
