@@ -34,6 +34,9 @@ Pokedex.Views.PokemonIndex = Backbone.View.extend({
   selectPokemonFromList: function (e) {
     var $currentTarget = $(e.currentTarget);
     var id = $currentTarget.data('id');
-    console.log(this.collection.get(id).escape('name'));
+    var pokemon = this.collection.get(id);
+    var pokeDetailView = new Pokedex.Views.PokemonDetail({ model: pokemon});
+    $("#pokedex .pokemon-detail").html(pokeDetailView.$el);
+    pokemon.fetch();
   }
 })
