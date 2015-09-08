@@ -91,16 +91,7 @@ Pokedex.Views.Pokemon = Backbone.View.extend({
   },
 
   renderToyDetail: function (toy) {
-    var $detail = $("<div class='detail'>");
-
-    $detail.html(
-      "<img src='" + toy.escape('image_url') + "'>" + "<br>" +
-      "Name: " + toy.escape('name') + "<br>" +
-      "Happiness: " + toy.escape('happiness') + "<br>" +
-      "Price: " + toy.escape('price')
-    );
-
-    this.$toyDetail.html($detail);
+    this.$toyDetail.html(JST['toyDetail']({ toy: toy, pokes: this.pokes }));
   },
 
   selectToyFromList: function (event) {

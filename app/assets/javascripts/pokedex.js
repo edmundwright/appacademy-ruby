@@ -5,9 +5,9 @@ window.Pokedex = {
   Routers: {},
   initialize: function () {
     Pokedex.pokemonTypes = pokemonTypes;
-    var $el = $('#pokedex');
-    view = new Pokedex.Views.Pokemon({ el: $el });
-    view.refreshPokemon();
+    // var $el = $('#pokedex');
+    // view = new Pokedex.Views.Pokemon({ el: $el });
+    // view.refreshPokemon();
   }
 };
 
