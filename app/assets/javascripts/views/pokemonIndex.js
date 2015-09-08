@@ -6,6 +6,10 @@ Pokedex.Views.PokemonIndex = Backbone.View.extend({
     this.listenTo(this.collection, 'add', this.addPokemonToList);
   },
 
+  events: {
+    "click li": "selectPokemonFromList"
+  },
+
   render: function() {
     this.$el.empty();
     this.collection.forEach(function(poke){
@@ -14,21 +18,22 @@ Pokedex.Views.PokemonIndex = Backbone.View.extend({
   },
 
   addPokemonToList: function (pokemon) {
-    var $li = $("<li class='poke-list-item'>");
-    $li.data('id', pokemon.escape('id'));
-
-    $li.html(JST['pokemonListItem']({ pokemon: pokemon }));
-
-    this.$el.append($li);
+    this.$el.append(JST['pokemonListItem']({ pokemon: pokemon }));
   },
 
   refreshPokemon: function () {
-    var that = this;
+    var indexView = this;
 
     this.collection.fetch({ success: function () {
-      that.collection.each(function (poke) {
-        that.addPokemonToList(poke);
+      indexView.collection.each(function (poke) {
+        indexView.addPokemonToList(poke);
       });
     }});
+  },
+
+  selectPokemonFromList: function (e) {
+    var $currentTarget = $(e.currentTarget);
+    var id = $currentTarget.data('id');
+    console.log(this.collection.get(id).escape('name'));
   }
 })
