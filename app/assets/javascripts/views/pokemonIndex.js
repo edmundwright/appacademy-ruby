@@ -21,22 +21,21 @@ Pokedex.Views.PokemonIndex = Backbone.View.extend({
     this.$el.append(JST['pokemonListItem']({ pokemon: pokemon }));
   },
 
-  refreshPokemon: function () {
+  refreshPokemon: function (callback) {
     var indexView = this;
 
     this.collection.fetch({ success: function () {
       indexView.collection.each(function (poke) {
         indexView.addPokemonToList(poke);
       });
+      if (callback) { callback() };
     }});
   },
 
   selectPokemonFromList: function (e) {
     var $currentTarget = $(e.currentTarget);
     var id = $currentTarget.data('id');
-    var pokemon = this.collection.get(id);
-    var pokeDetailView = new Pokedex.Views.PokemonDetail({ model: pokemon});
-    $("#pokedex .pokemon-detail").html(pokeDetailView.$el);
-    pokemon.fetch();
+    Backbone.history.navigate('pokemon/' + id, {trigger: true});
+
   }
 })
