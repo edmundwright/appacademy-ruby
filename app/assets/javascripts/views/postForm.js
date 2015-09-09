@@ -22,7 +22,7 @@ JournalApp.Views.PostForm = Backbone.View.extend({
         Backbone.history.navigate("posts/" + this.model.id, {trigger: true});
       }.bind(this),
 
-      error: function (_, response) {
+      error: function (model, response) {
         this.$el.find("ul.errors").empty();
         response.responseJSON.forEach(function (errorText) {
           var $li = $("<li>");
