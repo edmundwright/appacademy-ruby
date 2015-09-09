@@ -15,7 +15,7 @@ JournalApp.Views.PostForm = Backbone.View.extend({
 
   submitForm: function (e) {
     e.preventDefault();
-
+    
     this.model.save(this.$el.serializeJSON().post, {
       success: function () {
         this.collection.add(this.model);

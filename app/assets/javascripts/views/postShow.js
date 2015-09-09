@@ -1,4 +1,8 @@
 JournalApp.Views.PostShow = Backbone.View.extend({
+  events: {
+    "click button.delete": "delete"
+  },
+
   template: JST["postShow"],
 
   initialize: function () {
@@ -9,5 +13,10 @@ JournalApp.Views.PostShow = Backbone.View.extend({
     var content = this.template({ post: this.model });
     this.$el.html(content);
     return this;
+  },
+
+  delete: function() {
+    this.model.destroy();
+    Backbone.history.navigate("", {trigger: true})
   }
 });
