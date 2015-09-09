@@ -2,7 +2,7 @@ JournalApp.Views.PostIndex = Backbone.View.extend({
   template: JST['postIndex'],
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "reset remove", this.render);
   },
 
   render: function(){
