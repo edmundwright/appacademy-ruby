@@ -19,7 +19,7 @@ class Feed < ActiveRecord::Base
 
     feed
   end
-
+  
   def reload
     # reloads entries
     self.touch #this causes the updated_at column to be updated
@@ -36,5 +36,10 @@ class Feed < ActiveRecord::Base
     rescue SimpleRSSError
       return false
     end
+  end
+
+  def latest_entries
+    reload if Time.now - updated_at > 30
+    entries
   end
 end
