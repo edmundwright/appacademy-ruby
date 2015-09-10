@@ -1,7 +1,7 @@
 NewsReader.Collections.Entries = Backbone.Collection.extend({
   model: NewsReader.Models.Entry,
 
-  initialize: function (options) {
+  initialize: function (models, options) {
     this.feed = options.feed
   },
 

@@ -7,6 +7,7 @@ NewsReader.Models.Feed = Backbone.Model.extend({
         feed: this
       });
     }
+
     return this._entries;
   },
 

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+
 gem 'rails', '4.0.2'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
@@ -11,6 +13,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'simple-rss'
 gem 'backbone-on-rails'
 gem 'ejs'
+
+gem 'bcrypt'
 
 group :doc do
   gem 'sdoc', require: false
