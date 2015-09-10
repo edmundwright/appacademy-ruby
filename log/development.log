@@ -2237,3 +2237,656 @@ Started GET "/api/feeds" for 127.0.0.1 at 2015-09-10 11:48:31 -0400
 Processing by Api::FeedsController#index as JSON
   [1m[36mFeed Load (0.6ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
 Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2015-09-10 12:22:54 -0400
+
+ActionController::RoutingError (No route matches [GET] "/feeds"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.3) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.3) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.3) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  rack (1.5.3) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.3) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/var/rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/var/rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/var/rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (56.7ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-09-10 12:23:02 -0400
+Processing by Api::FeedsController#index as HTML
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-09-10 12:23:08 -0400
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFeed Load (1.2ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSQL (1.0ms)[0m  UPDATE "feeds" SET "updated_at" = '2015-09-10 16:23:08.905833' WHERE "feeds"."id" = 1
+  [1m[36m (0.7ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902180"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:23:00+00:00\",\"link\":\"http://example.com/test/1441902180\",\"description\":\"Non Lorem mollit enim irure.\",\"pubDate\":\"2015-09-10T12:23:00-04:00\",\"guid\":\"http://example.com/test/1441902180\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902180"], ["published_at", Thu, 10 Sep 2015 16:23:00 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:23:00+00:00"], ["updated_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902170"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:22:50+00:00\",\"link\":\"http://example.com/test/1441902170\",\"description\":\"Ad pariatur ullamco elit dolor cillum ullamco fugiat consequat exercitation dolore cillum aute.\",\"pubDate\":\"2015-09-10T12:22:50-04:00\",\"guid\":\"http://example.com/test/1441902170\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902170"], ["published_at", Thu, 10 Sep 2015 16:22:50 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:22:50+00:00"], ["updated_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902160"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:22:40+00:00\",\"link\":\"http://example.com/test/1441902160\",\"description\":\"Labore tempor nostrud irure nisi irure adipisicing dolor.\",\"pubDate\":\"2015-09-10T12:22:40-04:00\",\"guid\":\"http://example.com/test/1441902160\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902160"], ["published_at", Thu, 10 Sep 2015 16:22:40 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:22:40+00:00"], ["updated_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902150"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:22:30+00:00\",\"link\":\"http://example.com/test/1441902150\",\"description\":\"Anim cillum nisi dolore tempor in non.\",\"pubDate\":\"2015-09-10T12:22:30-04:00\",\"guid\":\"http://example.com/test/1441902150\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902150"], ["published_at", Thu, 10 Sep 2015 16:22:30 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:22:30+00:00"], ["updated_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902140"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:22:20+00:00\",\"link\":\"http://example.com/test/1441902140\",\"description\":\"Magna non ex occaecat dolore consequat occaecat excepteur pariatur id et cillum.\",\"pubDate\":\"2015-09-10T12:22:20-04:00\",\"guid\":\"http://example.com/test/1441902140\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902140"], ["published_at", Thu, 10 Sep 2015 16:22:20 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:22:20+00:00"], ["updated_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902130"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:22:10+00:00\",\"link\":\"http://example.com/test/1441902130\",\"description\":\"Minim pariatur fugiat non sunt consectetur.\",\"pubDate\":\"2015-09-10T12:22:10-04:00\",\"guid\":\"http://example.com/test/1441902130\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902130"], ["published_at", Thu, 10 Sep 2015 16:22:10 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:22:10+00:00"], ["updated_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902120"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:22:00+00:00\",\"link\":\"http://example.com/test/1441902120\",\"description\":\"Nostrud ad excepteur occaecat elit magna ullamco tempor commodo consequat ea laborum pariatur quis dolore.\",\"pubDate\":\"2015-09-10T12:22:00-04:00\",\"guid\":\"http://example.com/test/1441902120\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902120"], ["published_at", Thu, 10 Sep 2015 16:22:00 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:22:00+00:00"], ["updated_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902110"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:21:50+00:00\",\"link\":\"http://example.com/test/1441902110\",\"description\":\"Sit irure in excepteur minim ad qui do tempor sunt irure sunt minim in non.\",\"pubDate\":\"2015-09-10T12:21:50-04:00\",\"guid\":\"http://example.com/test/1441902110\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902110"], ["published_at", Thu, 10 Sep 2015 16:21:50 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:21:50+00:00"], ["updated_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902100"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:21:40+00:00\",\"link\":\"http://example.com/test/1441902100\",\"description\":\"Non laboris tempor proident id ad mollit.\",\"pubDate\":\"2015-09-10T12:21:40-04:00\",\"guid\":\"http://example.com/test/1441902100\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902100"], ["published_at", Thu, 10 Sep 2015 16:21:40 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:21:40+00:00"], ["updated_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902090"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:21:30+00:00\",\"link\":\"http://example.com/test/1441902090\",\"description\":\"Id qui pariatur commodo fugiat adipisicing cupidatat sint cillum.\",\"pubDate\":\"2015-09-10T12:21:30-04:00\",\"guid\":\"http://example.com/test/1441902090\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902090"], ["published_at", Thu, 10 Sep 2015 16:21:30 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:21:30+00:00"], ["updated_at", Thu, 10 Sep 2015 16:23:09 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mEntry Load (1.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 1]]
+Completed 200 OK in 672ms (Views: 651.8ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-09-10 12:23:09 -0400
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFeed Load (0.7ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 1]]
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 343ms (Views: 342.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/utils/composite_view.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/feeds/feedIndex.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/feeds/feedIndexItem.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/views/feedIndex.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/views/feedIndexItem.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:04 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-09-10 12:24:05 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 73ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/utils/composite_view.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/feeds/feedIndex.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/feeds/feedIndexItem.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/views/feedIndexItem.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/views/feedIndex.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-09-10 12:24:16 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-09-10 12:25:10 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2015-09-10 12:26:07 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mFeed Load (0.6ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-09-10 16:26:07.597418' WHERE "feeds"."id" = 3[0m
+  [1m[35m (0.6ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:08 UTC +00:00], ["feed_id", 3], ["guid", "http://www.npr.org/sections/thetwo-way/2015/09/10/439184404/disneylands-restricted-airspace-prompts-cancellation-of-insect-spraying-flight?utm_medium=RSS&amp;utm_campaign=news"], ["json", "{\"title\":\"Disneyland's Restricted Airspace Prompts Cancellation Of Insect-Spraying Flight\",\"link\":\"http://www.npr.org/sections/thetwo-way/2015/09/10/439184404/disneylands-restricted-airspace-prompts-cancellation-of-insect-spraying-flight?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"description\":\"A three-mile radius around the California theme park is designated as \\\"national defense airspace\\\" by the FAA, complicating attempts to control mosquitoes.\",\"content_encoded\":\"\\u003Cp\\u003EA three-mile radius around the California theme park is designated as \\\"national defense airspace\\\" by the FAA, complicating attempts to control mosquitoes.\\u003C/p\\u003E\\u003Cp\\u003E\\u003Ca href=\\\"http://www.npr.org/templates/email/emailAFriend.php?storyId=439184404\\\"\\u003E\\u0026raquo; E-Mail This\\u003C/a\\u003E\\u003C/p\\u003E\",\"pubDate\":\"2015-09-10T12:09:02-04:00\",\"guid\":\"http://www.npr.org/sections/thetwo-way/2015/09/10/439184404/disneylands-restricted-airspace-prompts-cancellation-of-insect-spraying-flight?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"dc_creator\":\"Bill Chappell\"}"], ["link", "http://www.npr.org/sections/thetwo-way/2015/09/10/439184404/disneylands-restricted-airspace-prompts-cancellation-of-insect-spraying-flight?utm_medium=RSS&amp;utm_campaign=news"], ["published_at", Thu, 10 Sep 2015 16:09:02 UTC +00:00], ["title", "Disneyland's Restricted Airspace Prompts Cancellation Of Insect-Spraying Flight"], ["updated_at", Thu, 10 Sep 2015 16:26:08 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:08 UTC +00:00], ["feed_id", 3], ["guid", "http://www.npr.org/sections/thetwo-way/2015/09/10/439190586/marine-corps-study-finds-all-male-combat-units-faster-than-mixed-units?utm_medium=RSS&amp;utm_campaign=news"], ["json", "{\"title\":\"Marine Corps Study Finds All-Male Combat Units Faster Than Mixed Units\",\"link\":\"http://www.npr.org/sections/thetwo-way/2015/09/10/439190586/marine-corps-study-finds-all-male-combat-units-faster-than-mixed-units?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"description\":\"The year-long study found that all-male squads performed better than mixed groups in 69 percent of the tasks evaluated. It's unclear what this will mean for the future of women in ground combat jobs.\",\"content_encoded\":\"\\u003Cp\\u003EThe year-long study found that all-male squads performed better than mixed groups in 69 percent of the tasks evaluated. It's unclear what this will mean for the future of women in ground combat jobs.\\u003C/p\\u003E\\u003Cp\\u003E\\u003Ca href=\\\"http://www.npr.org/templates/email/emailAFriend.php?storyId=439190586\\\"\\u003E\\u0026raquo; E-Mail This\\u003C/a\\u003E\\u003C/p\\u003E\",\"pubDate\":\"2015-09-10T12:00:00-04:00\",\"guid\":\"http://www.npr.org/sections/thetwo-way/2015/09/10/439190586/marine-corps-study-finds-all-male-combat-units-faster-than-mixed-units?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"dc_creator\":\"Eyder Peralta\"}"], ["link", "http://www.npr.org/sections/thetwo-way/2015/09/10/439190586/marine-corps-study-finds-all-male-combat-units-faster-than-mixed-units?utm_medium=RSS&amp;utm_campaign=news"], ["published_at", Thu, 10 Sep 2015 16:00:00 UTC +00:00], ["title", "Marine Corps Study Finds All-Male Combat Units Faster Than Mixed Units"], ["updated_at", Thu, 10 Sep 2015 16:26:08 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:08 UTC +00:00], ["feed_id", 3], ["guid", "http://www.npr.org/sections/goatsandsoda/2015/09/10/434647957/how-did-polio-pop-up-in-two-polio-free-countries-ukraine-and-mali?utm_medium=RSS&amp;utm_campaign=news"], ["json", "{\"title\":\"How Did Polio Pop Up In Two Polio-Free Countries: Ukraine And Mali?\",\"link\":\"http://www.npr.org/sections/goatsandsoda/2015/09/10/434647957/how-did-polio-pop-up-in-two-polio-free-countries-ukraine-and-mali?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"description\":\"Three new cases have raised questions about how the virus can suddenly reappear in a place where it had previously been eradicated.\",\"content_encoded\":\"\\u003Cp\\u003EThree new cases have raised questions about how the virus can suddenly reappear in a place where it had previously been eradicated.\\u003C/p\\u003E\\u003Cp\\u003E\\u003Ca href=\\\"http://www.npr.org/templates/email/emailAFriend.php?storyId=434647957\\\"\\u003E\\u0026raquo; E-Mail This\\u003C/a\\u003E\\u003C/p\\u003E\",\"pubDate\":\"2015-09-10T11:15:00-04:00\",\"guid\":\"http://www.npr.org/sections/goatsandsoda/2015/09/10/434647957/how-did-polio-pop-up-in-two-polio-free-countries-ukraine-and-mali?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"dc_creator\":\"Diane Cole\"}"], ["link", "http://www.npr.org/sections/goatsandsoda/2015/09/10/434647957/how-did-polio-pop-up-in-two-polio-free-countries-ukraine-and-mali?utm_medium=RSS&amp;utm_campaign=news"], ["published_at", Thu, 10 Sep 2015 15:15:00 UTC +00:00], ["title", "How Did Polio Pop Up In Two Polio-Free Countries: Ukraine And Mali?"], ["updated_at", Thu, 10 Sep 2015 16:26:08 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:08 UTC +00:00], ["feed_id", 3], ["guid", "http://www.npr.org/sections/npr-history-dept/2015/09/10/435209603/1840s-hunger-for-gold-and-galapagos-tortoises?utm_medium=RSS&amp;utm_campaign=news"], ["json", "{\"title\":\"1840s: Hunger For Gold And Galapagos Tortoises\",\"link\":\"http://www.npr.org/sections/npr-history-dept/2015/09/10/435209603/1840s-hunger-for-gold-and-galapagos-tortoises?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"description\":\"When the precious metal was discovered in California in the late 1840s, hordes of fortune seekers headed there from all over the world — some taking large amounts of tortoises with them.\",\"content_encoded\":\"\\u003Cp\\u003EWhen the precious metal was discovered in California in the late 1840s, hordes of fortune seekers headed there from all over the world — some taking large amounts of tortoises with them.\\u003C/p\\u003E\\u003Cp\\u003E\\u003Ca href=\\\"http://www.npr.org/templates/email/emailAFriend.php?storyId=435209603\\\"\\u003E\\u0026raquo; E-Mail This\\u003C/a\\u003E\\u003C/p\\u003E\",\"pubDate\":\"2015-09-10T11:03:38-04:00\",\"guid\":\"http://www.npr.org/sections/npr-history-dept/2015/09/10/435209603/1840s-hunger-for-gold-and-galapagos-tortoises?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"dc_creator\":\"Linton Weeks\"}"], ["link", "http://www.npr.org/sections/npr-history-dept/2015/09/10/435209603/1840s-hunger-for-gold-and-galapagos-tortoises?utm_medium=RSS&amp;utm_campaign=news"], ["published_at", Thu, 10 Sep 2015 15:03:38 UTC +00:00], ["title", "1840s: Hunger For Gold And Galapagos Tortoises"], ["updated_at", Thu, 10 Sep 2015 16:26:08 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:08 UTC +00:00], ["feed_id", 3], ["guid", "http://www.npr.org/sections/parallels/2015/09/10/439085907/migrants-enter-denmark-determined-to-reach-sweden?utm_medium=RSS&amp;utm_campaign=news"], ["json", "{\"title\":\"Migrants Enter Denmark, Determined To Reach Sweden\",\"link\":\"http://www.npr.org/sections/parallels/2015/09/10/439085907/migrants-enter-denmark-determined-to-reach-sweden?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"description\":\"Denmark has been trying to dissuade refugees from crossing its borders. But an estimated 3,000 have entered the country since Sunday, and some Danes are helping them make their way to Sweden.\",\"content_encoded\":\"\\u003Cp\\u003EDenmark has been trying to dissuade refugees from crossing its borders. But an estimated 3,000 have entered the country since Sunday, and some Danes are helping them make their way to Sweden.\\u003C/p\\u003E\\u003Cp\\u003E\\u003Ca href=\\\"http://www.npr.org/templates/email/emailAFriend.php?storyId=439085907\\\"\\u003E\\u0026raquo; E-Mail This\\u003C/a\\u003E\\u003C/p\\u003E\",\"pubDate\":\"2015-09-10T05:22:00-04:00\",\"guid\":\"http://www.npr.org/sections/parallels/2015/09/10/439085907/migrants-enter-denmark-determined-to-reach-sweden?utm_medium=RSS\\u0026amp;utm_campaign=news\",\"dc_creator\":\"Sidsel Overgaard\"}"], ["link", "http://www.npr.org/sections/parallels/2015/09/10/439085907/migrants-enter-denmark-determined-to-reach-sweden?utm_medium=RSS&amp;utm_campaign=news"], ["published_at", Thu, 10 Sep 2015 09:22:00 UTC +00:00], ["title", "Migrants Enter Denmark, Determined To Reach Sweden"], ["updated_at", Thu, 10 Sep 2015 16:26:08 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mEntry Load (0.9ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 3]]
+Completed 200 OK in 1036ms (Views: 1026.7ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/feeds/2" for 127.0.0.1 at 2015-09-10 12:26:08 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mSQL (0.8ms)[0m  UPDATE "feeds" SET "updated_at" = '2015-09-10 16:26:08.640321' WHERE "feeds"."id" = 2
+  [1m[36m (0.6ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:09 UTC +00:00], ["feed_id", 2], ["guid", "http://www.wired.com/?p=1848364"], ["json", "{\"title\":\"Apple TV Is a Lot of Things. But It’s Not Really Television\",\"link\":\"http://feeds.wired.com/c/35185/f/661370/s/49bc6a39/sc/28/l/0L0Swired0N0C20A150C0A90Capple0Etv0Elot0Ethings0Enot0Ereally0Etelevision0C/story01.htm\",\"description\":\"\\u0026lt;div class=\\\"rss_thumbnail\\\"\\u0026gt;\\u0026lt;img src=\\\"http://www.wired.com/wp-content/uploads/2015/09/GettyImages-487435312-660x440.jpg\\\" alt=\\\"Apple TV Is a Lot of Things. But It\\u0026amp;#8217;s Not Really Television\\\" /\\u0026gt;\\u0026lt;/div\\u0026gt;\\u0026lt;p\\u0026gt;Wanna buy shoes on your TV? Apple is on it.\\u0026lt;/p\\u0026gt; \\u0026lt;p\\u0026gt;The post \\u0026lt;a rel=\\\"nofollow\\\" href=\\\"http://www.wired.com/2015/09/apple-tv-lot-things-not-really-television/\\\"\\u0026gt;Apple TV Is a Lot of Things. But It\\u0026amp;#8217;s Not Really Television\\u0026lt;/a\\u0026gt; appeared first on \\u0026lt;a rel=\\\"nofollow\\\" href=\\\"http://www.wired.com\\\"\\u0026gt;WIRED\\u0026lt;/a\\u0026gt;.\\u0026lt;/p\\u0026gt;\\u0026lt;br clear='all'/\\u0026gt;\\u0026lt;br/\\u0026gt;\\u0026lt;br/\\u0026gt;\\u0026lt;a href=\\\"http://rc.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/rc/1/rc.htm\\\" rel=\\\"nofollow\\\"\\u0026gt;\\u0026lt;img src=\\\"http://rc.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/rc/1/rc.img\\\" border=\\\"0\\\"/\\u0026gt;\\u0026lt;/a\\u0026gt;\\u0026lt;br/\\u0026gt;\\u0026lt;br/\\u0026gt;\\u0026lt;a href=\\\"http://rc.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/rc/2/rc.htm\\\" rel=\\\"nofollow\\\"\\u0026gt;\\u0026lt;img src=\\\"http://rc.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/rc/2/rc.img\\\" border=\\\"0\\\"/\\u0026gt;\\u0026lt;/a\\u0026gt;\\u0026lt;br/\\u0026gt;\\u0026lt;br/\\u0026gt;\\u0026lt;a href=\\\"http://rc.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/rc/3/rc.htm\\\" rel=\\\"nofollow\\\"\\u0026gt;\\u0026lt;img src=\\\"http://rc.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/rc/3/rc.img\\\" border=\\\"0\\\"/\\u0026gt;\\u0026lt;/a\\u0026gt;\\u0026lt;br/\\u0026gt;\\u0026lt;br/\\u0026gt;\\u0026lt;a href=\\\"http://da.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/a2.htm\\\"\\u0026gt;\\u0026lt;img src=\\\"http://da.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/a2.img\\\" border=\\\"0\\\"/\\u0026gt;\\u0026lt;/a\\u0026gt;\\u0026lt;br/\\u0026gt;\\u0026lt;a href=\\\"http://adchoice.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/ach.htm\\\"\\u0026gt;\\u0026lt;img src=\\\"http://adchoice.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/ach.img\\\" border=\\\"0\\\"/\\u0026gt;\\u0026lt;/a\\u0026gt;\\u0026lt;img width=\\\"1\\\" height=\\\"1\\\" src=\\\"http://pi.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/a2t.img\\\" border=\\\"0\\\"/\\u0026gt;\\u0026lt;img width=\\\"1\\\" height=\\\"1\\\" src=\\\"http://pi2.feedsportal.com/r/238385539514/u/0/f/661370/c/35185/s/49bc6a39/sc/28/a2t2.img\\\" border=\\\"0\\\"/\\u0026gt;\\u0026lt;img width='1' height='1' src='http://feeds.wired.com/c/35185/f/661370/s/49bc6a39/sc/28/mf.gif' border='0'/\\u0026gt;\",\"comments\":\"http://www.wired.com/2015/09/apple-tv-lot-things-not-really-television/#comments\",\"pubDate\":\"2015-09-10T07:00:23-04:00\",\"category\":\"apple\",\"guid\":\"http://www.wired.com/?p=1848364\",\"dc_creator\":\"Julia Greenberg\"}"], ["link", "http://feeds.wired.com/c/35185/f/661370/s/49bc6a39/sc/28/l/0L0Swired0N0C20A150C0A90Capple0Etv0Elot0Ethings0Enot0Ereally0Etelevision0C/story01.htm"], ["published_at", Thu, 10 Sep 2015 11:00:23 UTC +00:00], ["title", "Apple TV Is a Lot of Things. But It’s Not Really Television"], ["updated_at", Thu, 10 Sep 2015 16:26:09 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mEntry Load (1.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 2]]
+Completed 200 OK in 691ms (Views: 685.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/feeds/4" for 127.0.0.1 at 2015-09-10 12:26:09 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mFeed Load (0.7ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-09-10 16:26:09.337212' WHERE "feeds"."id" = 4[0m
+  [1m[35m (0.9ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/499415"], ["json", "{\"title\":\"The Federal Reserve was just given another reason not to raise rates\",\"link\":\"http://qz.com/499415/the-federal-reserve-was-just-given-another-reason-not-to-raise-rates/\",\"description\":\"The lowflation is coming from outside the house. The US Bureau of Labor Statistics released its latest read on import and export prices, and both\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=499415\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"360\\\" src=\\\"https://qzprod.files.wordpress.com/2015/09/japan-port.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 wp-post-image\\\" alt=\\\"Workers are seen in a container area at a port in Tokyo.\\\" /\\u003E\\u003Cp\\u003EThe \\u003Ca href=\\\"http://qz.com/322438/behold-the-first-economics-cliche-of-2015/\\\"\\u003Elowflation\\u003C/a\\u003E is coming from outside the house.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe US Bureau of Labor Statistics released its \\u003Ca href=\\\"http://www.bls.gov/news.release/ximpim.nr0.htm\\\"\\u003Elatest read\\u003C/a\\u003E on import and export prices, and both are sinking to their lowest levels since the financial crisis.\\u003C/p\\u003E\\n\\u003Cdiv class=\\\"atlas-chart\\\" data-id=\\\"Ny_srOq6\\\" data-width=\\\"640\\\" data-height=\\\"409\\\"\\u003E\\u003Cimg src=\\\"https://atlas.qz.com/i/atlas_Ny_srOq6.png\\\" style=\\\"max-width: 100%;\\\"\\u003E\\u003C/div\\u003E\\n\\u003Cp\\u003EChina\\u0026#8217;s slowing economy is playing a role (\\u003Ca href=\\\"http://qz.com/486602/china-has-officially-ruined-everything-for-everybody/\\\"\\u003Eas it does in most things these days\\u003C/a\\u003E). Consumer price inflation there has remained stable, but export-influencing producer prices have been falling on an annual basis for years. And since China is America\\u0026#8217;s biggest trading partner, that\\u0026#8217;s weighing on US import costs.\\u003C/p\\u003E\\n\\u003Cdiv class=\\\"atlas-chart\\\" data-id=\\\"V1aceFca\\\" data-width=\\\"640\\\" data-height=\\\"409\\\"\\u003E\\u003Cimg src=\\\"https://atlas.qz.com/i/atlas_V1aceFca.png\\\" style=\\\"max-width: 100%;\\\"\\u003E\\u003C/div\\u003E\\n\\u003Cp\\u003EThat said, Chinese imports aren\\u0026#8217;t the only ones getting cheaper. It\\u0026#8217;s happening to Japan imports, and oil-heavy shipments from Canada and Mexico are hitting bargain-basement prices.\\u003C/p\\u003E\\n\\u003Cdiv class=\\\"atlas-chart\\\" data-id=\\\"41sNBF56\\\" data-width=\\\"640\\\" data-height=\\\"409\\\"\\u003E\\u003Cimg src=\\\"https://atlas.qz.com/i/atlas_41sNBF56.png\\\" style=\\\"max-width: 100%;\\\"\\u003E\\u003C/div\\u003E\\n\\u003Cp\\u003EIndeed, falling oil and import prices have continued to throw a wrench into US inflation projections. Federal Reserve chair Janet Yellen said oil prices \\u003Ca href=\\\"http://www.usatoday.com/story/money/2015/06/17/june-federal-reserve-meeting/28834059/\\\"\\u003Ehad stabilized\\u003C/a\\u003E in June, right before they \\u003Ca href=\\\"http://qz.com/470843/oil-prices-are-falling-again-heres-why/\\\"\\u003Ebegan sinking again\\u003C/a\\u003E. She and the rest of the open markets committee think the effects of cheap energy are \\u0026#8220;\\u003Ca href=\\\"http://www.federalreserve.gov/newsevents/press/monetary/20150729a.htm\\\"\\u003Etransitory\\u003C/a\\u003E,\\u0026#8221; though they\\u0026#8217;ve been saying so \\u003Ca href=\\\"http://www.federalreserve.gov/newsevents/press/monetary/20141217a.htm\\\"\\u003Esince December\\u003C/a\\u003E.\\u003C/p\\u003E\\n\\u003Cp\\u003EAnd since weak inflation has been such a big part of the \\u003Ca href=\\\"http://www.npr.org/2015/08/25/434513806/fed-shouldn-t-raise-interest-rates-ex-treasury-secretary-summers-cautions\\\"\\u003Ecase against the Fed raising interest rates\\u003C/a\\u003E this month \\u003Ca href=\\\"https://atlas.qz.com/charts/NyNAzATs\\\"\\u003Efor the first time since 2006\\u003C/a\\u003E, this isn\\u0026#8217;t going to make the decision any easier.\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=499415\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"comments\":\"http://qz.com/499415/the-federal-reserve-was-just-given-another-reason-not-to-raise-rates/#comments\",\"pubDate\":\"2015-09-10T12:22:47-04:00\",\"category\":\"Energy Shocks\",\"guid\":\"http://qz.com/preview/499415\",\"dc_creator\":\"Melvin Backman\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2015/09/japan-port.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"Workers are seen in a container area at a port in Tokyo.\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2015/09/japan-port.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/499415/the-federal-reserve-was-just-given-another-reason-not-to-raise-rates/"], ["published_at", Thu, 10 Sep 2015 16:22:47 UTC +00:00], ["title", "The Federal Reserve was just given another reason not to raise rates"], ["updated_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/499379"], ["json", "{\"title\":\"Bernie Sanders catches up to Hillary Clinton in Iowa\",\"link\":\"http://qz.com/499379/bernie-sanders-catches-up-to-hillary-clinton-in-iowa/\",\"description\":\"Bernie has gained a lot of ground against Hillary, with the two Democratic presidential candidates in a statistical dead heat in the pivotal early voting\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=499379\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"427\\\" src=\\\"https://qzprod.files.wordpress.com/2015/09/ap_806484673916.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 wp-post-image\\\" alt=\\\"No private email servers for this guy.\\\" /\\u003E\\u003Cp\\u003EBernie has gained a lot of ground against Hillary, with the two Democratic presidential candidates in a statistical dead heat in the pivotal early voting state of Iowa, according to a new poll by Quinnipiac University.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe senator from Vermont was the top choice of 41% of those polled. Former secretary of state Hillary Clinton, who has long been the frontrunner for the Democratic nomination, was preferred by 40%. \\u003Ca href=\\\"http://www.quinnipiac.edu/news-and-events/quinnipiac-university-poll/iowa/release-detail?ReleaseID=2277\\\" target=\\\"_blank\\\"\\u003EAccording to Quinnipiac\\u003C/a\\u003E—which polled 832 likely Democratic caucus participants with a 3.4% margin of error—more respondents perceive Sanders as \\u0026#8220;honest and trustworthy\\u0026#8221; than they do Clinton, who has struggled to shed persistent criticism about her use of private emails while at the State Department.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe survey was conducted at the beginning of September. When Quinnipiac conducted a similar assessment in Iowa in July, Clinton held a whopping 52-33% lead over Sanders. Even then, Clinton\\u0026#8217;s campaign was \\u003Ca href=\\\"http://www.nytimes.com/2015/07/07/us/politics/hillary-clintons-team-is-wary-as-bernie-sanders-finds-footing-in-iowa.html?_r=0\\\"\\u003Ewary of Sanders\\u0026#8217; Iowan support\\u003C/a\\u003E.\\u003C/p\\u003E\\n\\u003Cp\\u003EIowa holds its first-in-the-nation caucuses—\\u003Ca href=\\\"https://en.wikipedia.org/wiki/Iowa_caucuses#Democratic_Party_process\\\"\\u003Ea complicated process\\u003C/a\\u003E to select delegates who support a given presidential candidate—on Feb. 1, and is then followed by the first US primary in New Hampshire on Feb. 9. Sanders, who hails from nearby Vermont, has \\u003Ca href=\\\"http://time.com/4024573/bernie-sanders-new-hampshire/\\\"\\u003Eestablished a small lead over Clinton\\u003C/a\\u003E there, as well.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe Sanders campaign strategy, \\u003Ca href=\\\"http://www.motherjones.com/politics/2015/06/bernie-sanders-plan-to-beat-hillary-clinton\\\" target=\\\"_blank\\\"\\u003Eaccording to his adviser Tad Devine\\u003C/a\\u003E, is to concentrate its efforts on winning two early states and then quickly mobilize around the rest of the country. The problem with that strategy, \\u003Ca href=\\\"http://fivethirtyeight.com/datalab/bernie-sanders-could-win-iowa-and-new-hampshire-then-lose-everywhere-else/\\\" target=\\\"_blank\\\"\\u003Eaccording to FiveThirtyEight\\u0026#8217;s Nate Silver\\u003C/a\\u003E, is that Iowa and New Hampshire Democratic voters are much more liberal and white than in the rest of the country, \\u0026#8220;and that’s the core of Sanders’s support.\\u0026#8221; So it\\u0026#8217;s totally possible, says Silver, that Sanders wins in Iowa and New Hampshire and then loses everywhere else.\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=499379\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"comments\":\"http://qz.com/499379/bernie-sanders-catches-up-to-hillary-clinton-in-iowa/#comments\",\"pubDate\":\"2015-09-10T11:51:22-04:00\",\"category\":\"2016\",\"guid\":\"http://qz.com/preview/499379\",\"dc_creator\":\"Svati Kirsten Narula\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2015/09/ap_806484673916.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"Bernie Sanders\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2015/09/ap_806484673916.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/499379/bernie-sanders-catches-up-to-hillary-clinton-in-iowa/"], ["published_at", Thu, 10 Sep 2015 15:51:22 UTC +00:00], ["title", "Bernie Sanders catches up to Hillary Clinton in Iowa"], ["updated_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/499262"], ["json", "{\"title\":\"The sexist laws that make work harder for women in almost every country\",\"link\":\"http://qz.com/499262/the-sexist-laws-that-make-work-harder-for-women-in-almost-every-country/\",\"description\":\"Twenty years ago, 189 countries signed a UN declaration pledging to promote \\u0026#8220;the advancement of women and the achievement of gender equality.\\u0026#8221; Today, a new\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=499262\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"360\\\" src=\\\"https://qzprod.files.wordpress.com/2015/09/rtx1pqcy.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 wp-post-image\\\" alt=\\\"Why is this taking so long?\\\" /\\u003E\\u003Cp\\u003ETwenty years ago, 189 countries signed a \\u003Ca href=\\\"http://www.unwomen.org/en/how-we-work/intergovernmental-support/world-conferences-on-women\\\"\\u003EUN declaration\\u003C/a\\u003E pledging to promote \\u0026#8220;the advancement of women and the achievement of gender equality.\\u0026#8221; Today, \\u003Ca href=\\\"http://www.worldbank.org/en/news/press-release/2015/09/09/despite-progress-laws-restricting-economic-opportunity-for-women-are-widespread-globally-says-wbg-report\\\"\\u003Ea new report\\u003C/a\\u003E details how far we are from reaching that goal, particularly in the workplace.\\u003C/p\\u003E\\n\\u003Cp\\u003EWomen face legal job restrictions in at least 150 countries, according to the World Bank. These barriers to work have far-reaching consequences on not only women, but their children, communities, and national economies.\\u003C/p\\u003E\\n\\u003Cp\\u003EFully 90% of countries have at least one law restricting women\\u0026#8217;s economic opportunities, the World Bank has found. Below are a few of the most egregious—mapped.\\u003C/p\\u003E\\n\\u003Ch2\\u003E\\u003Cstrong\\u003EWhat jobs can women do?\\u003C/strong\\u003E\\u003C/h2\\u003E\\n\\u003Cp\\u003ESome 100 countries prevent women from doing certain types of jobs to prevent them from entering \\u0026#8220;unsuitable\\u0026#8221; sectors:\\u003C/p\\u003E\\n\\u003Cfigure id=\\\"image-499396\\\" class=\\\"inline-image  aligncenter zoomable size-medium\\\"\\u003E\\u003Cimg src=\\\"https://qzprod.files.wordpress.com/2015/09/countries-where-women-can-t-do-the-same-jobs-as-men_mapbuilder.png?w=640\\\" data-retina=\\\"https://qzprod.files.wordpress.com/2015/09/countries-where-women-can-t-do-the-same-jobs-as-men_mapbuilder.png?w=1024\\\" alt=\\\"\\\" title=\\\"\\\"/\\u003E\\u003C/figure\\u003E\\n\\u003Cp\\u003EIn Russia, for example, women are prevented from doing 456 jobs, which include being a train driver. What\\u0026#8217;s more, in 18 countries—including Cameroon and Yemen—husbands can legally prevent their wives from working at all.\\u003C/p\\u003E\\n\\u003Ch2\\u003E\\u003Cstrong\\u003ECan women work at night?\\u003C/strong\\u003E\\u003C/h2\\u003E\\n\\u003Cp\\u003ESome countries impose gender-based restrictions on working hours, with women forbidden from working the same night hours as men in 29 countries:\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cimg class=\\\"size-medium-desktop wp-image-499408 aligncenter\\\" src=\\\"https://qzprod.files.wordpress.com/2015/09/countries-where-women-can-t-work-the-same-night-hours-as-men_mapbuilder.png?w=640\\u0026#038;h=360\\\" alt=\\\"Countries-where-women-can-t-work-the-same-night-hours-as-men_mapbuilder\\\" width=\\\"640\\\" height=\\\"360\\\" /\\u003E\\u003C/p\\u003E\\n\\u003Ch2\\u003E\\u003Cstrong\\u003ECan an employer refuse to hire women?\\u003C/strong\\u003E\\u003C/h2\\u003E\\n\\u003Cp\\u003EMore than 100 countries do not have laws that prevent gender-based discrimination in hiring practices. Predictably, there is a positive relationship between prohibitions on discrimination and women\\u0026#8217;s employment relative to men\\u0026#8217;s, the World Bank says.\\u003C/p\\u003E\\n\\u003Cfigure id=\\\"image-499543\\\" class=\\\"inline-image  aligncenter zoomable size-medium\\\"\\u003E\\u003Cimg src=\\\"https://qzprod.files.wordpress.com/2015/09/countries-where-gender-discrimination-in-hiring-isn-t-outlawed_mapbuilder.png?w=640\\\" data-retina=\\\"https://qzprod.files.wordpress.com/2015/09/countries-where-gender-discrimination-in-hiring-isn-t-outlawed_mapbuilder.png?w=1024\\\" alt=\\\"\\\" title=\\\"\\\"/\\u003E\\u003C/figure\\u003E\\n\\u003Ch2\\u003E\\u003Cstrong\\u003ECan a woman get fired for being pregnant?\\u003C/strong\\u003E\\u003C/h2\\u003E\\n\\u003Cp\\u003EThe vast majority of countries have legislation in place to prevent employers from firing women simply for being pregnant, but there are 26 countries where this wasn\\u0026#8217;t the case:\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cimg class=\\\"size-medium-desktop wp-image-499425 aligncenter\\\" src=\\\"https://qzprod.files.wordpress.com/2015/09/countries-where-dismissal-of-pregnant-workers-is-allowed_mapbuilder-3.png?w=640\\u0026#038;h=360\\\" alt=\\\"Countries-where-dismissal-of-pregnant-workers-is-allowed_mapbuilder (3)\\\" width=\\\"640\\\" height=\\\"360\\\" /\\u003E\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=499262\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"comments\":\"http://qz.com/499262/the-sexist-laws-that-make-work-harder-for-women-in-almost-every-country/#comments\",\"pubDate\":\"2015-09-10T11:45:40-04:00\",\"category\":\"Uncategorized\",\"guid\":\"http://qz.com/preview/499262\",\"dc_creator\":\"Aamna Mohdin\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2015/09/rtx1pqcy.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"tiring-work\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2015/09/rtx1pqcy.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/499262/the-sexist-laws-that-make-work-harder-for-women-in-almost-every-country/"], ["published_at", Thu, 10 Sep 2015 15:45:40 UTC +00:00], ["title", "The sexist laws that make work harder for women in almost every country"], ["updated_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/498813"], ["json", "{\"title\":\"To beat ISIL, the US needs to know it\\u0026#8217;s engaged in \\u0026#8220;a different kind of war—a war of the imagination”\",\"link\":\"http://qz.com/498813/to-beat-isil-the-us-needs-to-know-its-engaged-in-a-different-kind-of-war-a-war-of-the-imagination/\",\"description\":\"How do you defeat ISIL? I recently asked Reza Aslan, the popular and controversial scholar of religion and best-selling author, to try to answer this\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=498813\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"427\\\" src=\\\"https://qzprod.files.wordpress.com/2015/09/rtr43j48.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 wp-post-image\\\" alt=\\\"Not your grandfather\\u0026#039;s war.\\\" /\\u003E\\u003Cp\\u003EHow do you defeat ISIL?\\u003C/p\\u003E\\n\\u003Cp\\u003EI recently asked \\u003Ca href=\\\"http://rezaaslan.com\\\"\\u003EReza Aslan\\u003C/a\\u003E, the popular and controversial scholar of religion and best-selling author, to try to answer this simple question.\\u003C/p\\u003E\\n\\u003Cp\\u003ESo far, the international community appears stymied in their efforts. A US-led international coalition has carried out \\u003Ca href=\\\"http://www.thedailybeast.com/articles/2015/09/04/u-s-to-admit-killing-more-civilians-in-isis-strikes.html\\\"\\u003Eapproximately 6,500 strikes\\u003C/a\\u003E against ISIL since last August, yet despite the bombardment ISIL continues its march of terror through Iraq and Syria. In May, ISIL executed close to 250 people as it took control of the ancient Syrian city of Palmyra. Recently, extremists \\u003Ca href=\\\"http://www.bbc.com/news/world-middle-east-34111092\\\"\\u003Eblew up Palmyra’s 2,000-year-old Temple of Bel. \\u003C/a\\u003E\\u003C/p\\u003E\\n\\u003Cp\\u003EAslan told Quartz that it’s not surprising that efforts to defeat ISIL with traditional military and weapons are proving difficult. ISIL, according to Aslan, is “engaged in is a different kind of war—a war of the imagination.”\\u003C/p\\u003E\\n\\u003Cp\\u003EIndeed, according to Aslan the true theater of war for ISIL is not on earth, but in the heavens. “It’s not about armies and nations. It’s about the demons of darkness and the angels of light. In these kinds of conflict there is no grey area.”\\u003C/p\\u003E\\n\\u003Cdiv class=\\\"embed-soundcloud\\\"\\u003E\\u003Ciframe width=\\\"500\\\" height=\\\"400\\\" scrolling=\\\"no\\\" frameborder=\\\"no\\\" src=\\\"https://w.soundcloud.com/player/?visual=true\\u0026#038;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F223123978\\u0026#038;show_artwork=true\\u0026#038;maxwidth=500\\u0026#038;maxheight=750\\\"\\u003E\\u003C/iframe\\u003E\\u003C/div\\u003E\\n\\u003Cp\\u003EThis simplistic binary of “good versus evil”—sanctioned by a perverse interpretation of religion —explains how ISIL’s barbaric violence has captured the attention of individuals like 24-year-old \\u003Ca href=\\\"http://www.reuters.com/article/2015/07/01/us-tunisia-security-idUSKCN0PB4VK20150701\\\"\\u003ESaif al-Deen al-Rezgui, who killed 38 people and wounded 39 others in a brazen attack on a Tunisian seaside resort \\u003C/a\\u003Ein June. Aslan believes extremists like al-Rezgui can “slaughter women, children, babies, because as far as they are concerned there are only two sides to this conflict: you are either on the side of God, (or) if you’re not on the side of God, then by definition, you’re on the side of the devil\\u0026#8230; and anything goes.”\\u003C/p\\u003E\\n\\u003Cp\\u003EThis “anything goes” philosophy of mass carnage includes targeted killings of religious minorities, especially Shia Muslims. In late June, a week after Kuwaiti authorities apprehended a cell of 12 ISIL terrorists, a bomb blast at a Kuwait City mosque \\u003Ca href=\\\"http://www.thedailybeast.com/articles/2015/06/26/isis-hits-shia-mosque-in-kuwait.html\\\"\\u003Ekilled 28 Shia worshippers\\u003C/a\\u003E during Friday prayers. However, Aslan cautions against labeling this a purely sectarian conflict. “Don’t think of it as sectarianism, think of it as a kind of radical extremist puritanism that has run amok,” he urges.\\u003C/p\\u003E\\n\\u003Cp\\u003EISIL “wants to return to some kind of pure, unadulterated and frankly totally imaginary past. So obviously, the Shia is the most recognizable community that rejects this kind of Sunni Wahhabist puritanism. But it’s not just the Shia, it’s Sufis. It’s essentially any kind Muslim that does not share this kind of puritanical worldview. All of them are considered enemy.”\\u003C/p\\u003E\\n\\u003Cp\\u003EThe problem then, is whether anyone—including the US—can truly win a cosmic war. The answer, according to Aslan, is no.\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cspan class=\\\"pull-quote\\\"\\u003E\\u003Cspan class=\\\"quote-line\\\"\\u003E\\u0026nbsp;\\u003C/span\\u003E\\u003Cspan\\u003EISIL “wants to return to some kind of pure, unadulterated and frankly totally imaginary past.\\u0026#8221; \\u003C/span\\u003E\\u003Cspan class=\\\"quote-line\\\"\\u003E\\u0026nbsp;\\u003C/span\\u003E\\u003C/span\\u003E“That’s the problem. If the war is about the fight between good and evil, if it\\u0026#8217;s about your very sense of self in an indeterminate world—those kinds of stakes are \\u003Cem\\u003Eunlosable\\u003C/em\\u003E. You can\\u0026#8217;t lose a conflict when what’s at stake is your very sense of self. But you also can’t win a conflict like that because what you’re fighting for is the triumph of good over evil—that isn’t happening in our lifetime. Which is why we have to remember it’s not about land for these guys. Even calling them the Islamic State is a misnomer, because they aren’t interested in statehood, they aren\\u0026#8217;t interested in nationality, they have no interest in borders.”\\u003C/p\\u003E\\n\\u003Cp\\u003EDespite the challenges, Aslan does believe the US military has a responsibility to put a stop to ISIL’s “genocidal campaign across the Middle East.” However, Aslan says the US cannot win by engaging in an ideological battle. For this reason, Aslan applauds American president Barack Obama for ignoring the \\u003Ca href=\\\"http://thehill.com/blogs/ballot-box/presidential-races/241566-huckabee-we-are-at-war-with-radical-islam\\\"\\u003Ecalls of many conservative politicians \\u003C/a\\u003Eto label the fight against ISIL as a fight against “radical Islam.” But, Aslan adds, “[ISIL’s fighters] are actually Muslims.”\\u003C/p\\u003E\\n\\u003Cp\\u003EEven though most practicing Muslims take great offense to comparisons between ISIL’s form of Islam and their own religion, Aslan himself defines a Muslim as “anyone who says he is a Muslim. That might make you uncomfortable, but it is also a fact. They say they are acting in the name of Islam, and we can’t ignore that. We have to take that seriously \\u0026#8230; They are a cancer in our midst and you can’t ignore a cancer.”\\u003C/p\\u003E\\n\\u003Cp\\u003EAt the same time, however, precision of language is required when labeling terrorists, something Aslan says America has repeatedly struggled with. “Look, if we haven’t figured this out already, terrorism is a meaningless word,” says Aslan. “The word ‘terrorist’ says much more about the person using the word then the person being described. At this point, it’s become very clear that it’s just become a word about ideology”—and Muslims.\\u003C/p\\u003E\\n\\u003Cp\\u003EAslan can effortlessly rattle off examples of white men whose crimes fit the definition but were no branded terrorists in the US, from Andrew Joseph Stack, who \\u003Ca href=\\\"http://www.theatlantic.com/politics/archive/2013/05/remember-when-andrew-joseph-stack-flew-a-plane-into-a-texas-irs-building/275887/\\\"\\u003Eflew his plane into an IRS building\\u003C/a\\u003E, to white supremacist Wade Michael Page, who \\u003Ca href=\\\"https://www.splcenter.org/fighting-hate/intelligence-report/2012/sikh-temple-killer-wade-michael-page-radicalized-army\\\"\\u003Ekilled six worshippers at a Sikh temple\\u003C/a\\u003E. Most notable recently of course is Dylan Roof, who \\u003Ca href=\\\"https://theintercept.com/2015/07/22/department-justice-didnt-charge-dylan-roof-domestic-terrorism/\\\"\\u003Ekilled nine black churchgoers \\u003C/a\\u003Eat the historic Emanuel African Methodist Episcopal Church in Charleston, South Carolina, in July 2015.\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cspan class=\\\"pull-quote\\\"\\u003E\\u003Cspan class=\\\"quote-line\\\"\\u003E\\u0026nbsp;\\u003C/span\\u003E\\u003Cspan\\u003E“The word ‘terrorist’ says much more about the person using the word then the person being described.\\u0026#8221; \\u003C/span\\u003E\\u003Cspan class=\\\"quote-line\\\"\\u003E\\u0026nbsp;\\u003C/span\\u003E\\u003C/span\\u003EThe reluctance by some Americans to acknowledge Roof’s act as an act of terror signifies a “serious problem,” according to Aslan. “The problem is we are just racist. We are a country full of racists.” For further proof, Aslan points to the case of Robert Doggart, a Christian pastor from Tennessee, \\u003Ca href=\\\"http://www.huffingtonpost.com/2015/07/07/robert-doggart-indicted_n_7744168.html\\\"\\u003Ewho was indicted in July\\u003C/a\\u003E for allegedly plotting to massacre Muslims in New York State. Doggart had initially been released from jail and put on house arrest.\\u003Cu\\u003E \\u003C/u\\u003EAn incredulous Aslan offers a thought experiment: “Let’s pretend he’s not a Christian pastor from Tennessee trying to kill Muslims in New York. Let’s pretend he’s a Muslim imam from New York City trying to kill Christians in Tennessee. \\u003Cem\\u003EIt would be the sole topic of conversation in this country\\u003C/em\\u003E. And yet—have you heard of Robert Doggart?”\\u003C/p\\u003E\\n\\u003Cp\\u003EFor sake of fairness and uniformity (and because I, in fact, had heard of Doggart), I pressed Aslan to create a modern definition of terrorism, something that would apply regardless of skin color.\\u003C/p\\u003E\\n\\u003Cp\\u003E“Any individual, institution, organization or state that haphazardly targets civilians is accused of, stands accused of terrorism,” Aslan said. “That includes Hamas, it includes the State of Israel, it includes the United States, it includes Dylan Roof, it includes ISIL. Any individual, organization or state that haphazardly targets civilians—period—is accused of terrorism. It’s as simple as that.”\\u003C/p\\u003E\\n\\u003Cp\\u003EIf only it were that simple.\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cem\\u003EFollow Wajahat on Twitter at \\u003Ca class=\\\"ProfileHeaderCard-screennameLink u-linkComplex js-nav\\\" href=\\\"https://twitter.com/WajahatAli\\\"\\u003E@\\u003Cspan class=\\\"u-linkComplex-target\\\"\\u003EWajahatAli\\u003C/span\\u003E\\u003C/a\\u003E. We welcome your comments at \\u003Ca href=\\\"mailto:ideas@qz.com\\\"\\u003Eideas@qz.com\\u003C/a\\u003E.\\u003C/em\\u003E\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=498813\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"comments\":\"http://qz.com/498813/to-beat-isil-the-us-needs-to-know-its-engaged-in-a-different-kind-of-war-a-war-of-the-imagination/#comments\",\"pubDate\":\"2015-09-10T11:40:38-04:00\",\"category\":\"Uncategorized\",\"guid\":\"http://qz.com/preview/498813\",\"dc_creator\":\"Wajahat Ali\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2015/09/rtr43j48.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"Resident of Tabqa city touring the streets on a motorcycle waves Islamist flag in celebration after Islamic State militants took over Tabqa air base, in nearby Raqqa city\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2015/09/rtr43j48.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/498813/to-beat-isil-the-us-needs-to-know-its-engaged-in-a-different-kind-of-war-a-war-of-the-imagination/"], ["published_at", Thu, 10 Sep 2015 15:40:38 UTC +00:00], ["title", "To beat ISIL, the US needs to know it&#8217;s engaged in &#8220;a different kind of war—a war of the imagination”"], ["updated_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/498531"], ["json", "{\"title\":\"Video: How Hollywood is ignoring the numbers that could make it richer\",\"link\":\"http://qz.com/498531/video-how-hollywood-is-ignoring-the-numbers-that-could-make-it-richer/\",\"description\":\"Now that summer’s over, it’s official: Jurassic World wasn’t just the biggest movie of the season; it’s the biggest summer movie of all time. But\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=498531\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"427\\\" src=\\\"https://qzprod.files.wordpress.com/2015/09/jurassic-world-blu-ray-dvd-2424_d012_00083r_rgb.jpeg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 wp-post-image\\\" alt=\\\"Even I, a manly dude on a motorcycle, may not be able to save the film industry.\\\" /\\u003E\\u003Cp\\u003E\\u003Cspan class='embed-youtube' style='text-align:center; display: block;'\\u003E\\u003Ciframe class='youtube-player' type='text/html' width='640' height='390' src='http://www.youtube.com/embed/2wm_qVRBRE0?version=3\\u0026#038;rel=1\\u0026#038;fs=1\\u0026#038;showsearch=0\\u0026#038;showinfo=1\\u0026#038;iv_load_policy=1\\u0026#038;wmode=transparent' frameborder='0' allowfullscreen='true'\\u003E\\u003C/iframe\\u003E\\u003C/span\\u003E\\u003C/p\\u003E\\n\\u003Cp\\u003ENow that summer’s over, it’s official: \\u003Cem\\u003EJurassic World\\u003C/em\\u003E wasn’t just the biggest movie of the season; it’s \\u003Ca href=\\\"http://www.boxofficemojo.com/alltime/world/\\\"\\u003Ethe biggest summer movie\\u003C/a\\u003E of all time.\\u003C/p\\u003E\\n\\u003Cp\\u003EBut \\u003Cem\\u003EJurassic World\\u003C/em\\u003E’s box office success belies a different trend: Hollywood is actually \\u003Ca href=\\\"https://atlas.qz.com/charts/V1kedijq\\\"\\u003Elosing revenue\\u003C/a\\u003E in the US. And \\u003Cem\\u003EJurassic World\\u003C/em\\u003E, which was criticized for its portrayal of women, may not be the best model for the film industry’s way forward.\\u003C/p\\u003E\\n\\u003Cp\\u003EIn this video, \\u003Ca href=\\\"http://qz.com/475528/hollywood-isnt-even-trying-to-include-more-women-new-data-make-it-clear/\\\"\\u003Ewe crunch the data\\u003C/a\\u003E and look at the possibility that Hollywood’s lack of gender inclusivity isn’t just incidental to the film industry’s falling revenue—it could actually be one of its causes.\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=498531\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"comments\":\"http://qz.com/498531/video-how-hollywood-is-ignoring-the-numbers-that-could-make-it-richer/#comments\",\"pubDate\":\"2015-09-10T11:10:43-04:00\",\"category\":\"Glass\",\"guid\":\"http://qz.com/preview/498531\",\"dc_creator\":\"Adam Freelander\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2015/09/jurassic-world-blu-ray-dvd-2424_d012_00083r_rgb.jpeg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"Chris Pratt in Jurassic World\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2015/09/jurassic-world-blu-ray-dvd-2424_d012_00083r_rgb.jpeg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/498531/video-how-hollywood-is-ignoring-the-numbers-that-could-make-it-richer/"], ["published_at", Thu, 10 Sep 2015 15:10:43 UTC +00:00], ["title", "Video: How Hollywood is ignoring the numbers that could make it richer"], ["updated_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/498992"], ["json", "{\"title\":\"National Geographic\\u0026#8217;s new Fox partnership is good for the magazine, and maybe the planet\",\"link\":\"http://qz.com/498992/national-geographics-new-fox-partnership-is-good-for-the-magazine-and-maybe-the-planet/\",\"description\":\"Fox News is about to become a sister company to National Geographic, the glossy magazine of the National Geographic Society. The $725 million deal creates\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=498992\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"361\\\" src=\\\"https://qzprod.files.wordpress.com/2015/09/natl-geo-cover.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 wp-post-image\\\" alt=\\\"This doesn\\u0026#039;t have to be a catastrophe.\\\" /\\u003E\\u003Cp\\u003EFox News is about to become a sister company to National Geographic, the glossy magazine of the National Geographic Society. The \\u003Ca href=\\\"http://bigstory.ap.org/article/c29afbb5b1d543beb4c21c0ec5d83ad0/national-geographic-sells-majority-media-business-fox\\\"\\u003E$725 million deal\\u003C/a\\u003E creates an unlikely pairing: a magazine that has promoted environmental conservation since the 1800s, joined to one of the \\u003Ca href=\\\"http://www.theguardian.com/environment/climate-consensus-97-per-cent/2015/aug/17/fox-news-inner-struggle-with-climate-misinformation\\\"\\u003Edriving forces\\u003C/a\\u003E behind climate change denial in the US.\\u003C/p\\u003E\\n\\u003Cp\\u003EIt shouldn\\u0026#8217;t be a surprise that the deal has \\u003Ca href=\\\"http://boingboing.net/2015/09/09/rupert-murdoch-just-bought-nat.html\\\"\\u003Einspired some hand-wringing and criticism.\\u003C/a\\u003E\\u003C/p\\u003E\\n\\u003Cdiv class=\\\"embed-twitter\\\"\\u003E\\n\\u003Cblockquote class=\\\"twitter-tweet\\\" \\u003E\\n\\u003Cp lang=\\\"en\\\" dir=\\\"ltr\\\"\\u003EThat sound you hear? 100k hearts breaking. \\u003Ca href=\\\"https://twitter.com/NatGeo\\\"\\u003E@NatGeo\\u003C/a\\u003E sold to Murdoch after 127yrs of nonprofit science journalism \\u003Ca href=\\\"https://twitter.com/hashtag/WHY?src=hash\\\"\\u003E#WHY\\u003C/a\\u003E \\u003Ca href=\\\"https://t.co/YpCWfLpdOV\\\"\\u003Ehttps://t.co/YpCWfLpdOV\\u003C/a\\u003E\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u0026mdash; Shannon Wianecki (@swianecki) \\u003Ca href=\\\"https://twitter.com/swianecki/status/641717697537900544\\\"\\u003ESeptember 9, 2015\\u003C/a\\u003E\\u003C/p\\u003E\\u003C/blockquote\\u003E\\n\\u003C/div\\u003E\\n\\u003Cp\\u003EIn the deal, Rupert Murdoch\\u0026#8217;s 21st Century Fox—which owns the 20th Century Fox movie studio, Fox television network, and the conservative Fox News Channel—will take a majority stake in National Geographic magazine and other media properties, expanding on an existing TV partnership. The new venture will transform the not-for-profit publication into a for-profit company that will be 73% owned by 21st Century Fox, and run by a board split between the two partners.\\u003C/p\\u003E\\n\\u003Cp\\u003ERupert, 84, is a self-described \\u0026#8220;climate change skeptic.\\u0026#8221;\\u003C/p\\u003E\\n\\u003Cdiv class=\\\"embed-twitter\\\"\\u003E\\n\\u003Cblockquote class=\\\"twitter-tweet\\\" \\u003E\\n\\u003Cp lang=\\\"en\\\" dir=\\\"ltr\\\"\\u003EA climate change skeptic not a denier. Sept UN meets in NY with endless alarmist nonsense from u know whom!  Pessimists always seen as sages\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u0026mdash; Rupert Murdoch  (@rupertmurdoch) \\u003Ca href=\\\"https://twitter.com/rupertmurdoch/status/636740873401700352\\\"\\u003EAugust 27, 2015\\u003C/a\\u003E\\u003C/p\\u003E\\u003C/blockquote\\u003E\\n\\u003C/div\\u003E\\n\\u003Cp\\u003EBut before they despair, critics of the deal might want to ponder a few things. Although Rupert is the executive co-chairman of 21st Century Fox, this summer he made his son James \\u003Ca href=\\\"http://www.theguardian.com/media/2015/jun/16/james-murdoch-21st-century-fox-chief-executive\\\"\\u003Echief executive of the company\\u003C/a\\u003E, part of Rupert\\u0026#8217;s process of handing the reins to the next generation.\\u003C/p\\u003E\\n\\u003Cp\\u003EAccording to a 2009 interview in the Guardian, James proudly \\u003Ca href=\\\"http://www.theguardian.com/lifeandstyle/2009/jun/07/james-murdoch\\\"\\u003Edrives a Prius,\\u003C/a\\u003E and he preaches the necessity of \\u0026#8220;basic science literacy\\u0026#8221; to address climate change now, when it is \\u0026#8220;crunch time.\\u0026#8221;\\u003C/p\\u003E\\n\\u003Cp\\u003EHis wife, Kathryn, is an environmentalist who worked with the Environmental Defense Fund and the Clinton Climate Initiative. Together, they\\u0026#8217;ve founded the \\u003Ca href=\\\"http://www.qdvm.org/#who-we-are\\\"\\u003EQuadrivium Foundation\\u003C/a\\u003E, a non-profit that works on sustainable fishing, among other causes.\\u003C/p\\u003E\\n\\u003Cfigure id=\\\"image-499412\\\" class=\\\"inline-image  aligncenter zoomable size-medium\\\"\\u003E\\u003Cimg src=\\\"https://qzprod.files.wordpress.com/2015/09/james-and-kathryn-murdoch.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=640\\\" data-retina=\\\"https://qzprod.files.wordpress.com/2015/09/james-and-kathryn-murdoch.jpg?quality=80\\u0026strip=all\\u0026w=1024\\\" alt=\\\"\\\" title=\\\"James and Kathryn Murdoch\\\"/\\u003E\\u003Cfigcaption class=\\\"inline-image-caption\\\"\\u003E\\u003Ci class=\\\"icon-camera\\\"\\u003E\\u003C/i\\u003EJames and Kathryn Murdoch\\u003Cspan class=\\\"inline-image-credit\\\"\\u003E(Reuters/Mike Blake)\\u003C/span\\u003E\\u003C/figcaption\\u003E\\u003C/figure\\u003E\\n\\u003Cp\\u003EBeing a good conservative means being a good environmentalist, James also \\u003Ca href=\\\"http://www.washingtonpost.com/wp-dyn/content/article/2009/12/03/AR2009120303698.html\\\"\\u003Ewrote in a 2009 Washington Post\\u003C/a\\u003E op-ed:\\u003C/p\\u003E\\n\\u003Cblockquote\\u003E\\u003Cp\\u003EConservatives have a robust tradition of principled concern for the environment. It was, after all, \\u003Ca href=\\\"http://www.nps.gov/history/history/hisnps/NPSHistory/teddy.htm\\\" target=\\\"\\\"\\u003ETeddy Roosevelt\\u003C/a\\u003E who created five national parks and signed the Antiquities Act. It was Richard Nixon who established the Environmental Protection Agency, and George H.W. Bush who ushered in one of the greatest environmental success stories, the 1990 cap-and-trade plan to take on acid rain.\\u003C/p\\u003E\\u003C/blockquote\\u003E\\n\\u003Cp\\u003EJames\\u0026#8217;s new job could usher in a new type of \\u003Ca href=\\\"http://www.huffingtonpost.com/s-kumar/why-rupert-murdochs-exit-_b_7565654.html\\\"\\u003Eclimate change coverage for Fox News\\u003C/a\\u003E, as the Huffington Post pointed out earlier this year. The nearly $1 billion investment in National Geographic might signal 21st Century Fox\\u0026#8217;s first steps in that direction.\\u003C/p\\u003E\\n\\u003Cp\\u003EIf so, there\\u0026#8217;s a lot of work to do. On-air Fox News commentators and guests have called climate change everything from a hoax that denies \\u003Ca href=\\\"https://www.youtube.com/watch?v=PIdyPdRrgKo\\\"\\u003EAmericans their freedom\\u003C/a\\u003E to a \\u003Ca href=\\\"https://www.youtube.com/watch?v=xi1Y9VSNzt0\\\"\\u003Epolitically-created fraud\\u003C/a\\u003E.\\u003C/p\\u003E\\n\\u003Cp\\u003EFox News and other conservative news outlet\\u0026#8217;s denigration of mainstream science, and support of fringe, often industry-backed experts and studies has also helped create a distrust of scientists and climate change realities, a \\u003Ca href=\\\"http://sciencepolicy.colorado.edu/about_us/meet_us/max_boykoff/readings/hmielowski_2013.pdf\\\"\\u003Euniversity study found\\u003C/a\\u003E (pdf).\\u003C/p\\u003E\\n\\u003Cp\\u003ENational Geographic, on the other hand, has scooped up \\u003Ca href=\\\"http://www.nationalgeographic.com/mediakit/pdf/ng-magazine/Awards_Recognition.pdf\\\"\\u003Edozens of major awards\\u003C/a\\u003E (pdf) on its \\u003Ca href=\\\"http://environment.nationalgeographic.com/environment/global-warming/signs-from-earth/\\\"\\u003Eextensive work\\u003C/a\\u003E related to the perils of a warming planet. Like many print properties, it has struggled to adapt to the digital era—circulation has fallen over 20% in the past three years, as \\u003Ca href=\\\"http://www.washingtonian.com/blogs/capitalcomment/media/rupert-murdoch-just-bought-national-geographic-heres-what-hes-getting.php\\\"\\u003Ethe Washingtonian reports\\u003C/a\\u003E. Still, it has over 3 million paid subscribers, as well as a popular Instagram account and $55 million in annual revenue.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe new deal will allow the National Geographic Society to double its investments in science, research, and education, a statement \\u003Ca href=\\\"http://press.nationalgeographic.com/2015/09/09/national-geographic-society-21st-century-fox-agree-to-expand-partnership/\\\"\\u003Eabout the deal explains.\\u003C/a\\u003E In the same statement, James said, \\u0026#8220;We believe in the Society’s mission of bringing the world to audiences through science, education and exploration.\\u0026#8221;\\u003C/p\\u003E\\n\\u003Cp\\u003ENational Geographic\\u0026#8217;s millions of global fans are hoping he really means it.\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=498992\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"comments\":\"http://qz.com/498992/national-geographics-new-fox-partnership-is-good-for-the-magazine-and-maybe-the-planet/#comments\",\"pubDate\":\"2015-09-10T10:47:33-04:00\",\"category\":\"Uncategorized\",\"guid\":\"http://qz.com/preview/498992\",\"dc_creator\":\"Heather Timmons\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2015/09/natl-geo-cover.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"NATL GEO COVER\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2015/09/natl-geo-cover.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/498992/national-geographics-new-fox-partnership-is-good-for-the-magazine-and-maybe-the-planet/"], ["published_at", Thu, 10 Sep 2015 14:47:33 UTC +00:00], ["title", "National Geographic&#8217;s new Fox partnership is good for the magazine, and maybe the planet"], ["updated_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00]]
+  [1m[35m (3.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/498597"], ["json", "{\"title\":\"Before the war, Syria housed three times as many refugees as Europe now\",\"link\":\"http://qz.com/498597/before-the-war-syria-housed-three-times-as-many-refugees-as-europe-now/\",\"description\":\"The much-anticipated agreement about Europe\\u0026#8217;s refugee crisis, announced yesterday (Sept. 9) by European Commission president Jean-Claude Juncker, couldn\\u0026#8217;t have come sooner. Some 160,000 refugees with\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=498597\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"360\\\" src=\\\"https://qzprod.files.wordpress.com/2015/09/ap_973843800713.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 wp-post-image\\\" alt=\\\"Just the basics will do.\\\" /\\u003E\\u003Cp\\u003EThe much-anticipated agreement about Europe\\u0026#8217;s refugee crisis, announced yesterday (Sept. 9) by European Commission president Jean-Claude Juncker, couldn\\u0026#8217;t have come sooner.\\u003C/p\\u003E\\n\\u003Cp\\u003ESome 160,000 refugees with asylum status will be relocated from Italy, Greece, and Hungary to other member states using a \\u003Ca href=\\\"https://twitter.com/Refugees/status/641589629255294976?ref_src=twsrc%5Etfw\\\"\\u003Equota system\\u003C/a\\u003E based on the countries\\u0026#8217; respective population sizes, GDPs, and unemployment rates. Overall, about 450,000 refugees have asked for European asylum according to the latest official data.\\u003C/p\\u003E\\n\\u003Cp\\u003EThe plan is hardly impressive when compared to ongoing and past efforts to aid refugees by other countries. According to the UN Refugee Agency (UNHCR), in 2014 the vast majority of Syrian refugees, or 86% of them, were hosted in developing countries. The European effort is dwarfed by the numbers of migrants and refugees housed in Lebanon and Turkey:\\u003C/p\\u003E\\n\\u003Cdiv class=\\\"embed-twitter\\\"\\u003E\\n\\u003Cblockquote class=\\\"twitter-tweet\\\" \\u003E\\n\\u003Cp lang=\\\"en\\\" dir=\\\"ltr\\\"\\u003ENew data: \\u003Ca href=\\\"https://twitter.com/hashtag/Syria?src=hash\\\"\\u003E#Syria\\u003C/a\\u003E’s neighbours are buckling under the strain. Other countries must play their part in refugee crisis \\u003Ca href=\\\"http://t.co/MPelALFk4o\\\"\\u003Epic.twitter.com/MPelALFk4o\\u003C/a\\u003E\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u0026mdash; UN Refugee Agency (@Refugees) \\u003Ca href=\\\"https://twitter.com/Refugees/status/641589629255294976\\\"\\u003ESeptember 9, 2015\\u003C/a\\u003E\\u003C/p\\u003E\\u003C/blockquote\\u003E\\n\\u003C/div\\u003E\\n\\u003Cp\\u003EEurope\\u0026#8217;s efforts are also muted by Syria\\u0026#8217;s recent history of housing migrants. Before the civil war started in 2011, Syria\\u0026#8217;s \\u003Ca href=\\\"http://www.brookings.edu/research/papers/2007/06/11humanrights-al-khalidi\\\"\\u003Eopen borders policy\\u003C/a\\u003E, \\u003Ca href=\\\"http://www.irinnews.org/report/101007/turkey-introduces-tough-new-border-policies-for-syrians)\\\"\\u003Efollowed by other countries in the region\\u003C/a\\u003E (i.e. Turkey and Lebanon) made it the destination of hundreds of thousands of refugees, primarily from Iraq. At the end of 2010, according to UNHCR, \\u003Ca href=\\\"http://www.unhcr.org/4dfdbf50b.html\\\"\\u003Eover 1,300,000 refugees\\u003C/a\\u003E and asylum-seekers, of which 1 million were Iraqi, were housed in Syria—that\\u0026#8217;s over 6% of the country\\u0026#8217;s population at the time.\\u003C/p\\u003E\\n\\u003Cp\\u003EFor a sense of comparison, if Germany were to \\u003Ca href=\\\"http://www.bbc.co.uk/news/world-europe-34185353\\\"\\u003Eprovide asylum to 500,000\\u003C/a\\u003E refugees and asylum-seekers this year, it would amount to 0.6% of the country\\u0026#8217;s population. The 450,000 asylum requests Europe has received represents less than 0.1% of the continent\\u0026#8217;s population. If \\u003Ca href=\\\"//www.reuters.com/article/2015/09/09/us-europe-migrants-idUSKCN0R71EX20150909\\\"\\u003E850,000 people\\u003C/a\\u003E cross the sea between this year and next as predicted, that would represent roughly 0.15% of Europe\\u0026#8217;s population.\\u003C/p\\u003E\\n\\u003Cdiv class=\\\"atlas-chart\\\" data-id=\\\"EJ_cedYp\\\" data-width=\\\"640\\\" data-height=\\\"409\\\"\\u003E\\u003Cimg src=\\\"https://atlas.qz.com/i/atlas_EJ_cedYp.png\\\" style=\\\"max-width: 100%;\\\"\\u003E\\u003C/div\\u003E\\n\\u003Cp\\u003EIt\\u0026#8217;s worth noting that housing migrants in Europe is likely a more expensive endeavor than in, say, Syria, given the disparity in standards of living and socio-economic benefits available to residents. Refugees in Syria were not kept in camps\\u003Cstrong\\u003E, \\u003C/strong\\u003Ebut their \\u003Ca href=\\\"http://documents.wfp.org/stellent/groups/public/documents/ena/wfp119686.pdf\\\"\\u003Eliving conditions weren\\u0026#8217;t desirable\\u003C/a\\u003E (pdf, p.12-13). In European countries like Germany, refugees are being taken \\u003Ca href=\\\"http://www.voanews.com/content/reu-orderly-german-welcome-masks-chaos-for-refugees/2955138.html\\\"\\u003Einto reception centers\\u003C/a\\u003E and relocated to longer-term housing. Given the desperation of refugees in this crisis, it\\u0026#8217;s clear that just the basics will do.\\u003C/p\\u003E\\n\\u003Ch3\\u003E\\u003Cem\\u003ERead more of our \\u003Ca href=\\\"http://qz.com/re/refugee-crisis\\\"\\u003Ecoverage of the crisis\\u003C/a\\u003E.\\u003C/em\\u003E\\u003C/h3\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=498597\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"comments\":\"http://qz.com/498597/before-the-war-syria-housed-three-times-as-many-refugees-as-europe-now/#comments\",\"pubDate\":\"2015-09-10T10:40:36-04:00\",\"category\":\"Borders\",\"guid\":\"http://qz.com/preview/498597\",\"dc_creator\":\"Annalisa Merelli\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2015/09/ap_973843800713.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"AP_973843800713\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2015/09/ap_973843800713.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/498597/before-the-war-syria-housed-three-times-as-many-refugees-as-europe-now/"], ["published_at", Thu, 10 Sep 2015 14:40:36 UTC +00:00], ["title", "Before the war, Syria housed three times as many refugees as Europe now"], ["updated_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00], ["feed_id", 4], ["guid", "http://qz.com/preview/499383"], ["json", "{\"title\":\"Elon Musk proposed nuking Mars last night on Colbert\",\"link\":\"http://qz.com/499383/elon-musk-proposed-nuking-mars-last-night-on-colbert/\",\"description\":\"Elon Musk: Space visionary. Energy innovator. Galactic supervillain? The billionaire CEO of SpaceX and Tesla Motors appeared on the second episode of Stephen Colbert\\u0026#8217;s Late\\u0026#8230;\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=499383\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"content\":\"\",\"content_encoded\":\"\\u003Cimg width=\\\"640\\\" height=\\\"360\\\" src=\\\"https://qzprod.files.wordpress.com/2015/09/elon-musk-colbert.jpg?quality=80\\u0026amp;strip=all\\u0026amp;w=640\\\" class=\\\"attachment-medium_10 wp-post-image\\\" alt=\\\"Elon Musk Colbert\\\" /\\u003E\\u003Cp\\u003EElon Musk: Space visionary. Energy innovator. Galactic supervillain?\\u003C/p\\u003E\\n\\u003Cp\\u003EThe billionaire CEO of SpaceX and Tesla Motors appeared on the second episode of Stephen Colbert\\u0026#8217;s \\u003Cem\\u003ELate Show\\u003C/em\\u003E last night (Sept. 9) to discuss his various business ventures. Colbert asked him about his plan to send people to Mars, which Musk described as a \\u0026#8220;fixer-up\\u0026#8221; of a planet. That led to this exchange:\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u0026#8220;Eventually you can transform Mars into an Earthlike planet,\\u0026#8221; Musk said. \\u0026#8220;By warming it up.\\u0026#8221;\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u0026#8220;With a blanket?\\u0026#8221; Colbert asked.\\u003C/p\\u003E\\n\\u003Cp\\u003ENo, Stephen, not with a blanket. With a great number of thermonuclear bombs:\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cspan class='embed-youtube' style='text-align:center; display: block;'\\u003E\\u003Ciframe class='youtube-player' type='text/html' width='640' height='390' src='http://www.youtube.com/embed/gV6hP9wpMW8?version=3\\u0026#038;rel=1\\u0026#038;fs=1\\u0026#038;showsearch=0\\u0026#038;showinfo=1\\u0026#038;iv_load_policy=1\\u0026#038;wmode=transparent' frameborder='0' allowfullscreen='true'\\u003E\\u003C/iframe\\u003E\\u003C/span\\u003E\\u003C/p\\u003E\\n\\u003Cp\\u003EMusk has \\u003Ca href=\\\"http://aeon.co/magazine/technology/the-elon-musk-interview-on-mars/\\\"\\u003Epublicly supported this idea\\u003C/a\\u003E for a long time, but we\\u0026#8217;d wager it\\u0026#8217;s the first time anyone\\u0026#8217;s suggested it on a late-night talk show. The idea is that the nukes would melt the Mars\\u0026#8217; polar ice caps and kickstart a greenhouse effect—similar to the one we\\u0026#8217;re currently experiencing on Earth—that would quickly make the planet warmer.\\u003C/p\\u003E\\n\\u003Cp\\u003EHere\\u0026#8217;s famous physicist and futurist Michio Kaku giving a quick explanation:\\u003C/p\\u003E\\n\\u003Cp\\u003E\\u003Cspan class='embed-youtube' style='text-align:center; display: block;'\\u003E\\u003Ciframe class='youtube-player' type='text/html' width='640' height='390' src='http://www.youtube.com/embed/PrvhOepio4Q?version=3\\u0026#038;rel=1\\u0026#038;fs=1\\u0026#038;showsearch=0\\u0026#038;showinfo=1\\u0026#038;iv_load_policy=1\\u0026#038;wmode=transparent' frameborder='0' allowfullscreen='true'\\u003E\\u003C/iframe\\u003E\\u003C/span\\u003E\\u003C/p\\u003E\\n\\u003Cp\\u003EThere is some skepticism in the scientific community that nuking Mars would actually make it more hospitable. First, there\\u0026#8217;s the possibility that all the liquid water created as a result of the bombs would simply freeze again, leaving us right where we started. Second, it may not be a fantastic idea to introduce hundreds (or possibly thousands) of nuclear bombs worth of radiation into the Martian atmosphere. Even if that succeeded in warming the planet, the resulting radiation could make it inhospitable all over again.\\u003C/p\\u003E\\n\\u003Cp\\u003EWhat\\u0026#8217;s perhaps more notable than Musk revealing this plan on TV is the fact that Musk appeared on Colbert at all. Musk would have fit right in on Colbert\\u0026#8217;s previous show, Comedy Central\\u0026#8217;s \\u003Cem\\u003EThe Colbert Report \\u003C/em\\u003E(in fact, \\u003Ca href=\\\"http://www.cc.com/video-clips/hjiro1/the-colbert-report-elon-musk\\\"\\u003Ehe did\\u003C/a\\u003E), but entrepreneurs and tech titans aren\\u0026#8217;t typical guests on traditional late night network shows, like Colbert\\u0026#8217;s new gig at CBS. But Stephen Colbert is proving that he\\u0026#8217;s \\u003Ca href=\\\"http://qz.com/498277/watch-what-you-missed-from-stephen-colberts-zany-promising-late-show-debut/\\\"\\u003Enot going to be a typical late-night host\\u003C/a\\u003E, and Elon Musk is certainly not your typical entrepreneur.\\u003C/p\\u003E\\u003Cimg alt=\\\"\\\" border=\\\"0\\\" src=\\\"http://pixel.wp.com/b.gif?host=qz.com\\u0026#038;blog=39587363\\u0026#038;post=499383\\u0026#038;subd=qzprod\\u0026#038;ref=\\u0026#038;feed=1\\\" width=\\\"1\\\" height=\\\"1\\\" /\\u003E\",\"comments\":\"http://qz.com/499383/elon-musk-proposed-nuking-mars-last-night-on-colbert/#comments\",\"pubDate\":\"2015-09-10T10:39:16-04:00\",\"category\":\"Space Business\",\"guid\":\"http://qz.com/preview/499383\",\"dc_creator\":\"Adam Epstein\",\"media_content_url\":\"http://qzprod.files.wordpress.com/2015/09/elon-musk-colbert.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\",\"media_content_type\":\"html\",\"media_title\":\"Elon Musk Colbert\",\"media_thumbnail_url\":\"http://qzprod.files.wordpress.com/2015/09/elon-musk-colbert.jpg?quality=80\\u0026#038;strip=all\\u0026#038;w=150\"}"], ["link", "http://qz.com/499383/elon-musk-proposed-nuking-mars-last-night-on-colbert/"], ["published_at", Thu, 10 Sep 2015 14:39:16 UTC +00:00], ["title", "Elon Musk proposed nuking Mars last night on Colbert"], ["updated_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mEntry Load (2.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 4]]
+Completed 200 OK in 877ms (Views: 855.9ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/api/feeds/5" for 127.0.0.1 at 2015-09-10 12:26:10 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "5"]]
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-09-10 16:26:10.220967' WHERE "feeds"."id" = 5[0m
+  [1m[35m (0.6ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (1.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 5]]
+Completed 200 OK in 716ms (Views: 711.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-09-10 12:26:10 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-09-10 16:26:10.942256' WHERE "feeds"."id" = 1[0m
+  [1m[35m (0.6ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902370"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:26:10+00:00\",\"link\":\"http://example.com/test/1441902370\",\"description\":\"Ea anim commodo enim reprehenderit incididunt commodo sit velit officia irure adipisicing ea nisi.\",\"pubDate\":\"2015-09-10T12:26:10-04:00\",\"guid\":\"http://example.com/test/1441902370\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902370"], ["published_at", Thu, 10 Sep 2015 16:26:10 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:26:10+00:00"], ["updated_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902360"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:26:00+00:00\",\"link\":\"http://example.com/test/1441902360\",\"description\":\"Deserunt fugiat irure esse mollit magna commodo ullamco pariatur id labore nulla ipsum id consequat.\",\"pubDate\":\"2015-09-10T12:26:00-04:00\",\"guid\":\"http://example.com/test/1441902360\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902360"], ["published_at", Thu, 10 Sep 2015 16:26:00 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:26:00+00:00"], ["updated_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902350"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:25:50+00:00\",\"link\":\"http://example.com/test/1441902350\",\"description\":\"Ad nostrud esse et in laborum proident.\",\"pubDate\":\"2015-09-10T12:25:50-04:00\",\"guid\":\"http://example.com/test/1441902350\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902350"], ["published_at", Thu, 10 Sep 2015 16:25:50 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:25:50+00:00"], ["updated_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902340"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:25:40+00:00\",\"link\":\"http://example.com/test/1441902340\",\"description\":\"Minim laboris pariatur culpa sit in minim.\",\"pubDate\":\"2015-09-10T12:25:40-04:00\",\"guid\":\"http://example.com/test/1441902340\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902340"], ["published_at", Thu, 10 Sep 2015 16:25:40 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:25:40+00:00"], ["updated_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902330"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:25:30+00:00\",\"link\":\"http://example.com/test/1441902330\",\"description\":\"In elit laboris adipisicing quis non excepteur incididunt qui.\",\"pubDate\":\"2015-09-10T12:25:30-04:00\",\"guid\":\"http://example.com/test/1441902330\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902330"], ["published_at", Thu, 10 Sep 2015 16:25:30 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:25:30+00:00"], ["updated_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902320"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:25:20+00:00\",\"link\":\"http://example.com/test/1441902320\",\"description\":\"Veniam in elit aliquip esse velit ex non culpa ad aliquip quis fugiat aliquip.\",\"pubDate\":\"2015-09-10T12:25:20-04:00\",\"guid\":\"http://example.com/test/1441902320\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902320"], ["published_at", Thu, 10 Sep 2015 16:25:20 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:25:20+00:00"], ["updated_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902310"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:25:10+00:00\",\"link\":\"http://example.com/test/1441902310\",\"description\":\"Aliqua fugiat ullamco excepteur officia sunt culpa anim reprehenderit.\",\"pubDate\":\"2015-09-10T12:25:10-04:00\",\"guid\":\"http://example.com/test/1441902310\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902310"], ["published_at", Thu, 10 Sep 2015 16:25:10 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:25:10+00:00"], ["updated_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902300"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:25:00+00:00\",\"link\":\"http://example.com/test/1441902300\",\"description\":\"Sint officia qui et nisi occaecat labore.\",\"pubDate\":\"2015-09-10T12:25:00-04:00\",\"guid\":\"http://example.com/test/1441902300\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902300"], ["published_at", Thu, 10 Sep 2015 16:25:00 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:25:00+00:00"], ["updated_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902290"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:24:50+00:00\",\"link\":\"http://example.com/test/1441902290\",\"description\":\"Exercitation fugiat ullamco nostrud veniam ipsum occaecat ipsum adipisicing id.\",\"pubDate\":\"2015-09-10T12:24:50-04:00\",\"guid\":\"http://example.com/test/1441902290\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902290"], ["published_at", Thu, 10 Sep 2015 16:24:50 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:24:50+00:00"], ["updated_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902280"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:24:40+00:00\",\"link\":\"http://example.com/test/1441902280\",\"description\":\"Ullamco adipisicing aliqua incididunt elit amet enim aliqua ad esse id.\",\"pubDate\":\"2015-09-10T12:24:40-04:00\",\"guid\":\"http://example.com/test/1441902280\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902280"], ["published_at", Thu, 10 Sep 2015 16:24:40 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:24:40+00:00"], ["updated_at", Thu, 10 Sep 2015 16:26:11 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 1]]
+Completed 200 OK in 175ms (Views: 162.7ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/api/feeds/2" for 127.0.0.1 at 2015-09-10 12:27:03 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-09-10 16:27:03.589981' WHERE "feeds"."id" = 2[0m
+  [1m[35m (0.5ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 2]]
+Completed 200 OK in 271ms (Views: 267.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/feeds/5" for 127.0.0.1 at 2015-09-10 12:27:03 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "5"]]
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-09-10 16:27:03.866708' WHERE "feeds"."id" = 5[0m
+  [1m[35m (0.6ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 5]]
+Completed 200 OK in 603ms (Views: 599.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2015-09-10 12:27:04 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-09-10 16:27:04.474064' WHERE "feeds"."id" = 3[0m
+  [1m[35m (0.5ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 3]]
+Completed 200 OK in 172ms (Views: 169.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/feeds/4" for 127.0.0.1 at 2015-09-10 12:27:04 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-09-10 16:27:04.650328' WHERE "feeds"."id" = 4[0m
+  [1m[35m (0.6ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mEntry Load (2.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 4]]
+Completed 200 OK in 404ms (Views: 398.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-09-10 12:27:05 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-09-10 16:27:05.060795' WHERE "feeds"."id" = 1[0m
+  [1m[35m (0.6ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:27:05 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902420"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:27:00+00:00\",\"link\":\"http://example.com/test/1441902420\",\"description\":\"Reprehenderit in sunt officia eiusmod nisi nisi culpa ut esse amet aute.\",\"pubDate\":\"2015-09-10T12:27:00-04:00\",\"guid\":\"http://example.com/test/1441902420\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902420"], ["published_at", Thu, 10 Sep 2015 16:27:00 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:27:00+00:00"], ["updated_at", Thu, 10 Sep 2015 16:27:05 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:27:05 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902410"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:26:50+00:00\",\"link\":\"http://example.com/test/1441902410\",\"description\":\"Ut eu non elit laboris dolore et et.\",\"pubDate\":\"2015-09-10T12:26:50-04:00\",\"guid\":\"http://example.com/test/1441902410\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902410"], ["published_at", Thu, 10 Sep 2015 16:26:50 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:26:50+00:00"], ["updated_at", Thu, 10 Sep 2015 16:27:05 UTC +00:00]]
+  [1m[35m (2.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:27:05 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902400"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:26:40+00:00\",\"link\":\"http://example.com/test/1441902400\",\"description\":\"Mollit commodo velit amet quis dolore minim duis adipisicing duis tempor officia non labore.\",\"pubDate\":\"2015-09-10T12:26:40-04:00\",\"guid\":\"http://example.com/test/1441902400\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902400"], ["published_at", Thu, 10 Sep 2015 16:26:40 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:26:40+00:00"], ["updated_at", Thu, 10 Sep 2015 16:27:05 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:27:05 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902390"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:26:30+00:00\",\"link\":\"http://example.com/test/1441902390\",\"description\":\"Reprehenderit nostrud elit ex adipisicing enim do sunt.\",\"pubDate\":\"2015-09-10T12:26:30-04:00\",\"guid\":\"http://example.com/test/1441902390\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902390"], ["published_at", Thu, 10 Sep 2015 16:26:30 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:26:30+00:00"], ["updated_at", Thu, 10 Sep 2015 16:27:05 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:27:05 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902380"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:26:20+00:00\",\"link\":\"http://example.com/test/1441902380\",\"description\":\"Cillum duis do enim in anim irure pariatur.\",\"pubDate\":\"2015-09-10T12:26:20-04:00\",\"guid\":\"http://example.com/test/1441902380\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902380"], ["published_at", Thu, 10 Sep 2015 16:26:20 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:26:20+00:00"], ["updated_at", Thu, 10 Sep 2015 16:27:05 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mEntry Load (0.7ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 1]]
+Completed 200 OK in 605ms (Views: 594.5ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-10 12:27:10 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 343ms (Views: 342.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/utils/composite_view.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/feeds/feedIndexItem.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/feeds/feedIndex.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/views/feedIndex.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/views/feedIndexItem.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-09-10 12:27:11 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-09-10 12:27:22 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds/2" for 127.0.0.1 at 2015-09-10 12:27:27 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFeed Load (2.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEntry Load (5.8ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 2]]
+Completed 200 OK in 28ms (Views: 18.5ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/api/feeds/5" for 127.0.0.1 at 2015-09-10 12:27:27 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 5]]
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2015-09-10 12:27:28 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mEntry Load (0.7ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 3]]
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/feeds/4" for 127.0.0.1 at 2015-09-10 12:27:28 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mFeed Load (2.0ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mEntry Load (3.8ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 4]]
+Completed 200 OK in 29ms (Views: 21.4ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-09-10 12:27:28 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntry Load (0.8ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 1]]
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 304ms (Views: 303.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/utils/composite_view.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/feeds/feedIndex.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/feeds/feedIndexItem.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/views/feedIndex.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/assets/views/feedIndexItem.js?body=1" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-09-10 12:27:54 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-09-10 12:28:01 -0400
+Processing by Api::FeedsController#index as JSON
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds/2" for 127.0.0.1 at 2015-09-10 12:28:03 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFeed Load (3.7ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mSQL (2.8ms)[0m  UPDATE "feeds" SET "updated_at" = '2015-09-10 16:28:03.179325' WHERE "feeds"."id" = 2
+  [1m[36m (1.2ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 2]]
+Completed 200 OK in 274ms (Views: 263.2ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/api/feeds/5" for 127.0.0.1 at 2015-09-10 12:28:03 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "5"]]
+  [1m[35mSQL (0.7ms)[0m  UPDATE "feeds" SET "updated_at" = '2015-09-10 16:28:03.454512' WHERE "feeds"."id" = 5
+  [1m[36m (0.8ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 5]]
+Completed 200 OK in 877ms (Views: 871.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-09-10 12:28:04 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSQL (0.9ms)[0m  UPDATE "feeds" SET "updated_at" = '2015-09-10 16:28:04.335086' WHERE "feeds"."id" = 1
+  [1m[36m (0.6ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902480"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:28:00+00:00\",\"link\":\"http://example.com/test/1441902480\",\"description\":\"Nisi sunt cillum aliqua id incididunt deserunt occaecat adipisicing dolore laboris veniam exercitation.\",\"pubDate\":\"2015-09-10T12:28:00-04:00\",\"guid\":\"http://example.com/test/1441902480\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902480"], ["published_at", Thu, 10 Sep 2015 16:28:00 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:28:00+00:00"], ["updated_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902470"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:27:50+00:00\",\"link\":\"http://example.com/test/1441902470\",\"description\":\"Nisi veniam velit anim voluptate ut exercitation quis minim aute aute nisi cupidatat exercitation excepteur.\",\"pubDate\":\"2015-09-10T12:27:50-04:00\",\"guid\":\"http://example.com/test/1441902470\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902470"], ["published_at", Thu, 10 Sep 2015 16:27:50 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:27:50+00:00"], ["updated_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902460"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:27:40+00:00\",\"link\":\"http://example.com/test/1441902460\",\"description\":\"Veniam amet exercitation qui velit est minim enim enim eiusmod.\",\"pubDate\":\"2015-09-10T12:27:40-04:00\",\"guid\":\"http://example.com/test/1441902460\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902460"], ["published_at", Thu, 10 Sep 2015 16:27:40 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:27:40+00:00"], ["updated_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902450"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:27:30+00:00\",\"link\":\"http://example.com/test/1441902450\",\"description\":\"Consectetur sint pariatur ipsum pariatur voluptate cupidatat deserunt consequat qui ullamco occaecat labore quis.\",\"pubDate\":\"2015-09-10T12:27:30-04:00\",\"guid\":\"http://example.com/test/1441902450\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902450"], ["published_at", Thu, 10 Sep 2015 16:27:30 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:27:30+00:00"], ["updated_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902440"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:27:20+00:00\",\"link\":\"http://example.com/test/1441902440\",\"description\":\"Dolore sunt ad consectetur dolore non tempor sunt ipsum.\",\"pubDate\":\"2015-09-10T12:27:20-04:00\",\"guid\":\"http://example.com/test/1441902440\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902440"], ["published_at", Thu, 10 Sep 2015 16:27:20 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:27:20+00:00"], ["updated_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1441902430"], ["json", "{\"title\":\"Lorem ipsum 2015-09-10T16:27:10+00:00\",\"link\":\"http://example.com/test/1441902430\",\"description\":\"Cupidatat ex ea amet officia.\",\"pubDate\":\"2015-09-10T12:27:10-04:00\",\"guid\":\"http://example.com/test/1441902430\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1441902430"], ["published_at", Thu, 10 Sep 2015 16:27:10 UTC +00:00], ["title", "Lorem ipsum 2015-09-10T16:27:10+00:00"], ["updated_at", Thu, 10 Sep 2015 16:28:04 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mEntry Load (0.8ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 1]]
+Completed 200 OK in 563ms (Views: 553.2ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/feeds/4" for 127.0.0.1 at 2015-09-10 12:28:04 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mSQL (0.8ms)[0m  UPDATE "feeds" SET "updated_at" = '2015-09-10 16:28:04.903663' WHERE "feeds"."id" = 4
+  [1m[36m (0.5ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (2.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 4]]
+Completed 200 OK in 401ms (Views: 395.5ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/feeds/3" for 127.0.0.1 at 2015-09-10 12:28:05 -0400
+Processing by Api::FeedsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mSQL (0.8ms)[0m  UPDATE "feeds" SET "updated_at" = '2015-09-10 16:28:05.310059' WHERE "feeds"."id" = 3
+  [1m[36m (0.7ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 3]]
+Completed 200 OK in 181ms (Views: 177.4ms | ActiveRecord: 2.5ms)
