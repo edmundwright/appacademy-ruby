@@ -72,11 +72,8 @@ nav button.user {
 }
 
 nav button.user:hover {
-    background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
-
-
-
 
 li.list {
   border-radius: 5px;
@@ -92,20 +89,36 @@ li.list {
 div.list-new {
   float: left;
   width: 270px;
-}
-
-button.list-new {
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.701961);
-  float: left;
   background: rgba(0,0,0,.15);
-  width: 250px;
-  padding: 7px;
+  width: 270px;
   margin: 10px;
+  overflow: hidden;
 }
 
-button.list-new:hover {
+div.list-new button.open {
+  text-align: left;
+  width: 270px;
+  padding: 10px;
+}
+
+div.list-new button.close {
+  margin: 5px;
+  padding: 2px;
+  font-size: 24px;
+}
+
+div.list-new button.open:hover {
   background: rgba(0,0,0,.30);
+}
+
+div.list-new input {
+  background: rgb(226, 228, 230);
+  border-radius: 5px;
+  width: 245px;
+  padding: 7px 5px;
+  margin: 5px;
 }
 
 ul.lists {
