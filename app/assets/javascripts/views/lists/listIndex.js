@@ -1,5 +1,5 @@
-TrelloClone.Views.CardIndex = Backbone.CompositeView.extend({
-  template: JST["cards/cardIndex"],
+TrelloClone.Views.ListIndex = Backbone.CompositeView.extend({
+  template: JST["lists/listIndex"],
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render)
@@ -12,7 +12,7 @@ TrelloClone.Views.CardIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
 
     this.collection.each(function (model) {
-      this.addSubview("ul.cards", new TrelloClone.Views.CardIndexItem({
+      this.addSubview("ul.lists", new TrelloClone.Views.ListIndexItem({
         model: model
       }))
     }.bind(this))
