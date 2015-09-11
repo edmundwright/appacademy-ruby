@@ -1,4 +1,4 @@
-body, html, div, h1, h2, h3, ul, li  {
+body, html, div, h1, h2, h3, ul, li, button, nav, a, form  {
   margin: 0;
   padding: 0;
   border: 0;
@@ -6,8 +6,13 @@ body, html, div, h1, h2, h3, ul, li  {
   font: inherit;
   font-size: inherit;
   color: inherit;
+  text-decoration: inherit;
 
   background: transparent;
+}
+
+ul {
+  list-style: none;
 }
 
 .group:after {

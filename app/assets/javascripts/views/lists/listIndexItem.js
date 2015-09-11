@@ -3,6 +3,8 @@ TrelloClone.Views.ListIndexItem = Backbone.CompositeView.extend({
 
   tagName: "li",
 
+  className: "list",
+
   initialize: function () {
     this.listenTo(this.model, "sync", this.render)
   },

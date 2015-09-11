@@ -1,0 +1,127 @@
+body {
+  background: rgb(0, 121, 191);
+  color: white;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+nav {
+  background: rgba(0,0,0,.15);
+  padding: 5px 0;
+}
+
+nav > a {
+  text-align: center;
+  margin: 0 5px;
+  display: block;
+  font-weight: bold;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.298039);
+  padding: 7px;
+}
+
+nav > a:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+nav > a.boards {
+  float: left;
+  width: 70px;
+}
+
+nav > a.new-board {
+  float: right;
+  width: 30px;
+  font-size: 25px;
+  font-weight: normal;
+  padding: 0px;
+  line-height: 25px;
+  padding-bottom: 5px;
+}
+
+nav > a.user {
+  width: 70px;
+  float: right;
+}
+
+nav button.user {
+  text-align: center;
+  margin: 0 5px;
+  display: block;
+  font-weight: bold;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.298039);
+  padding: 7px;
+  width: 70px;
+  float: right;
+}
+
+nav button.user:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+li.list {
+  border-radius: 5px;
+  background: rgb(226, 228, 230);
+  color: rgb(77, 77, 77);
+
+  float: left;
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+}
+
+div.list-new {
+  float: left;
+  width: 270px;
+}
+
+button.list-new {
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.701961);
+  float: left;
+  background: rgba(0,0,0,.15);
+  width: 250px;
+  padding: 7px;
+  margin: 10px;
+}
+
+button.list-new:hover {
+  background: rgba(0,0,0,.30);
+}
+
+ul.lists {
+  float: left;
+}
+
+li.card {
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+
+  margin: 7px 0px;
+  padding: 7px;
+}
+
+li.card:hover {
+  /*Not sure of colour here*/
+  background: rgb(240, 240, 240);
+}
