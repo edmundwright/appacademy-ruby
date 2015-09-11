@@ -3,6 +3,7 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
 
 
   initialize: function () {
+    this.model.fetch();
     this.listenTo(this.model, "sync", this.render)
   },
 
