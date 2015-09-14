@@ -20,6 +20,15 @@ h2 {
   font-weight: bold;
 }
 
+div.backdrop {
+  padding-top: 40px;
+}
+
+nav.navbar {
+  position: fixed;
+  width: 100%;
+}
+
 nav {
   background: rgba(0,0,0,.15);
   padding: 5px 0;
@@ -115,11 +124,53 @@ div.list-new button.open:hover {
 }
 
 div.list-new input {
+  color: black;
   background: rgb(226, 228, 230);
   border-radius: 5px;
-  width: 245px;
+  width: 250px;
   padding: 7px 5px;
   margin: 5px;
+}
+
+div.card-new textarea  {
+  color: black;
+  background: white;
+  padding: 7px 5px;
+  width: 240px;
+  height: 50px;
+  border-radius: 5px;
+  border: 0;
+}
+
+div.card-new button.open {
+  text-align: left;
+  width: 250px;
+  display: block;
+  margin-top: 20px;
+  color: gray;
+}
+
+div.card-new form > button {
+  background: rgb(97, 189, 79);
+  border-radius: 5px;
+  min-height: 37px;
+  width: 63px;
+  margin-top: 5px;
+  float: left;
+  color: white;
+}
+
+div.card-new button.close {
+  float: right;
+  margin: 5px;
+  padding: 2px;
+  font-size: 24px;
+  color: gray;
+}
+
+div.card-new button.open:hover {
+  background: rgb(240, 240, 240);
+  text-decoration: underline;
 }
 
 ul.lists {
@@ -136,7 +187,6 @@ li.card {
 }
 
 li.card:hover {
-  /*Not sure of colour here*/
   background: rgb(240, 240, 240);
 }
 
@@ -145,14 +195,43 @@ li.card:hover {
   box-shadow: 1px 1px 10px black;
 }
 
+
 div#main.index-div {
   background: white;
   min-height: calc(100vh - 42px);
   color: black;
+  padding: 50px;
 }
 
-ul.boards > li {
+.boardsIndex {
+  margin-top: 50px;
+  margin-left: 150px;
+}
+
+ul.boards a {
+  color: white;
   float: left;
   display: block;
-  width: 200px;
+  width: 280px;
+  border-radius: 5px;
+  background: rgb(0, 121, 191);
+  min-height: 100px;
+  margin: 10px;
+  padding: 10px;
 }
+
+ul.boards a:hover {
+  background: rgb(0, 94, 148);
+}
+
+/*div#modal {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: rgb(226, 228, 230);
+  left: calc(50vw - 250px);
+  top: calc(50vh - 250px);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 40px black;
+}*/

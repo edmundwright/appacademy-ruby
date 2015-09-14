@@ -17,7 +17,7 @@ TrelloClone.Routers.Router = Backbone.Router.extend({
   },
 
   boardIndex: function () {
-    this.$rootEl.addClass("index-div")
+    this.$rootEl.addClass("index-div");
     var view = new TrelloClone.Views.BoardIndex({
       collection: TrelloClone.boards
     })
@@ -26,7 +26,7 @@ TrelloClone.Routers.Router = Backbone.Router.extend({
   },
 
   boardShow: function (id) {
-    this.$rootEl.removeClass("index-div")
+    this.$rootEl.removeClass("index-div");
     var model = TrelloClone.boards.getOrFetch(id);
     var view = new TrelloClone.Views.BoardShow({
       model: model

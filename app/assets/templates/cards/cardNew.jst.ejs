@@ -1,6 +1,10 @@
-<form>
-  <input type="hidden" name="card[list_id]" value="<%= list.id %>">
-  <textarea id="card_title" name="card[title]"></textarea>
-  <button>Add</button>
-</form>
-<button class="close">x</button>
+<% if(isOpen) { %>
+  <form>
+    <input type="hidden" name="card[list_id]" value="<%= list.id %>">
+    <textarea id="card_title" name="card[title]"></textarea>
+    <button>Add</button>
+  </form>
+  <button class="close">x</button>
+<% } else { %>
+  <button class="open">Add a card...</button>
+<% } %>

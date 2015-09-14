@@ -1,4 +1,4 @@
-TrelloClone.Views.CardIndexItem = Backbone.View.extend({
+TrelloClone.Views.CardIndexItem = Backbone.CompositeView.extend({
   template: JST["cards/cardIndexItem"],
 
   tagName: "li",
@@ -19,6 +19,9 @@ TrelloClone.Views.CardIndexItem = Backbone.View.extend({
   },
 
   show: function () {
+    // this.addSubview($("#modal"), new TrelloClone.Views.CardShow({
+    //   model: this.model
+    // }))
     Backbone.history.navigate("#cards/" + this.model.id, { trigger: true })
   }
 });

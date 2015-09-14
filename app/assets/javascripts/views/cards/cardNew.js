@@ -3,15 +3,18 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
 
   events: {
     "submit form": "submit",
-    "click button.close": "close"
+    "click button.close": "close",
+    "click button.open": "open"
   },
 
   initialize: function (options) {
+    this.isOpen = false;
     this.list = options.list
   },
 
   render: function () {
     this.$el.html(this.template({
+      isOpen: this.isOpen,
       list: this.list
     }));
 
@@ -27,12 +30,19 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
     }), {
       success: function () {
         this.list.cards().add(model);
-        this.remove();
+        this.close();
       }.bind(this)
     })
   },
 
+  open: function () {
+    this.isOpen = true;
+    this.render();
+    this.$("textarea").focus();
+  },
+
   close: function () {
-    this.remove();
+    this.isOpen = false;
+    this.render();
   }
 });

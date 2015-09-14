@@ -1,15 +1,23 @@
 TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   template: JST["boards/boardShow"],
 
+  className: "show-div",
+
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model.lists(), "add", this.setWidth);
   },
 
   events: {
     "click button.list-new": "listNew"
   },
 
+  setWidth: function () {
+    this.$el.css("width", "" + ((this.model.lists().length + 1) * 292) + "px");
+  },
+
   render: function () {
+    this.setWidth();
     $("body").removeClass().addClass("show-body");
     var content = this.template({
       model: this.model

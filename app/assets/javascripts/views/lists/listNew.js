@@ -6,28 +6,28 @@ TrelloClone.Views.ListNew = Backbone.View.extend({
   },
 
   initialize: function (options) {
-    this.formTemplate = JST["lists/listNewForm"],
-    this.buttonTemplate = JST["lists/listNewButton"],
-    this.currentTemplate = this.buttonTemplate;
+    this.isOpen = false;
+    this.template = JST["lists/listNew"],
     this.board = options.board;
   },
 
   render: function () {
-    this.$el.html(this.currentTemplate({
-      board: this.board
+    this.$el.html(this.template({
+      board: this.board,
+      isOpen: this.isOpen
     }));
 
     return this;
   },
 
   open: function () {
-    this.currentTemplate = this.formTemplate;
+    this.isOpen = true;
     this.render();
     this.$("input").focus();
   },
 
   close: function () {
-    this.currentTemplate = this.buttonTemplate;
+    this.isOpen = false;
     this.render();
   },
 
