@@ -144,3 +144,15 @@ li.card:hover {
   transform: rotate(1deg);
   box-shadow: 1px 1px 10px black;
 }
+
+div#main.index-div {
+  background: white;
+  min-height: calc(100vh - 42px);
+  color: black;
+}
+
+ul.boards > li {
+  float: left;
+  display: block;
+  width: 200px;
+}

@@ -5,15 +5,12 @@ TrelloClone.Views.ListIndexItem = Backbone.CompositeView.extend({
 
   className: "list",
 
-  initialize: function () {
-    this.listenTo(this.model, "sync", this.render)
-  },
-
   events: {
     "click button.card-new": "cardNew"
   },
 
   render: function () {
+    this.$el.attr("id", "card_" + this.model.id);
     var content = this.template({
       model: this.model
     });

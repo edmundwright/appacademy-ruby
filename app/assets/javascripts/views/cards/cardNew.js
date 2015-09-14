@@ -22,7 +22,9 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
     e.preventDefault();
     var formContent = $(e.currentTarget).serializeJSON();
     var model = new TrelloClone.Models.Card();
-    model.save(formContent.card, {
+    model.save(jQuery.extend(formContent.card, {
+      "ord": this.list.cards().length
+    }), {
       success: function () {
         this.list.cards().add(model);
         this.remove();
