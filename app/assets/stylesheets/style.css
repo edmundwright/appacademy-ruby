@@ -107,6 +107,7 @@ div.list-new button.close {
   margin: 5px;
   padding: 2px;
   font-size: 24px;
+  float: right;
 }
 
 div.list-new button.open:hover {

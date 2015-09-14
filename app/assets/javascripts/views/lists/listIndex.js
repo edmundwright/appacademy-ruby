@@ -11,11 +11,15 @@ TrelloClone.Views.ListIndex = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
 
+
     this.collection.each(function (model) {
       this.addSubview("ul.lists", new TrelloClone.Views.ListIndexItem({
         model: model
       }))
     }.bind(this))
+
+    this.$("ul.lists").sortable();
+
 
     return this;
   }

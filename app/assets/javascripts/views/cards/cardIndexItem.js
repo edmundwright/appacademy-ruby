@@ -5,9 +5,9 @@ TrelloClone.Views.CardIndexItem = Backbone.View.extend({
 
   className: "card",
 
-  events: {
-    "click": "show"
-  },
+  // events: {
+  //   "click": "show"
+  // },
 
   render: function () {
     var content = this.template({
