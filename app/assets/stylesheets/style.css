@@ -139,3 +139,8 @@ li.card:hover {
   /*Not sure of colour here*/
   background: rgb(240, 240, 240);
 }
+
+.ui-sortable-helper {
+  transform: rotate(1deg);
+  box-shadow: 1px 1px 10px black;
+}

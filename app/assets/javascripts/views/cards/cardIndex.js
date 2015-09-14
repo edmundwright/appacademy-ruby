@@ -18,7 +18,8 @@ TrelloClone.Views.CardIndex = Backbone.CompositeView.extend({
     }.bind(this))
 
     this.$("ul.cards").sortable();
-
+    this.order = this.$("ul.cards").sortable( "toArray" );
+    console.log(this.order)
     return this;
   }
 });
