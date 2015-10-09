@@ -1,0 +1,36 @@
+<h1><%= @cat.name %></h1>
+
+<table>
+  <% @cat.attributes.each do |key, value| %>
+    <% unless value.nil? || key=='created_at' ||
+        key=='updated_at' || key=='id'%>
+      <tr>
+        <td>
+          <%= key.gsub('_',' ').capitalize %>
+        </td>
+        <td>
+          <%= value.to_s.capitalize %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+  <tr>
+    <td>Age</td>
+    <td><%= @cat.age %></td>
+  </tr>
+</table>
+
+<a href="<%= edit_cat_url(@cat) %>">Edit cat!</a>
+
+<h2> Rental Requests </h2>
+<table>
+  <% @cat.rental_requests.order(:start_date).each do |request| %>
+    <tr><td>
+      <%= request.start_date  %> - <%= request.end_date  %>,  <%= request.requester.user_name %>: <%= request.status  %>
+      <% if current_user == @cat.owner %>
+        <%= render 'accept_deny', request: request %>
+      <% end %>
+    </td></tr>
+  <% end %>
+</table>
+<a href="<%= cats_url %>"> Back to List of Cats </a>
