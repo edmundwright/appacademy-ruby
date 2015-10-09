@@ -1,0 +1,71 @@
+html, body, figure, ul, li, section, article, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.carousel {
+  margin: 50px auto;
+  width: 600px;
+}
+
+ul.items {
+  margin: auto;
+  border: 10px solid black;
+  width: 600px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel > button {
+  position: relative;
+}
+
+ul.items > li {
+  display: none;
+  width: 100%;
+}
+
+ul.items > li.active {
+  display: block;
+  position: absolute;
+  left: 0%;
+  transition: left 500ms;
+}
+
+ul.items img {
+  width: 100%;
+}
+
+ul.items > li.left {
+  display: block;
+  left: -100%;
+  position: absolute;
+    transition: left 500ms;
+}
+
+ul.items > li.right {
+  display: block;
+  left: 100%;
+  position: absolute;
+    transition: left 500ms;
+}

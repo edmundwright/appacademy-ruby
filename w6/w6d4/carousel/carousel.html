@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>My Cool Carousel Website</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="carousel.js"></script>
+  <link href="carousel.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <figure class="carousel">
+    <ul class="items">
+      <li><img src="http://placecorgi.com/260/300" /></li>
+      <li><img src="http://placecorgi.com/240/180" /></li>
+      <li><img src="http://placecorgi.com/260/180" /></li>
+      <li><img src="http://placecorgi.com/260/420" /></li>
+    </ul>
+
+    <button class="slide-right">Prev</button>
+    <button class="slide-left">Next</button>
+  </figure>
+
+  <script>
+    $(function () {
+      $('.carousel').carousels();
+    });
+  </script>
+</body>
+</html>

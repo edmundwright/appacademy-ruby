@@ -1,0 +1,51 @@
+html, body, figure, ul, li, section, article, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.gutter-images > img {
+  width: 20%;
+  display: block;
+  float: left;
+  background: red;
+}
+
+.thumbnails {
+  width: 400px;
+    background: blue;
+    margin: 20px auto;
+}
+
+main.active > img {
+  width: 100%;
+}
+
+a.nav {
+
+  font-size: 150px;
+  cursor: pointer;
+}
+
+a.nav:hover {
+  color: yellow;
+  font-size: 200px;
+}

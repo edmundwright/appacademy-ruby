@@ -1,0 +1,76 @@
+html, body, figure, ul, li, section, article, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.tabs {
+  width: 600px;
+  margin: 100px auto;
+  font-family: sans-serif;
+}
+
+.content-tabs {
+  margin: auto;
+  width: 600px;
+}
+
+.tabs > li {
+  display: block;
+  float: left;
+  color: white;
+  width: 150px;
+}
+
+.tabs a {
+  width: 144px;
+  padding: 3px;
+  display: block;
+  background: orange;
+}
+
+.tabs a.active {
+  font-weight: bold;
+  background: red;
+}
+
+.content-tabs article {
+  display: none;
+  padding-top: 50px;
+  opacity: 0;
+}
+
+.content-tabs article.active {
+  display: block;
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.content-tabs article.transitioning {
+  display: block;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.content-tabs article.active.transitioning {
+  display: block;
+  opacity: 0;
+}
