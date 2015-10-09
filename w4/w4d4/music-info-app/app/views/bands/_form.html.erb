@@ -1,0 +1,17 @@
+<%= render 'shared/errors' %>
+
+<form action="<%= edit ? band_url(band) : bands_url %>" method="post">
+  <% if edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+
+  <%= hidden_auth_token %>
+
+  <label for="band_name">Name</label>
+  <input id="band_name"
+         type="text"
+         name="band[name]"
+         value = "<%= band.name %>">
+
+  <button><%= edit ? "Edit band!" : "Add band!" %></button>
+</form>

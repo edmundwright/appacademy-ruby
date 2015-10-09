@@ -1,0 +1,8 @@
+<h1>Sign up!</h1>
+
+<%= render 'shared/errors' %>
+
+<form action="<%= users_url %>" method="post">
+  <%= render 'fields', email: @email %>
+  <button>Sign up!</button>
+</form>

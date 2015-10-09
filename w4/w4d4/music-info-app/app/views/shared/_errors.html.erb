@@ -1,0 +1,3 @@
+<% flash[:errors].try(:each) do |error_message| %>
+  <div><%= error_message %></div>
+<% end %>

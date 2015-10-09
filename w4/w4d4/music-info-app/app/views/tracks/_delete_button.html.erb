@@ -1,0 +1,5 @@
+<form action="<%= track_url(track) %>" method="post">
+  <%= hidden_auth_token %>
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete this track</button>
+</form>

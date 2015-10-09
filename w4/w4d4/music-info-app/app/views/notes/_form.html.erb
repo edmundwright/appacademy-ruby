@@ -1,0 +1,12 @@
+<%= render 'shared/errors' %>
+
+<form action="<%= notes_url %>" method="post">
+  <%= hidden_auth_token %>
+
+  <input hidden="type" name="note[track_id]" value="<%= track.id %>">
+
+  <label for="note_body">Add a new note:</label>
+  <textarea id="note_body" name="note[body]"></textarea>
+
+  <button>Submit note</button>
+</form>

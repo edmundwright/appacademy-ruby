@@ -1,0 +1,25 @@
+<h1><%= link(@track) %></h1>
+
+<% if current_user.admin? %>
+  <a href="<%= edit_track_url %>">Edit this track</a>
+  <%= render 'delete_button', track: @track  %>
+<% end %>
+
+<h2>Details</h2>
+
+Album: <%= link(@track.album) %><br>
+Band: <%= link(@track.band) %><br>
+Bonus?: <%= @track.bonus? ? "Yes" : "No" %>
+
+<% if @track.lyrics %>
+  <h2>Lyrics</h2>
+  <%= ugly_lyrics(@track.lyrics) %>
+<% end %>
+
+<h2>Notes</h2>
+
+<%= render 'notes/form', track: @track %>
+
+<% @track.notes.each do |note| %>
+  <%= render 'notes/note', note: note %>
+<% end %>

@@ -1,0 +1,18 @@
+<h1><%= link(@album) %></h1>
+
+<% if current_user.admin? %>
+  <a href="<%= edit_album_url %>">Edit this album</a>
+  <%= render 'delete_button', album: @album  %>
+  <a href="<%= new_album_track_url(@album) %>">Add a new track</a><br><br>
+<% end %>
+
+<h2>Details</h2>
+
+Band: <%= link(@album.band) %><br>
+Live?: <%= @album.live? ? "Yes" : "No" %>
+
+<h2>Tracks</h2>
+
+<% track_links_for_album(@album).each do |link| %>
+  <%= link %><br>
+<% end %>

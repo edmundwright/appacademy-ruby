@@ -1,0 +1,10 @@
+<h1>Welcome to MusicInfo.com. Activate your account now!</h1>
+
+Welcome to the site, <%= @user.email %>.
+
+To activate your account, please follow
+<a href="localhost:3000/users/activate?activation_token=<%= @user.activation_token %>">
+  this link.
+</a>
+
+Thanks!
