@@ -1,0 +1,23 @@
+<nav class="navbar group">
+  <a class="boards" href="#">☯ Boards</a>
+  <a class="new-board" href="#boards/new">+</a>
+  <% if signed_in? %>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="delete">
+      <button class="user">Sign out</button>
+    </form>
+  <% else %>
+    <a class="user" href="<%= new_session_url %>">Sign In</a>
+    <a class="user" href="<%= new_user_url %>">Sign Up</a>
+  <% end %>
+
+
+</nav>
+
+<% if flash[:errors] %>
+<div class="alert alert-warning alert-dismissible" role="alert">
+   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+<%= flash[:errors].join("<br>").html_safe %>
+</div>
+<% end %>

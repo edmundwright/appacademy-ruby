@@ -1,0 +1,237 @@
+body {
+  background: rgb(0, 121, 191);
+  color: white;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+div.backdrop {
+  padding-top: 40px;
+}
+
+nav.navbar {
+  position: fixed;
+  width: 100%;
+}
+
+nav {
+  background: rgba(0,0,0,.15);
+  padding: 5px 0;
+}
+
+nav > a {
+  text-align: center;
+  margin: 0 5px;
+  display: block;
+  font-weight: bold;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.298039);
+  padding: 7px;
+}
+
+nav > a:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+nav > a.boards {
+  float: left;
+  width: 70px;
+}
+
+nav > a.new-board {
+  float: right;
+  width: 30px;
+  font-size: 25px;
+  font-weight: normal;
+  padding: 0px;
+  line-height: 25px;
+  padding-bottom: 5px;
+}
+
+nav > a.user {
+  width: 70px;
+  float: right;
+}
+
+nav button.user {
+  text-align: center;
+  margin: 0 5px;
+  display: block;
+  font-weight: bold;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.298039);
+  padding: 7px;
+  width: 70px;
+  float: right;
+}
+
+nav button.user:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+li.list {
+  border-radius: 5px;
+  background: rgb(226, 228, 230);
+  color: rgb(77, 77, 77);
+
+  float: left;
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+}
+
+div.list-new {
+  float: left;
+  width: 270px;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.701961);
+  background: rgba(0,0,0,.15);
+  width: 270px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+div.list-new button.open {
+  text-align: left;
+  width: 270px;
+  padding: 10px;
+}
+
+div.list-new button.close {
+  margin: 5px;
+  padding: 2px;
+  font-size: 24px;
+  float: right;
+}
+
+div.list-new button.open:hover {
+  background: rgba(0,0,0,.30);
+}
+
+div.list-new input {
+  color: black;
+  background: rgb(226, 228, 230);
+  border-radius: 5px;
+  width: 250px;
+  padding: 7px 5px;
+  margin: 5px;
+}
+
+div.card-new textarea  {
+  color: black;
+  background: white;
+  padding: 7px 5px;
+  width: 240px;
+  height: 50px;
+  border-radius: 5px;
+  border: 0;
+}
+
+div.card-new button.open {
+  text-align: left;
+  width: 250px;
+  display: block;
+  margin-top: 20px;
+  color: gray;
+}
+
+div.card-new form > button {
+  background: rgb(97, 189, 79);
+  border-radius: 5px;
+  min-height: 37px;
+  width: 63px;
+  margin-top: 5px;
+  float: left;
+  color: white;
+}
+
+div.card-new button.close {
+  float: right;
+  margin: 5px;
+  padding: 2px;
+  font-size: 24px;
+  color: gray;
+}
+
+div.card-new button.open:hover {
+  background: rgb(240, 240, 240);
+  text-decoration: underline;
+}
+
+ul.lists {
+  float: left;
+}
+
+li.card {
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+
+  margin: 7px 0px;
+  padding: 7px;
+}
+
+li.card:hover {
+  background: rgb(240, 240, 240);
+}
+
+.ui-sortable-helper {
+  transform: rotate(1deg);
+  box-shadow: 1px 1px 10px black;
+}
+
+
+div#main.index-div {
+  background: white;
+  min-height: calc(100vh - 42px);
+  color: black;
+  padding: 50px;
+}
+
+.boardsIndex {
+  margin-top: 50px;
+  margin-left: 150px;
+}
+
+ul.boards a {
+  color: white;
+  float: left;
+  display: block;
+  width: 280px;
+  border-radius: 5px;
+  background: rgb(0, 121, 191);
+  min-height: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+
+ul.boards a:hover {
+  background: rgb(0, 94, 148);
+}
+
+/*div#modal {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: rgb(226, 228, 230);
+  left: calc(50vw - 250px);
+  top: calc(50vh - 250px);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 40px black;
+}*/

@@ -1,0 +1,9 @@
+<% if(isOpen) { %>
+  <form>
+    <input type="hidden" name="list[board_id]" value="<%= board.id %>">
+    <input type="text" id="list_title" name="list[title]">
+  </form>
+  <button class="close">x</button>
+<% } else { %>
+  <button class="open">Add a list...</button>
+<% } %>
