@@ -1,3 +1,3 @@
 # Work for App Academy
 
-Work for App Academy. Most projects are stored in their own repositories.
+Exercises completed and projects written for App Academy.
