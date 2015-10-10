@@ -1,0 +1,27 @@
+<ul class="errors"></ul>
+
+<% if (editingTitle) { %>
+  <form class="edit-title">
+    <input type="text" name="post[title]" value="<%= post.escape('title') %>">
+  </form>
+<% } else { %>
+  <h1 class="post-title"><%= post.escape("title") %></h1>
+<% } %>
+<br>
+
+<% if (editingBody) { %>
+  <form class="edit-body">
+    <textarea name="post[body]"><%= post.escape('body') %></textarea>
+    <button>Update body</button>
+  </form>
+<% } else { %>
+  <p class="post-body"><%= post.escape("body") %></p>
+<% } %>
+
+<br>
+<a href="#posts/">Back to Index</a>
+
+<br>
+<a href="#posts/<%= post.id %>/edit">Edit post</a>
+<br>
+<button class="delete">Delete this Post</button>
