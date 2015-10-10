@@ -1,0 +1,11 @@
+<%= form_auth_token %>
+
+<label for="goal_body">Body</label>
+<textarea id="goal_body" name="goal[body]"><%= goal.body %></textarea>
+
+
+<input type="radio" name="goal[private]" id="goal_private_true" value="true" <%= "checked" if goal.private == true %>>
+<label for="goal_private_true">Private</label>
+
+<input type="radio" name="goal[private]" id="goal_private_false" value="false" <%= "checked" if goal.private == false %>>
+<label for="goal_private_false">Public</label>

@@ -1,0 +1,7 @@
+<%= render 'layouts/errors' %>
+
+<form action="<%= goal_url(@goal) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <%= render 'form', goal: @goal %>
+  <button>Edit Goal</button>
+</form>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GoalApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= flash[:notice] %>
+
+<%= link_to "Add Goal", new_goal_url %>
+
+<% if signed_in? %>
+  <%= current_user.username %>
+  <form action="<%= session_url %>" method="post">
+    <%= form_auth_token %>
+    <input type="hidden" name="_method" value="delete">
+    <button>Sign Out</button>
+  </form>
+<% else %>
+  <%= link_to "Sign In", new_session_url %>
+  <%= link_to "Sign Up", new_user_url %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

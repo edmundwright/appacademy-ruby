@@ -1,0 +1,17 @@
+<h2>Goals Index</h2>
+
+<h3>Private Goals</h3>
+  <% @private_goals.each do |goal| %>
+    <%= goal.body %>
+  <% end %>
+
+<h3>Public Goals</h3>
+<% @public_goals.each do |goal| %>
+  <%= goal.body %>
+<% end %>
+
+
+<h3>Other Users Public Goals</h3>
+<% @other_user_public_goals.each do |goal| %>
+  <%= goal.body %> : <%= goal.user.username %>
+<% end %>

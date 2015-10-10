@@ -1,0 +1,57 @@
+<h2>Goal</h2>
+
+<%= @goal.body %>
+<br>
+User: <%= @goal.user.username %><br>
+
+
+Status:
+<% if @goal.private? %>
+  Private
+<% else %>
+  Public
+<% end %>
+
+<% if @goal.completed? %>
+  Completed
+<% else %>
+  Not Completed
+  <% if current_user == @goal.user %>
+    <form action="<%= goal_url(@goal) %>" method="post">
+      <%= form_auth_token %>
+      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="goal[completed]" value="true">
+      <button>Complete!</button>
+    </form>
+  <% end %>
+<% end %>
+
+<% if current_user == @goal.user %>
+<%= link_to "Update Goal", edit_goal_url(@goal) %>
+  <form action="<%= goal_url(@goal) %>" method="post">
+    <%= form_auth_token %>
+    <input type="hidden" name="_method" value="delete">
+    <button>Delete Goal</button>
+  </form>
+<% end %>
+
+<%= render 'layouts/errors' %>
+
+<form action="<%= comments_url %>" method="post">
+  <%= form_auth_token %>
+  <input type="hidden" name="comment[commentable_id]" value="<%= @goal.id %>">
+  <input type="hidden" name="comment[commentable_type]" value="Goal">
+  <label for="comment_reply">Comment</label>
+  <textarea name="comment[reply]" id="comment_reply"></textarea>
+
+
+  <button>Submit Comment</button>
+</form>
+
+<ul>
+  <% @goal.received_comments.each do |comment| %>
+    <li>
+      <%= comment.reply %> -<%=comment.author.username %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,6 @@
+<%= render 'layouts/errors' %>
+
+<form action="<%= goals_url %>" method="post">
+  <%= render 'form', goal: @goal %>
+  <button>Add Goal</button>
+</form>
